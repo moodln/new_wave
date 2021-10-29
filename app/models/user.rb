@@ -3,7 +3,7 @@ class User < ApplicationRecord
     validates :username, presence: true, uniqueness: true 
     validates :password_digest, :session_token, presence: true 
     validates :password, length: {minimum: 6}, allow_nil: true
-    validates :name, default: :username 
+    # validates :name, default: :username 
     # dont know if this is right ^
     after_initialize :ensure_session_token 
     attr_reader :password
