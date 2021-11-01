@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 class SessionForm extends React.Component {
     constructor(props) {
         super(props);
@@ -23,9 +24,9 @@ class SessionForm extends React.Component {
     }
 
     render() {
-        const { errors, formType } = this.props;
+        let { errors, formType } = this.props;
         let content;
-        formType === 'login' ? content = 'Log In' : 'Sign up for a new wave account!'
+        formType === 'login' ? content = 'Log In' : content = 'Sign up for a new wave account!'
         return ( 
             <div>
                 <p>{errors}</p>

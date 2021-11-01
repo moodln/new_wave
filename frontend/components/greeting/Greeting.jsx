@@ -17,9 +17,9 @@ class Greeting extends React.Component {
         } else {
             return (
                 <div>
-                    <Link to='/login'>Log In</Link>
+                    <Link to='/login' onClick={this.props.clearErrors}>Log In</Link>
                     <br/>
-                    <Link to='/signup'>Sign Up</Link>
+                    <Link to='/signup' onClick={this.props.clearErrors}>Sign Up</Link>
                 </div>
             )
         }
