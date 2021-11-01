@@ -6,7 +6,7 @@ class User < ApplicationRecord
     validates_format_of :email, with: URI::MailTo::EMAIL_REGEXP
     # validates :name, default: 'username' 
     # dont know if this is right ^
-    after_initialize :ensure_session_token
+    after_initialize :ensure_session_token, :set_defaults
     attr_reader :password
     attr_accessor :name 
 
@@ -20,6 +20,10 @@ class User < ApplicationRecord
     @password = password
     self.password_digest = BCrypt::Password.create(password)
   end
+
+  def set_defaults 
+    self.name ||= self.username
+  end 
 
   # def name=(name)
   #   @name = name 
