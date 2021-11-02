@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { signup } from '../../actions/session_actions';
+import { signup, login } from '../../actions/session_actions';
 import SessionForm from './SessionForm';
 
 const mSTP = (state) => ({
@@ -8,7 +8,8 @@ const mSTP = (state) => ({
 });
 
 const mDTP = (dispatch) => ({
-    processForm: (user) => dispatch(signup(user))
+    processForm: (user) => dispatch(signup(user)),
+    handleDemo: (user) => dispatch(login(user))
 });
 
 const SignupFormContainer = connect(mSTP, mDTP)(SessionForm);

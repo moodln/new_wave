@@ -7,9 +7,9 @@ import SignupFormContainer from './session/signup_form_container';
 
 const App = () => (
     <div>
-        <header>
+        <header className='logo-links-container'>
         <Link to='/'>
-            <img src={window.logo} alt="new_wave logo" className='logo'/>
+            <img src={window.logo} alt="new_wave logo" className='logo' />
         </Link>
         <GreetingContainer />
         </header>

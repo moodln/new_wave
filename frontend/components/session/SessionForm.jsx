@@ -30,7 +30,7 @@ class SessionForm extends React.Component {
         return ( 
             <div>
                 <p>{errors}</p>
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={this.handleSubmit} className='session-form'>
                     <h1>{content}</h1>
                     <label>Username: 
                         <input type="text" 
@@ -48,6 +48,7 @@ class SessionForm extends React.Component {
                             onChange={this.update('password')} />
                     </label>
                     <button>open sesame</button>
+
                 </form>
             </div>
         )

@@ -8,7 +8,8 @@ const mSTP = (state) => ({
 });
 
 const mDTP = (dispatch) => ({
-    processForm: (user) => dispatch(login(user))
+    processForm: (user) => dispatch(login(user)),
+    handleDemo: (user) => dispatch(login(user))
 });
 
 const LoginFormContainer = connect(mSTP, mDTP)(SessionForm);
