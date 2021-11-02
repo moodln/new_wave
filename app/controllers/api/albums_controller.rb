@@ -10,6 +10,16 @@ class Api::AlbumsController < ApplicationController
         render :index
     end 
 
+    def create 
+        @album = Album.new(album_params)
+
+        if @album.save 
+            render json: {message: 'you did ittt'}
+        else 
+            render json: @album.errors.full_messages 
+        end 
+    end 
+
 
     def album_params 
         params.require(:album).permit(:title, :artist_id)

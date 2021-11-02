@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Link } from 'react-router-dom';
 import { AuthRoute } from '../util/route_util';
+import AlbumIndex from './albums/AlbumIndex';
 import GreetingContainer from './greeting/GreetingContainer';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
@@ -16,6 +17,9 @@ const App = () => (
 
         <AuthRoute path='/login' component={LoginFormContainer} />
         <AuthRoute path='/signup' component={SignupFormContainer} />
+        <div>
+            <AlbumIndex />
+        </div>
     </div>
 );
 
