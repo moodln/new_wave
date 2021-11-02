@@ -9,7 +9,7 @@ const App = () => (
     <div>
         <header>
         <Link to='/'>
-            <img src={window.logo} alt="new_wave logo" />
+            <img src={window.logo} alt="new_wave logo" className='logo'/>
         </Link>
         <GreetingContainer />
         </header>
