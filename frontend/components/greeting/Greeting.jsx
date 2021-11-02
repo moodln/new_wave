@@ -35,9 +35,9 @@ class Greeting extends React.Component {
         } else {
             return (
                 <div className='links-container'>
-                    <Link to='/login' onClick={this.props.clearErrors}>log in</Link>
-                    <br/><p/>
                     <Link to='/signup' onClick={this.props.clearErrors}>sign up</Link>
+                    <br /><p />
+                    <Link to='/login' onClick={this.props.clearErrors}>log in</Link>
                     <br/><p/>
                     <Link to='/' onClick={this.handleDemoLogin} value='guest user'>guest user</Link>
                 </div>
