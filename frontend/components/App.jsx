@@ -1,13 +1,15 @@
 import React from 'react';
 import { Route, Link } from 'react-router-dom';
 import { AuthRoute } from '../util/route_util';
-import AlbumIndex from './albums/AlbumIndex';
 import GreetingContainer from './greeting/GreetingContainer';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
+// import Modal from './modal/modal.jsx';
+
 
 const App = () => (
     <div>
+        {/* <Modal /> */}
         <header className='logo-links-container'>
         <Link to='/'>
             <img src={window.logo} alt="new_wave logo" className='logo' />
@@ -15,11 +17,7 @@ const App = () => (
         <GreetingContainer />
         </header>
 
-        <AuthRoute path='/login' component={LoginFormContainer} />
-        <AuthRoute path='/signup' component={SignupFormContainer} />
-        <div>
-            <AlbumIndex />
-        </div>
+        
     </div>
 );
 
