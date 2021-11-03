@@ -1,6 +1,9 @@
 import { connect } from 'react-redux';
-import { signup } from '../../actions/session_actions';
+import React from 'react';
+import { signup, login } from '../../actions/session_actions';
+import { openModal, closeModal } from '../../actions/modal_actions';
 import SessionForm from './SessionForm';
+
 
 const mSTP = (state) => ({
     errors: Object.values(state.errors), 
@@ -8,7 +11,14 @@ const mSTP = (state) => ({
 });
 
 const mDTP = (dispatch) => ({
-    processForm: (user) => dispatch(signup(user))
+    processForm: (user) => dispatch(signup(user)),
+    handleDemo: (user) => dispatch(login(user)),
+    otherForm: (
+        <button onClick={() => dispatch(openModal('login'))}>
+            Login
+        </button>
+    ),
+    closeModal: () => dispatch(closeModal())
 });
 
 const SignupFormContainer = connect(mSTP, mDTP)(SessionForm);
