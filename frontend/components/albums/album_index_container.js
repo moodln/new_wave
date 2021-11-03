@@ -3,7 +3,7 @@ import { fetchAlbums } from '../../actions/album_actions';
 import AlbumIndex from './AlbumIndex';
 
 const mapStateToProps = (state) => ({
-    albums: Object.values(state.albums)
+    albums: Object.values(state.entities.albums)
 })
 
 const mapDispatchToProps = (dispatch) => ({

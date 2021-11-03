@@ -1,4 +1,5 @@
 import React from 'react';
+import AlbumIndexItem from './AlbumIndexItem';
 
 class AlbumIndex extends React.Component {
     componentDidMount() {
