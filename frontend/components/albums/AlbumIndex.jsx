@@ -13,13 +13,17 @@ class AlbumIndex extends React.Component {
     fetchAlbums() {
         $.ajax({
             url: "/api/albums"
-        }).then(albums => {
-            this.setState({ albums });
+        }).then(albumz => {
+            this.setState({ albums: albumz });
         });
     }
 
     componentDidMount() {
+        debugger
+        if (!this.state.albums) {
         this.fetchAlbums();
+        }
+        debugger
     }
 
 

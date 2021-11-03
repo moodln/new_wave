@@ -25,7 +25,10 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 gem 'jquery-rails'
+# Use ActiveStorage aws s3
 gem "aws-sdk-s3"
+# Use URI.open to create img urls 
+# gem 'open-uri'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

@@ -6,8 +6,17 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+    # require 'open-uri'  
+
     User.destroy_all 
+    Album.destroy_all
 
     demoUser = User.create!(username: 'guest', email: 'demo@demo.com', password: 'password')
-
+    demoAlbum = Album.create!(title: 'Beat', artist_id: demoUser.id)
+    # file = open('https://new-wave-aa-dev.us-east-1.amazonaws.com/<optional_folder_name>/<some_file>.jpg')
+    demoAlbum.photo.attach(
+        io: File.open('./app/assets/images/beat.jpeg'), 
+        filename: 'beat.jpeg') 
+        # content_type: 'image/jpeg')
     puts "created #{demoUser.username}"
+    puts "created #{demoAlbum.title}"

@@ -7,7 +7,7 @@ class Api::AlbumsController < ApplicationController
 
     def index
         @albums = Album.all 
-        render :index
+        render "api/albums/index"
     end 
 
     def create 
@@ -22,6 +22,6 @@ class Api::AlbumsController < ApplicationController
 
 
     def album_params 
-        params.require(:album).permit(:title, :artist_id)
+        params.require(:album).permit(:title, :artist_id, :photo)
     end 
 end 
