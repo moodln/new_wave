@@ -17,6 +17,7 @@ class SessionForm extends React.Component {
         e.preventDefault();
 
         this.props.processForm(this.state);
+        this.props.closeModal();
     }
 
     update(type) {
@@ -26,28 +27,31 @@ class SessionForm extends React.Component {
     render() {
         let { errors, formType } = this.props;
         let content;
-        formType === 'login' ? content = 'Log In' : content = 'Sign up for a new wave account!'
+        formType === 'login' ? content = 'Log In' : content = 'Sign up for a new wave account'
         return ( 
-            <div>
+            <div className='modal-content'>
                 <p>{errors}</p>
-                <form onSubmit={this.handleSubmit} className='session-form'>
+                <form onSubmit={this.handleSubmit} className={`session-form ${formType}`}>
                     <h1>{content}</h1>
-                    <label>Username: 
+                    {/* <div className='username'> */}
+                    <label>Username </label>
                         <input type="text" 
                             value={this.state.username} 
                             onChange={this.update('username')} />
-                    </label>
-                    <label>Email: 
+                    {/* </div> */}
+                    {/* <div className='email'> */}
+                    <label>Email </label>
                         <input type="text"
                             value={this.state.email}
                             onChange={this.update('email')} />    
-                    </label>
-                    <label>Password: 
+                    {/* </div> */}
+                    {/* <div className='password'> */}
+                    <label>Password </label>
                         <input type="password"
                             value={this.state.password}
                             onChange={this.update('password')} />
-                    </label>
-                    <button>open sesame</button>
+                    {/* </div> */}
+                    <button>{formType}</button>
 
                 </form>
             </div>

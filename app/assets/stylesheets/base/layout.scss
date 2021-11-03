@@ -8,10 +8,6 @@ body {
     padding: 30px;
 }
 
-.session {
-    // text-decoration: none;
-}
-
 .logo-links-container {
     display: flex;
     
@@ -37,11 +33,25 @@ header a:hover{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    padding: 20px;
+    margin: 20px;
+    // background-color: pink;
+    width: 30vw;
+    font-size: 16px;
 }
 
-.links-container a{
-    padding: 15px;
+.links-container .links{
+    text-decoration: none;
+    background-color: white;
+    border: none;
+    font-weight: bold;
+    color: black;
+    font: 14px/1.2307692308 'Helvetica Neue',Helvetica,Arial,sans-serif;
+    margin: 15px;
+}
+
+.links:hover {
+    text-decoration: underline;
+    font-weight: 500;
 }
 
 .welcome-message {
@@ -67,3 +77,151 @@ header a:hover{
     padding: 30px;
     margin: 10px;
 }
+
+.modal-background-signup {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(44, 44, 44, 0.7);
+  z-index: 10;
+}
+
+.modal-background-login {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(243, 242, 242, 0.7);
+  z-index: 10;
+}
+
+.modal-child-signup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+//   padding: 30px;
+  height: 60vh;
+  width: 50vw;
+  border-radius: 10px;
+}
+
+.modal-child-login {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+//   padding: 30px;
+  height: 75vh;
+  width: 100vw;
+  border-radius: 10px;
+}
+
+.modal-content {
+    // background-color: pink;
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+}
+
+.session-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    // background-color: lightblue;
+    border-radius: 10px;
+}
+
+.session-form > h1 {
+    padding: 10px;
+    font-size: 20px;
+    font-weight: normal;
+    background-color: rgb(235, 235, 235);
+    border-bottom-color: rgb(224, 223, 223);
+    width: 95%;
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color:rgba(19, 19, 19, 0.7)
+}
+
+.session-form label {
+    margin-top: 30px;
+    // background-color: royalblue;
+    width: 70%;
+    font-size: 17px;
+    color:rgb(34, 33, 33);
+}
+
+.session-form input {
+    width: 70%;
+    height: 30px;
+    border-radius: 0;
+    border: 1px solid rgb(81, 83, 83);
+}
+
+.session-form button {
+    background-color: rgb(84, 168, 194);
+    color: white;
+    width: 70%;
+    height: 30px;
+    font-size: 17px;
+    font-weight: 500;
+    padding: 5px;
+    margin-top: 40px;
+    border: none;
+    border-radius: 5px;
+}
+
+.session-form button:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.login > h1{
+    padding: 10px;
+    width: 65%;
+    font-size: 17px;
+    // background-color: pink;
+    border-bottom: 2px dotted rgb(141, 145, 145);
+}
+
+.login {
+    background-color: rgb(235, 235, 235);
+}
+
+.login input{
+    width: 45%;
+}
+
+.login button {
+    width: 45%;
+}
+
+// .username {
+//     display: flex;
+//     justify-content: space-evenly;
+//     background-color: pink;
+//     margin-bottom: 5px;
+// }
+
+// .username input {
+//     margin-bottom: 0px;
+//     background-color: blue;
+// }
+
+// .email {
+//     display: flex;
+//     justify-content: space-evenly;
+// }
+
+// .password {
+//     display: flex;
+//     justify-content: space-evenly;
+// }

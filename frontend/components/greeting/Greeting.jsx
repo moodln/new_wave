@@ -21,7 +21,7 @@ class Greeting extends React.Component {
 
 
     render() {
-        const { currentUser, logout } = this.props;
+        const { currentUser, logout, openModal } = this.props;
         if (currentUser) {
             return (
                 <div className='welcome-message'>
@@ -35,10 +35,10 @@ class Greeting extends React.Component {
         } else {
             return (
                 <div className='links-container'>
-                    <Link to='/login' onClick={this.props.clearErrors}>log in</Link>
-                    <br/><p/>
-                    <Link to='/signup' onClick={this.props.clearErrors}>sign up</Link>
-                    <br/><p/>
+                    <Link to='/' onClick={() => openModal('login')} value='log in'>log in</Link>
+                    
+                    <Link to='/' onClick={() => openModal('signup')} value='sign up' >sign up</Link>
+                    
                     <Link to='/' onClick={this.handleDemoLogin} value='guest user'>guest user</Link>
                 </div>
             )
