@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Link } from 'react-router-dom';
 import { AuthRoute } from '../util/route_util';
 import GreetingContainer from './greeting/GreetingContainer';
-
+import AlbumIndexContainer from './albums/album_index_container'
 
 
 
@@ -15,7 +15,7 @@ const App = () => (
         <GreetingContainer />
         </header>
 
-        
+        <AlbumIndexContainer />
     </div>
 );
 

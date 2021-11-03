@@ -1,16 +1,22 @@
 import React from 'react';
 
-export default function AlbumIndex({ albums }) {
-    return (
-        <ul>
-            {albums.map(album => {
-                return (
-                    <li key={album.id}>
-                        <h2>{album.title}</h2>
-                        <img src={album.photoUrl} />
-                    </li>
-                );
-            })}
-        </ul>
-    );
+class AlbumIndex extends React.Component {
+    componentDidMount() {
+        this.props.fetchAlbums();
+    }
+
+    render() {
+        const { albums } = this.props;
+        return (
+            <div>
+                <ul>
+                    {albums.map(album => (
+                        <AlbumIndexItem album={album} />
+                    ))}
+                </ul>
+            </div>
+        )
+    }
 }
+
+export default AlbumIndex;
