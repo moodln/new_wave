@@ -12,7 +12,7 @@ class ArticleIndex extends React.Component {
         return (
             <div className='article-index'>
                 {articles.map((article, idx) => (
-                    <ArticleIndexItem key={idx} article={article} />
+                    <ArticleIndexItem key={idx} article={article} idx={idx} />
                 ))}
             </div>
         )

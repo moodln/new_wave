@@ -1,13 +1,14 @@
 import React from "react";
 
 
-const ArticleIndexItem = ({ article }) => {
+const ArticleIndexItem = (props) => {
+    const {article, idx} = props;
     return (
         <div className='article'>
-            <li key={article.id}>
-                <h2>{article.title}</h2>
-                <img src={article.photoUrl} alt={article.title} />
-            </li>
+                <h2>{article.title}:</h2>
+                <p>{article.description}</p>
+                <img className={`name${idx}`} src={article.photoUrl} alt={article.title} />
+                <button>explore</button>
         </div>
     )
 }
