@@ -10,6 +10,7 @@
 
     User.destroy_all 
     Album.destroy_all
+    Article.destroy_all
 
     demoUser = User.create!(username: 'guest', email: 'demo@demo.com', password: 'password')
     demoAlbum = Album.create!(title: 'Beat', artist_id: demoUser.id)
@@ -20,7 +21,7 @@
         
     demoArticle = Article.create!(title: 'new wave weekly', description: 'Tim Gane and Laetitia Sadier pick their favourite tracks and reflect on two decades of pioneering electropop')
     demoArticle.photo.attach(
-        io: File.open('./app/assets/images/stereolab.jpeg'),
+        io: File.open('./app/assets/images/stereolab2.png'),
         filename: 'stereolab.jpeg')
         # content_type: 'image/jpeg')
     puts "created #{demoUser.username}"

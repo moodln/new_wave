@@ -3,6 +3,7 @@ import { Route, Link } from 'react-router-dom';
 import { AuthRoute } from '../util/route_util';
 import GreetingContainer from './greeting/GreetingContainer';
 import AlbumIndexContainer from './albums/album_index_container'
+import ArticleIndexContainer from './article/article_index_container';
 
 
 
@@ -14,7 +15,7 @@ const App = () => (
         </Link>
         <GreetingContainer />
         </header>
-
+        <ArticleIndexContainer />
         <AlbumIndexContainer />
     </div>
 );

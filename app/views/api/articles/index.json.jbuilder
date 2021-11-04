@@ -1,4 +1,4 @@
-json.array! @articles do |articles|
+json.array! @articles do |article|
     json.extract! article, :id, :title
     json.photoUrl url_for(article.photo)
 end 

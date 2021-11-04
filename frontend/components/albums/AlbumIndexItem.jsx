@@ -3,10 +3,10 @@ import React from "react";
 
 const AlbumIndexItem = ({album}) => {
     return (
-        <div>
-            <li key={album.id}>
-                <h2>{album.title}</h2>
+        <div className='album'>
+            <li key={album.title}>
                 <img src={album.photoUrl} alt={album.title} />
+                <h2>{album.title}</h2>
             </li>
         </div>
     )
