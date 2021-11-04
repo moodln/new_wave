@@ -16,7 +16,13 @@
     # file = open('https://new-wave-aa-dev.us-east-1.amazonaws.com/<optional_folder_name>/<some_file>.jpg')
     demoAlbum.photo.attach(
         io: File.open('./app/assets/images/beat.jpeg'), 
-        filename: 'beat.jpeg') 
+        filename: 'beat.jpeg')
+        
+    demoArticle = Article.create!(title: 'new wave weekly', description: 'Tim Gane and Laetitia Sadier pick their favourite tracks and reflect on two decades of pioneering electropop')
+    demoArticle.photo.attach(
+        io: File.open('./app/assets/images/stereolab.jpeg'),
+        filename: 'stereolab.jpeg')
         # content_type: 'image/jpeg')
     puts "created #{demoUser.username}"
     puts "created #{demoAlbum.title}"
+    puts "created #{demoArticle.title} with #{demoArticle.photo.filename}"
