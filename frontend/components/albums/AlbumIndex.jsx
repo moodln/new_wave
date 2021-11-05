@@ -10,11 +10,9 @@ class AlbumIndex extends React.Component {
         const { albums } = this.props;
         return (
             <div className='album-index'>
-                <ul>
                     {albums.map((album, idx) => (
                         <AlbumIndexItem key={idx} album={album} />
                     ))}
-                </ul>
             </div>
         )
     }
