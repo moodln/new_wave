@@ -2,6 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import GreetingContainer from './greeting/GreetingContainer';
 import Modal from './modal/Modal.jsx';
+import AlbumIndexContainer from './albums/album_index_container'
+import ArticleIndexContainer from './article/article_index_container';
+
 
 
 const App = () => (
@@ -13,6 +16,8 @@ const App = () => (
         </Link>
         <GreetingContainer />
         </header>
+        <ArticleIndexContainer />
+        <AlbumIndexContainer />
     </div>
 );
 

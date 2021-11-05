@@ -10,6 +10,12 @@ class User < ApplicationRecord
     attr_reader :password
     attr_accessor :name 
 
+    has_many :albums,
+        primary_key: :id, 
+        foreign_key: :artist_id, 
+        class_name: :Album, 
+        dependent: :destroy
+
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
     return nil unless user
