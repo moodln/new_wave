@@ -89,7 +89,7 @@ header a:hover{
     width: 60vw;
     min-width: 700px;
     overflow: hidden;
-    margin: 3px 0px 3px 0px;
+    margin: 1.5px 0px 1.5px 0px;
 
 }
 
@@ -97,7 +97,7 @@ header a:hover{
     position: absolute;
     width: 40vw;
     height: 30vh;
-    margin: 3px;
+    margin: 1.5px;
 }
 
 .img2 {
@@ -105,7 +105,7 @@ header a:hover{
     width: 40vw;
     height: 30vh;
     top: 208px;
-    margin: 6px 3px 3px 3px;
+    margin: 2.5px 1.5px 1.5px 1.5px;
     // right: 0px;
 }
 
@@ -161,6 +161,11 @@ header a:hover{
     width: 95px;
     
 }
+
+.article img:hover { 
+  opacity: .9; 
+}
+
 
 .article {
     color: rgb(231, 231, 231);
