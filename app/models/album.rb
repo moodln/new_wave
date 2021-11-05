@@ -5,11 +5,12 @@ class Album < ApplicationRecord
         primary_key: :id, 
         foreign_key: :artist_id, 
         class_name: :User
-        
+
     has_many :songs,
         primary_key: :id,
         foreign_key: :album_id,
         class_name: :Song
 
     has_one_attached :photo
+    mas_many_attached :songs
 end 
