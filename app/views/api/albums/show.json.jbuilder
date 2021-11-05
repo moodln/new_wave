@@ -1,1 +1,1 @@
-json.extract! @album, :photo
+json.extract! @album, :photo, :songs
