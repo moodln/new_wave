@@ -162,7 +162,7 @@ header a:hover{
     
 }
 
-.article img:hover { 
+img:hover { 
   opacity: .9; 
 }
 
@@ -259,4 +259,5 @@ header a:hover{
     border: 1px solid black;
     width: 150px;
     height: 150px;
+    overflow: auto;
 }
