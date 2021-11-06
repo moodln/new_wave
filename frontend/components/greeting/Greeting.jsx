@@ -1,5 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Modal from '../modal/Modal.jsx';
+import AlbumIndexContainer from '../albums/album_index_container'
+import ArticleIndexContainer from '../article/article_index_container';
+
 
 class Greeting extends React.Component {
     constructor(props){
@@ -19,7 +23,6 @@ class Greeting extends React.Component {
         this.props.handleDemo(demoUser);
     }
 
-
     render() {
         const { currentUser, logout, openModal } = this.props;
         if (currentUser) {
@@ -34,12 +37,19 @@ class Greeting extends React.Component {
             )   
         } else {
             return (
-                <div className='links-container'>
-                    <Link to='/' onClick={() => openModal('login')} value='log in'>log in</Link>
+                <div>
                     
-                    <Link to='/' onClick={() => openModal('signup')} value='sign up' >sign up</Link>
-                    
-                    <Link to='/' onClick={this.handleDemoLogin} value='guest user'>guest user</Link>
+                    <Modal />
+                            <div className='links-container'>
+                                <Link to='/' onClick={() => openModal('login')} value='log in'>log in</Link>
+                                
+                                <Link to='/' onClick={() => openModal('signup')} value='sign up' >sign up</Link>
+                                
+                                <Link to='/' onClick={this.handleDemoLogin} value='guest user'>guest user</Link>
+                            </div>
+                        
+                    <ArticleIndexContainer />
+                    <AlbumIndexContainer />
                 </div>
             )
         }

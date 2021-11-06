@@ -8,15 +8,15 @@ body {
     padding: 30px;
 }
 
-.logo-links-container {
-    display: flex;
+// .logo-links-container {
+//     display: flex;
     
-    justify-content: space-between;
-    align-items: center; 
-    position: relative;
-}
+//     justify-content: space-between;
+//     align-items: center; 
+//     position: relative;
+// }
 
-header a{
+.links-container a{
     text-decoration: none;
     font-weight: 500;
     color: black;
@@ -37,6 +37,10 @@ header a:hover{
     // background-color: pink;
     width: 30vw;
     font-size: 16px;
+    position: absolute;
+    z-index: 300;
+    top: 20px;
+    right: 20px;
 }
 
 .links-container .links{

@@ -12,5 +12,5 @@ class Album < ApplicationRecord
         class_name: :Song
 
     has_one_attached :photo
-    mas_many_attached :songs
+    has_many_attached :songs
 end 
