@@ -7,13 +7,11 @@ import AlbumShowContainer from './albums/album_show_container';
 
 const App = () => (
     <div>
-        
-        <Link to='/'>
+        {/* <Link to='/'>
             <img src={window.logo} alt="new_wave logo" className='logo' />
-        </Link>
+        </Link> */}
        
         <Route exact path='/' component={GreetingContainer} />
-        
         <Route exact path="/albums/:albumId" component={AlbumShowContainer} />
     </div>
 );

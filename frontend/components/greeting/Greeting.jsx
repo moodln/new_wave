@@ -27,12 +27,19 @@ class Greeting extends React.Component {
         const { currentUser, logout, openModal } = this.props;
         if (currentUser) {
             return (
-                <div className='welcome-message'>
-                    <h1>Welcome, {currentUser.username} !</h1>
-                    <br/>
-                    <div className='welcome-message-link'>
-                    <Link to='/' onClick={logout}>logout</Link>
+                <div>
+                    <div className='welcome-message'>
+                        {/* <div className='welcome-message-link'> */}
+                        <Link to='/'>
+                            <img src={window.logo} alt="new_wave logo" className='logo' />
+                        </Link>
+                        <Link to='/' onClick={logout}>
+                                <img src={window.circle} alt="blue_circle" className='circle'/>
+                        </Link>
+                        {/* </div> */}
                     </div>
+                    <ArticleIndexContainer />
+                    <AlbumIndexContainer />
                 </div>
             )   
         } else {
