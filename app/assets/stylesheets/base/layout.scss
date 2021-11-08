@@ -35,13 +35,13 @@ body {
     justify-content: space-evenly;
     align-items: center;
     margin: 20px;
-    // background-color: pink;
+
     width: 30vw;
     font-size: 16px;
     position: absolute;
     z-index: 300;
-    top: 20px;
-    right: 20px;
+    top: 4px;
+    right: -22px;
 }
 
 .links-container .links{
@@ -428,4 +428,92 @@ img:hover {
     width: 150px;
     height: 150px;
     overflow: auto;
+}
+
+.album-show-container {
+    background-color: #eeeeee;
+    border-top: 0.4px solid rgb(194, 194, 194);
+    height: 100vh;
+    width: 100vw;
+}
+
+.album-show-container img{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+
+}
+
+.album-show-body {
+    background-color: #fdfffe;
+    position: absolute;
+    top: 169px;
+    left: 36px;
+    height: 80%;
+    width: 85%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 40px;
+    border-left: 0.4px solid grey;
+    border-right: 0.4px solid grey;
+}
+
+.album-details {
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+    padding: 50px;
+}
+
+.album-show-body header {
+    font-size: 15px;
+    font-weight: bold;
+    background-color: #e5e3e3;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    align-content: space-around;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.active {
+    color: black;
+    border-top: 2px solid black;
+}
+
+.album-show-body a {
+    margin: 0px 10px;
+    color: #3686bb;
+    padding: 10px;
+}
+.album-show-body img {
+    height: 350px;
+    width: 350px;
+}
+
+.album-show-body h2 {
+    font-size: 30px;
+    padding: 5px;
+}
+
+.album-show-body h2:active {
+    color: black;
+}
+
+.album-show-body p {
+    margin-left: 6px;
+}
+
+.artist-info {
+    padding: 10px;
+    width: 114px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }

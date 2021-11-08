@@ -47,6 +47,9 @@ class Greeting extends React.Component {
                 <div>
                     
                     <Modal />
+                    <Link to='/'>
+                        <img src={window.logo} alt="new_wave logo" className='logo' />
+                    </Link>
                             <div className='links-container'>
                                 <Link to='/' onClick={() => openModal('login')} value='log in'>log in</Link>
                                 
