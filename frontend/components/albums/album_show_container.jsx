@@ -3,13 +3,11 @@ import { fetchAlbum, fetchAlbums } from '../../actions/album_actions';
 import AlbumShow from './AlbumShow';
 
 const mapStateToProps = (state, ownProps) => ({
-    album: state.entities.albums[ownProps.match.params.albumId],
-    albums: state.entities.albums
+    album: state.entities.albums[ownProps.match.params.albumId]
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    fetchAlbum: (albumId) => dispatch(fetchAlbum(albumId)),
-    fetchAlbums: () => dispatch(fetchAlbums())
+    fetchAlbum: (albumId) => dispatch(fetchAlbum(albumId))
 });
 
 const AlbumShowContainer = connect(mapStateToProps, mapDispatchToProps)(AlbumShow);
