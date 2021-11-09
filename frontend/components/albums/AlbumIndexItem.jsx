@@ -9,6 +9,7 @@ const AlbumIndexItem = ({album}) => {
                 <img src={album.photoUrl} alt={album.title} />
             </Link>
                 <h2>{album.title}</h2>
+            <Link to='/albums'>create</Link>
         </div>
     )
 }

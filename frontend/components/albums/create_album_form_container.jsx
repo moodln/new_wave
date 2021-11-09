@@ -4,7 +4,7 @@ import { createSong } from "../../actions/song_actions";
 import CreateAlbumForm from './CreateAlbumForm';
 
 const mSTP = (state) => ({
-    currentUser: state.entities.user[state.session.id]
+    currentUser: state.entities.users[state.session.id]
 })
 
 const mDTP = (dispatch) => ({
@@ -13,3 +13,5 @@ const mDTP = (dispatch) => ({
 })
 
 const CreateAlbumContainer = connect(mSTP, mDTP)(CreateAlbumForm);
+
+export default CreateAlbumContainer;

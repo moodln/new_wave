@@ -12,6 +12,16 @@ class Api::AlbumsController < ApplicationController
         render :show 
     end 
 
+    def create 
+        @album = User.create!(album_params)
+
+        if @album.save
+            render :show
+        else
+            render json: @album.errors.full_messages, status: 422
+        end
+    end 
+
     def album_params 
         params.require(:album).permit(:title, :artist_id, :photo, songs: [])
     end 

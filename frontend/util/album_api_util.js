@@ -15,6 +15,8 @@ export const fetchAlbum = (albumId) => {
 export const createAlbum = (album) => (
     $.ajax({
         method: 'POST',
+        contentType: false,
+        processData: false,
         url: '/api/albums',
         data: { album }
     })
