@@ -4,7 +4,7 @@ import {
     REMOVE_SONG,
 } from '../actions/song_actions';
 
-const SongsReducer = (state = {}, action) => {
+const songsReducer = (state = {}, action) => {
     Object.freeze(state);
     let nextState = Object.assign({}, state);
 

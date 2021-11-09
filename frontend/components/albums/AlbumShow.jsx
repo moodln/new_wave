@@ -11,9 +11,9 @@ class AlbumShow extends React.Component {
     }
 
     render() {
-        // debugger
+        debugger
         if (!this.props.album) {
-            // debugger
+            debugger
             return null 
         } else {
         return (
@@ -63,7 +63,7 @@ class AlbumShow extends React.Component {
                                 <p>{this.props.album.artist.location}</p>
                                 <button>Follow</button>
                                 <p>{this.props.album.artist.about}</p>
-                                <ul>
+                                {/* <ul>
                                     {this.props.album.artist.albums.map(album => {
                                         return (
                                         <li key={album.id}>
@@ -71,7 +71,7 @@ class AlbumShow extends React.Component {
                                             <p>{album.title}</p>
                                         </li>
                                     )})}
-                                </ul>
+                                </ul> */}
                             </div>
                         </div>
                     </div>
