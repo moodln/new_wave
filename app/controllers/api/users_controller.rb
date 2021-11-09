@@ -12,6 +12,7 @@ class Api::UsersController < ApplicationController
 
     def show
         @user = User.find_by(id: params[:id])
+        @albums = Album.find_by(artist_id: params[:id])
         render :show
     end
 

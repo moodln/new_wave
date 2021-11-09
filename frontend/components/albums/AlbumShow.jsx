@@ -3,7 +3,6 @@ import {Link} from "react-router-dom";
 
 class AlbumShow extends React.Component {
     componentDidMount() {
-        this.props.fetchAlbums()
         this.props.fetchAlbum(this.props.match.params.albumId)
     }
 
@@ -17,8 +16,6 @@ class AlbumShow extends React.Component {
             // debugger
             return null 
         } else {
-            // debugger
-            // const albums = Object.values(this.props.albums.filter(album => album.artist.id === this.props.album.artist.id))
         return (
             <div>
                 <div className='welcome-message'>
@@ -66,15 +63,15 @@ class AlbumShow extends React.Component {
                                 <p>{this.props.album.artist.location}</p>
                                 <button>Follow</button>
                                 <p>{this.props.album.artist.about}</p>
-                                {/* <ul>
-                                    {albums.map(album => {
+                                <ul>
+                                    {this.props.album.artist.albums.map(album => {
                                         return (
-                                        <li>
+                                        <li key={album.id}>
                                             <img src={album.photoUrl} alt={album.title} />
                                             <p>{album.title}</p>
                                         </li>
                                     )})}
-                                </ul> */}
+                                </ul>
                             </div>
                         </div>
                     </div>
