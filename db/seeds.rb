@@ -11,14 +11,15 @@
     User.destroy_all 
     Album.destroy_all
     Article.destroy_all
-
+    Song.destroy_all
+    ApplicationRecord.connection.reset_pk_sequence!('albums')
 
     demoUser = User.create!(username: 'guest', email: 'demo@demo.com', password: 'password')
-    boweryArtist = User.create!(username: 'bowery_electric', email: 'bowery@gmail.com', password: 'password', location: 'NYC', about: 'American post-rock band, formed in 1993')
-    esgArtist = User.create!(username: 'ESG', email: 'esg@esg.com', password: 'password', location: 'The Bronx, NYC', about: 'ESG is an American funk rock band formed in the South Bronx in 1978. ESG has been influential across a wide range of musical genres, including hip hop, and dance-punk.')
-    tsegueArtist = User.create!(username: 'tsegue_maryam_guebrou', email: 'tsegue@gmail.com', password: 'password', location: 'addis ababa, ethiopia', about: 'Emahoy Tsegué-Maryam Guèbrou is an Ethiopian nun known for her piano playing and compositions.' )
-    cocteauArtist = User.create!(username: 'cocteau_twins', email: 'cocteau@gmail.com', password: 'password', location: 'grangemouth, scotland', about: 'Cocteau Twins were a Scottish dream pop band active from 1979 to 1997.')
-    latinAtrist = User.create!(username: 'latin_playboys', email: 'latin@gmail.com', password: 'password', location: 'East Los Angeles, California')
+    boweryArtist = User.create!(username: 'bowery_electric', name: 'Bowery Electric', email: 'bowery@gmail.com', password: 'password', location: 'NYC', about: 'American post-rock band, formed in 1993', artist: true)
+    esgArtist = User.create!(username: 'ESG', email: 'esg@esg.com', password: 'password', location: 'The Bronx, NYC', about: 'ESG is an American funk rock band formed in the South Bronx in 1978. ESG has been influential across a wide range of musical genres, including hip hop, and dance-punk.', artist: true)
+    tsegueArtist = User.create!(username: 'tsegue_maryam_guebrou', name: 'Tsegue Maryam Guebrou',email: 'tsegue@gmail.com', password: 'password', location: 'addis ababa, ethiopia', about: 'Emahoy Tsegué-Maryam Guèbrou is an Ethiopian nun known for her piano playing and compositions.', artist: true)
+    cocteauArtist = User.create!(username: 'cocteau_twins', name: 'Cocteau Twins', email: 'cocteau@gmail.com', password: 'password', location: 'grangemouth, scotland', about: 'Cocteau Twins were a Scottish dream pop band active from 1979 to 1997.', artist: true)
+    latinAtrist = User.create!(username: 'latin_playboys', name: 'Latin Playboys', email: 'latin@gmail.com', password: 'password', location: 'East Los Angeles, California', artist: true)
     # ('about' from Wikipedia)
 
     beatAlbum = Album.create!(title: 'Beat', artist_id: boweryArtist.id)
@@ -45,6 +46,37 @@
     latinAlbum.photo.attach(
         io: open('https://new-wave-aa-seeds.s3.amazonaws.com/ltnply.png'),
         filename: 'ltnply.png')
+
+    mothersLove = Song.create!(title: "Mother's Love", album_id: tsegueAlbum.id)
+    mothersLove.audio.attach(
+        io: open("https://new-wave-aa-seeds.s3.amazonaws.com/Mother's+Love.mp3"),
+        filename: "Mother's+Love.mp3"
+    )
+    cherrySong = Song.create!(title: 'Cherry-Coloured Funk', album_id: cocteauAlbum.id)
+    cherrySong.audio.attach(
+        io: open('https://new-wave-aa-seeds.s3.amazonaws.com/Cherry-coloured+Funk.mp3'),
+        filename: 'Cherry-coloured+Funk.mp3'
+    )
+    manifoldSong = Song.create!(title: 'Manifold De Amour', album_id: latinAlbum.id)
+    manifoldSong.audio.attach(
+        io: open('https://new-wave-aa-seeds.s3.amazonaws.com/Manifold+de+Amour+-+Latin+Playboys.mp3'),
+        filename: 'Manifold+de+Amour+-+Latin+Playboys.mp3'
+    )
+    cawesgSong = Song.create!(title: 'Dance', album_id: cawesgAlbum.id)
+    cawesgSong.audio.attach(
+        io: open('https://new-wave-aa-seeds.s3.amazonaws.com/ESG+-+Dance.mp3'),
+        filename: 'Dance.mp3'
+    )
+    moodySong = Song.create!(title: 'UFO', album_id: esgMoodyEp.id)
+    moodySong.audio.attach(
+        io: open('https://new-wave-aa-seeds.s3.amazonaws.com/ESG+-+UFO.mp3'),
+        filename: 'UFO.mp3'
+    )
+    beatSong = Song.create!(title: 'Empty Words', album_id: beatAlbum.id)
+    beatSong.audio.attach(
+        io: open('https://new-wave-aa-seeds.s3.amazonaws.com/Empty+Words.mp3'),
+        filename: 'Beat.mp3'
+    )
 
 
         

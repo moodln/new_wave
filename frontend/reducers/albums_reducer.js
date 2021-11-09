@@ -8,8 +8,7 @@ const albumsReducer = (state = {}, action) => {
         case RECEIVE_ALBUMS:
             return nextState = action.albums;
         case RECEIVE_ALBUM:
-            nextState[action.album.id] = action.album;
-            return nextState;
+            return Object.assign({}, {[action.album.id]: action.album })
         default: 
             return state;
     }

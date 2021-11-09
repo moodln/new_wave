@@ -7,6 +7,8 @@ class Api::AlbumsController < ApplicationController
 
     def show 
         @album = Album.find(params[:id])
+        @song = Song.find_by(album_id: params[:id])
+        # @artist = User.find_by(id: params[:artist_id])
         render :show 
     end 
 

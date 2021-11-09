@@ -295,54 +295,52 @@ body {
 
 // .side-articles-container {}
 
-.article h2 {
-    position: absolute;
-    bottom: 130px;
-    left: 45px;
-    background-image: radial-gradient(rgba(0,0,0,1), rgba(0,0,0,0));
-    letter-spacing: 1px;
-}
-
-.article p {
-    position: absolute;
-    bottom: 100px;
-    left: 45px;
-    font-size: 14px;
-    font-weight: 400;
-    background-image: radial-gradient(rgba(0,0,0,1), rgba(0,0,0,0));
-    overflow-wrap: break-word;
-    letter-spacing: 1px;
-    overflow: hidden;
-    font-weight: normal;
-}
-
-.article button {
-    position: absolute;
-    bottom: 40px;
-    left: 45px;
-    background: rgba(0, 0, 0, 0.4);
-    color: rgb(231, 231, 231);
-    border: 1px solid white;
-    // font-weight: bold;
-    padding: 7px;
-    border-radius: 5px;
-    width: 95px;
-    
-}
-
-img:hover { 
-  opacity: .9; 
-}
-
 
 .article {
     color: rgb(231, 231, 231);
     font-size: 35px;
     font-weight: 500;
     text-shadow: 0px 1px 2px #050505;
+
+    h2 {
+        position: absolute;
+        bottom: 130px;
+        left: 45px;
+        background-image: radial-gradient(rgba(0,0,0,1), rgba(0,0,0,0));
+        letter-spacing: 1px;
+    }
+
+    p {
+        position: absolute;
+        bottom: 100px;
+        left: 45px;
+        font-size: 14px;
+        font-weight: 400;
+        background-image: radial-gradient(rgba(0,0,0,1), rgba(0,0,0,0));
+        overflow-wrap: break-word;
+        letter-spacing: 1px;
+        overflow: hidden;
+        font-weight: normal;
+    }
+
+    button {
+        position: absolute;
+        bottom: 40px;
+        left: 45px;
+        background: rgba(0, 0, 0, 0.4);
+        color: rgb(231, 231, 231);
+        border: 1px solid white;
+        // font-weight: bold;
+        padding: 7px;
+        border-radius: 5px;
+        width: 95px;
+        
+    }
 }
 
-
+img:hover { 
+  opacity: .9; 
+}
 
 .container-1 {
     position: relative;
@@ -421,93 +419,164 @@ img:hover {
     flex-wrap: wrap;
     inline-size: 150px;
     overflow-wrap: break-word;
+
+    img {
+        border: 1px solid black;
+        width: 150px;
+        height: 150px;
+        overflow: auto;
+    }
 }
 
-.album img {
-    border: 1px solid black;
-    width: 150px;
-    height: 150px;
-    overflow: auto;
-}
 
 .album-show-container {
     background-color: #eeeeee;
     border-top: 0.4px solid rgb(194, 194, 194);
     height: 100vh;
     width: 100vw;
-}
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    flex-wrap: wrap;
+    justify-content: center;
 
-.album-show-container img{
-    width: 100vw;
-    height: 100vh;
-    position: relative;
+    img{
+        width: 100vw;
+        height: 100vh;
+        position: relative;
 
+    }
 }
 
 .album-show-body {
     background-color: #fdfffe;
-    position: absolute;
-    top: 169px;
-    left: 36px;
-    height: 80%;
+    height: 100%;
     width: 85%;
+    max-width: 965px;
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
-    padding: 40px;
     border-left: 0.4px solid grey;
     border-right: 0.4px solid grey;
+    margin-top: 35px;
+
+     p {
+        margin-left: 6px;
+    }
+
+    header {
+        font-size: 15px;
+        font-weight: bold;
+        background-color: #e5e3e3;
+        width: 100%;
+        height: 40px;
+        display: flex;
+        flex-direction: row;
+        align-content: space-around;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    a {
+        margin: 0px 10px;
+        color: #3686bb;
+        padding: 10px;
+    }
+
+    img {
+        height: 350px;
+        width: 350px;
+    }
+
+    h2 {
+        font-size: 30px;
+        padding: 5px;
+    }
+
+    h2:active {
+        color: black;
+    }
 }
 
-.album-details {
-    display: flex;
-    justify-content: space-around;
-    height: 100%;
-    padding: 50px;
-}
-
-.album-show-body header {
-    font-size: 15px;
-    font-weight: bold;
-    background-color: #e5e3e3;
-    width: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 40px;
-    display: flex;
-    flex-direction: row;
-    align-content: space-around;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-}
 
 .active {
     color: black;
     border-top: 2px solid black;
 }
 
-.album-show-body a {
-    margin: 0px 10px;
-    color: #3686bb;
+.album-details {
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+        margin: 70px 34px 0px 20px;
+}
+
+.album-info {
+
+    audio {
+        margin-top: 26px;
+    }
+
+    h4 {
+        font-weight: bold;
+        margin: 15px 5px 4px;
+    }
+
+    p:nth-of-type(2) {
+        font-size: 13px;
+    }
+
+    p:nth-of-type(3) {
+        margin: 4px 5px;
+        font-size: 12.5px;
+    }
+
+    h3 {
+        font-weight: bold;
+        font-size: 18px;
+        margin: 0px 5px;
+    }
+
+    p:nth-of-type(4) {
+        font-size: 13px;
+        font-weight: bold;
+        margin: 5px;
+    }
+
+    // p:nth-of-type(5) {
+    //     font-size: 12px;
+    // }
+
+    .song-list {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+
+        p {
+            font-size: 12px;
+        }
+
+        button {
+            height: 32px;
+            width: 33px;
+            position: relative;
+        }
+
+        img {
+            height: 18px;
+            width: 18px;
+            border: 1px solid black;
+            margin: 5px 5px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+    }
+}
+
+.album-display {
     padding: 10px;
-}
-.album-show-body img {
-    height: 350px;
-    width: 350px;
-}
-
-.album-show-body h2 {
-    font-size: 30px;
-    padding: 5px;
-}
-
-.album-show-body h2:active {
-    color: black;
-}
-
-.album-show-body p {
-    margin-left: 6px;
 }
 
 .artist-info {
@@ -516,4 +585,43 @@ img:hover {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+
+    h3 {
+        font-weight: bold;
+        letter-spacing: 1px;
+        margin-left: 10px;
+        font-size: 16px;
+    }
+
+    p {
+        margin-left: 5px;
+        font-size: 12px;
+        color: grey;
+        padding: 5px;
+        width: 125px;
+    }
+
+    button {
+    background-color: white;
+    color: #0085c7;
+    font-weight: bold;
+    border-radius: 3px;
+    border: 0.5px solid #b8b7b7;
+    padding: 6px;
+    height: 29px;
+    width: 119px;
+    margin: 9px 10px;
+    font-size: 12px;
+    }
+
+    p:nth-of-type(2n) {
+        color: black;
+    }
+
+    img {
+        width: 128px;
+        height: 100px;
+        margin: 0px 10px 10px;
+    }
 }
+
