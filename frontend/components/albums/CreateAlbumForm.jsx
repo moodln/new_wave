@@ -3,13 +3,15 @@ import React from 'react';
 class CreateAlbumForm extends React.Component {
     constructor(props) {
         super(props)
-
+        
+        if (this.props.currentUser) {
         this.state = {
             title: 'album name',
             artist_id: this.props.currentUser.id,
             img_url: null, 
             audio_url: null
         }
+        } 
 
         this.handleInput = this.handleInput.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -47,16 +49,24 @@ class CreateAlbumForm extends React.Component {
 
 
     render() {
-        return (
-            <div>
-                <form onSubmit={this.handleSubmit}>
-                <input type="text"  value={this.state.title} onChange={this.handleInput('title')}/>
-                <input type="file" accept="image/png, image/jpeg" onChange={this.handleFile('img_url')} />
-                <input type="file" accept="audio/mp3" onChange={this.handleFile('audio_url')} />
-                <button>submit</button>
-                </form>
-            </div>
-        )
+        if (this.state) {
+            return (
+                <div>
+                    <form onSubmit={this.handleSubmit}>
+                    <input type="text"  value={this.state.title} onChange={this.handleInput('title')}/>
+                    <input type="file" accept="image/png, image/jpeg" onChange={this.handleFile('img_url')} />
+                    <input type="file" accept="audio/mp3" onChange={this.handleFile('audio_url')} />
+                    <button>submit</button>
+                    </form>
+                </div>
+            )
+        } else {
+            return (
+                <div>
+                    <p>{this.props.errors}</p>
+                </div>
+            )
+        }
     }
 }
 

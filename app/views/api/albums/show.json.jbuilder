@@ -8,5 +8,9 @@ if @album.photo.attached?
     json.photoUrl url_for(@album.photo)
 end
 
-json.songUrls url_for(@song.audio)
+if @song 
+    json.songUrls url_for(@song.audio)
+elsif @album.song 
+    json.songUrls url_for(@album.song)
+end 
 

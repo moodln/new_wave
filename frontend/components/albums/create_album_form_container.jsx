@@ -3,9 +3,13 @@ import { createAlbum } from "../../actions/album_actions";
 import { createSong } from "../../actions/song_actions";
 import CreateAlbumForm from './CreateAlbumForm';
 
-const mSTP = (state) => ({
-    currentUser: state.entities.users[state.session.id]
-})
+const mSTP = (state) => {
+    if (state.session.id) {
+        return {currentUser: state.entities.users[state.session.id]}
+    } else {
+        return {errors: 'you must be signed in to create a new album'}
+    }
+}
 
 const mDTP = (dispatch) => ({
     createAlbum: (album) => dispatch(createAlbum(album)),
