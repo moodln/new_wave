@@ -38,6 +38,10 @@ class CreateAlbumForm extends React.Component {
         formData.append('album[song]', this.state.audio_url);
         debugger
         this.props.createAlbum(formData)
+            .then(response => {
+                debugger
+                return this.props.history.push(`/albums/${response.album.id}`)
+            })
             
     }
 
