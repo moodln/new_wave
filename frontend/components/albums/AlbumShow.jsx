@@ -2,6 +2,11 @@ import React from "react";
 import {Link} from "react-router-dom";
 
 class AlbumShow extends React.Component {
+    constructor(props) {
+        super(props);
+
+        // this.redirect = this.redirect.bind(this);
+    }
     componentDidMount() {
         this.props.fetchAlbum(this.props.match.params.albumId)
     }
@@ -10,12 +15,19 @@ class AlbumShow extends React.Component {
         document.getElementById('audio').play()
     }
 
+    // redirect() {
+    //     if (this.props.currentUser.id === this.props.album.artist.id) {
+    //         this.props.history.push(`/`)
+    //     } 
+    // }
+
     render() {
-        debugger
+        // debugger
         if (!this.props.album) {
-            debugger
+            // debugger
             return null 
         } else {
+           
         return (
             <div>
                 <div className='welcome-message'>
@@ -47,6 +59,7 @@ class AlbumShow extends React.Component {
                                 <p>Includes unlimited streaming via the free new_wave app, plus high-quality download in MP3, FLAC and more.</p>
                                 <h3>Buy Digital Album $7</h3>
                                 <p>Send as Gift</p>
+                                {/* <button onClick={this.props.deleteAlbum(this.props.album.id)} onClick={this.redirect}>remove album</button> */}
                                 <div className='song-list'>
                                     <button onClick={this.playAudio}><img src={window.play} alt="play_button" className='play' /></button>
                                     <p>1. {this.props.album.songTitle}</p>
