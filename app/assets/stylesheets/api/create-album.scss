@@ -1,0 +1,70 @@
+.create-album-body {
+    background-color: #e9e9e9;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+
+.create-album-form {
+
+    ::-webkit-file-upload-button {
+   display: none;
+}
+
+    .image-container {
+        background-color: white;
+    }
+
+    .image {
+        display: inline-block;
+        background-color: white;
+        border: .5px dashed rgb(175, 175, 175);
+    }
+
+    img {
+        height: 80px;
+        width: 80px;
+        opacity: 0.2;
+    }
+
+    .album-name-container {
+        background-color: white;
+    }
+
+    .album-name {
+        background-color: white;
+        width: 70%;
+        border: 0.5px inset gainsboro;
+        height: 20px;
+        font-size: 22px;
+        color: #afb1b0;
+        padding: 10px;
+    }
+
+    label { 
+        padding: 5px;
+        background: silver;
+    }
+
+    label > input[type=file] {
+        display: none;
+    }
+
+    .image-file-container {
+        background-color: lightsalmon;
+    }
+
+    .image-file {
+        background-color: lightskyblue;
+    }
+
+    .song-file-container {
+        background-color: limegreen;
+    }
+
+    .song-file {
+        background-color: mediumslateblue;
+    }
+}

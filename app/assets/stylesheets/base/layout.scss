@@ -64,6 +64,27 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        right: 15px;
+        background-color: #f9f9f9;
+        min-width: 209px;
+        box-shadow: 0px 8px 16px 0px black;
+        padding: 12px 16px;
+        z-index: 1;
+        border-radius: 5px;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block; 
+    }
 }
 
 // .welcome-message a {

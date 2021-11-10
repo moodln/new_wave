@@ -1,4 +1,5 @@
 import React from 'react';
+import HeaderContainer from '../header/header_container';
 import ArticleIndexItem from './ArticleIndexItem';
 
 class ArticleIndex extends React.Component {
@@ -10,11 +11,11 @@ class ArticleIndex extends React.Component {
         const { articles } = this.props;
         
         return (
-            <div className='article-index'>
-                {articles.map((article, idx) => (
-                    <ArticleIndexItem key={idx} article={article} idx={idx} />
-                ))}
-            </div>
+                <div className='article-index'>
+                    {articles.map((article, idx) => (
+                        <ArticleIndexItem key={idx} article={article} idx={idx} />
+                    ))}
+                </div>
         )
     }
 }
