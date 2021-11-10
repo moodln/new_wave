@@ -18,7 +18,7 @@ export const createAlbum = (album) => (
         contentType: false,
         processData: false,
         url: '/api/albums',
-        data: { album }
+        data: album
     })
 )
 

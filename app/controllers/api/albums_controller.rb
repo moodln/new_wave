@@ -13,8 +13,9 @@ class Api::AlbumsController < ApplicationController
     end 
 
     def create 
-        @album = User.create!(album_params)
-
+        @album = Album.create!(album_params)
+        # @song = Song.create!(@album.song)
+        # debugger
         if @album.save
             render :show
         else
@@ -23,6 +24,6 @@ class Api::AlbumsController < ApplicationController
     end 
 
     def album_params 
-        params.require(:album).permit(:title, :artist_id, :photo, songs: [])
+        params.require(:album).permit(:title, :artist_id, :photo, :song)
     end 
 end 
