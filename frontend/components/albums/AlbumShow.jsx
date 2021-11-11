@@ -17,12 +17,14 @@ class AlbumShow extends React.Component {
     }
 
     removeAlbum(albumId) {
-        e.preventDefault();
-        this.props.deleteAlbum(albumId)
-        if (this.props.currentUser.id === this.props.album.artist.id) {
-            this.props.history.push(`/`)
+        return (e) => {
+            e.preventDefault();
+
+            if (this.props.currentUser.id === this.props.album.artist.id) {
+                this.props.deleteAlbum(albumId)
+                this.props.history.push(`/`)
+            } 
         } 
-        
     }
 
     render() {
@@ -56,7 +58,7 @@ class AlbumShow extends React.Component {
                                 <p>Includes unlimited streaming via the free new_wave app, plus high-quality download in MP3, FLAC and more.</p>
                                 <h3>Buy Digital Album $7</h3>
                                 <p>Send as Gift</p>
-                                <button onClick={() => this.removeAlbum(this.props.album.id)}>remove album</button>
+                                <button onClick={this.removeAlbum(this.props.album.id)}>remove album</button>
                                 <div className='song-list'>
                                     <button onClick={this.playAudio}><img src={window.play} alt="play_button" className='play' /></button>
                                     <p>1. {this.props.album.songTitle}</p>

@@ -144,7 +144,7 @@ class CreateAlbumForm extends React.Component {
                                             type="text"
                                             onChange={this.handleInput('description')} />
                                     
-                                    <p>tell your fans about your work, anything you'd like them to know.</p>
+                                    <p>tell your fans about your work!</p>
                                 </div>
                                 <div className='border'> </div>
                                 <div className='image-file-container'>

@@ -28,6 +28,7 @@ class Api::AlbumsController < ApplicationController
         @album = Album.find(params[:id])
         if @album.artist_id == current_user.id 
             @album.destroy 
+            @albums = Album.all
             render :index
         end  
         #     render json: 'cannot remove album that is not yours'
