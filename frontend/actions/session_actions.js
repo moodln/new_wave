@@ -40,3 +40,10 @@ export const signup = (user) => (dispatch) => {
         .then((currentUser) => dispatch(receiveCurrentUser(currentUser)))
         .fail(errors => dispatch(receiveErrors(errors)))
 }
+
+export const edit = (user, formData) => (dispatch) => {
+    debugger
+    return SessionApiUtil.edit(user, formData)
+        .then((user) => dispatch(receiveCurrentUser(user)))
+        .fail(errors => dispatch(receiveErrors(errors)))
+}

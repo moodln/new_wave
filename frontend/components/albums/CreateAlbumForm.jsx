@@ -26,9 +26,9 @@ class CreateAlbumForm extends React.Component {
     }
 
     handleFile(type) {
-        return (e) => (
-            this.setState({[type]: e.currentTarget.files[0]})
-        )
+        return (e) => {
+            return this.setState({[type]: e.currentTarget.files[0]})
+        }
     }
 
     handleSubmit(e) {
@@ -50,29 +50,68 @@ class CreateAlbumForm extends React.Component {
 
 
     render() {
+        const albumName = this.state.title === 'album name' ? 'Untitled Album' : this.state.title
         if (this.state) {
             return (
                 <div>
                     <div className='create-album-body'>
-                        <div className='create-album-form'>
-                            <form onSubmit={this.handleSubmit}>
-                            <div className='image-container'>
-                                <div className='image'>
-                                    <img src={this.state.img_url} alt="default image" />
+                        
+                            <form className='create-album-form' onSubmit={this.handleSubmit}>
+                            <div className='album-preview'>
+                            <div className='album-preview-box'>
+                                <div className='image-container'>
+                                    <div className='image'>
+                                        <img src={this.state.img_url} alt="default image" />                                   
+                                    </div>
+                                    <div className='album-text'>
+                                        <h1>{albumName}</h1>
+                                        <div className='album-p'>
+                                            <p>by</p>
+                                            <p>{this.props.currentUser.username}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                                <div className='song-file-container'>
+                                    <p>tracks</p>
+                                    <label htmlFor="audio-input-id">add track
+                                        <input className='song-file'
+                                            id='audio-input-id'
+                                            type="file"
+                                            title='add track'
+                                            accept="audio/mp3"
+                                            onChange={this.handleFile('audio_url')} />
+                                    </label>
+                                </div>
+                                <button>save draft</button>
+                            </div>
+                            </div>
+                            <div className='album-name-container'> 
+                                <div className='album-name-asterisk'>
+                                    <p>*</p>    
+                                    <input className='album-name' type="text" value={this.state.title} onChange={this.handleInput('title')} />
+                                </div>
+                                <div className='border'> </div>
+                                <div className='image-file-container'>
+                                    <label htmlFor="image-input-id">Upload Album Art
+                                        <input className='image-file'
+                                            id='image-input-id'
+                                            type="file"
+                                            title='Upload Album Art'
+                                            accept="image/png, image/jpeg"
+                                            onChange={this.handleFile('img_url')} />
+                                    </label>
+                                    <div className='center-p'>
+                                        <div className='together-p'>
+                                            <p>1400 x 1400 pixels minimum</p>
+                                            <p>(bigger is better)</p>
+                                        </div>
+                                    <p>.jpg, .gif or .png, 10MB max</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div className='album-name-container'>
-                                    <input className='album-name' type="text" value={this.state.title} onChange={this.handleInput('title')} />
-                            </div>
-                            <div className='image-file-container'>
-                                    <input className='image-file' type="file" title='Upload Album Art' accept="image/png, image/jpeg" onChange={this.handleFile('img_url')} />
-                            </div>
-                            <div className='song-file-container'>
-                                <input className='song-file' type="file" title='add track' accept="audio/mp3" onChange={this.handleFile('audio_url')} />
-                            </div>
-                            <button>submit</button>
                             </form>
-                        </div>
+                       
                     </div>
                 </div>
             )

@@ -34,6 +34,8 @@ class Header extends React.Component {
                     <div className="dropdown-content">
                         <p>hello</p>
                         <Link onClick={this.props.logout} to='/'> logout </Link>
+                        <br />
+                        <Link to={`/users/${this.props.currentUser.id}`}> profile </Link>
                     </div>
                 </div>
             </div>

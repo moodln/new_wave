@@ -64,6 +64,7 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 0.5px solid #e5e5e5;
 
     .dropdown {
         position: relative;
@@ -430,7 +431,9 @@ img:hover {
     justify-content: space-evenly;
     align-content: space-around;
     align-items: flex-start;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    overflow: auto;
+    // white-space: nowrap;
 }
 
 .album {
@@ -453,26 +456,28 @@ img:hover {
 .album-show-container {
     background-color: #eeeeee;
     border-top: 0.4px solid rgb(194, 194, 194);
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-content: space-around;
     flex-wrap: wrap;
     justify-content: center;
 
-    img{
+    img {
         width: 100vw;
         height: 100vh;
         position: relative;
+        margin-bottom: 183px;
+
 
     }
 }
 
 .album-show-body {
     background-color: #fdfffe;
-    height: 100%;
-    width: 85%;
+    // height: 100%;
+    // width: 85%;
     max-width: 965px;
     display: flex;
     justify-content: flex-start;
@@ -612,6 +617,7 @@ img:hover {
         letter-spacing: 1px;
         margin-left: 10px;
         font-size: 16px;
+        overflow-wrap: break-word;
     }
 
     p {

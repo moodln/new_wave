@@ -1,5 +1,5 @@
 .create-album-body {
-    background-color: #e9e9e9;
+    background-color: #f7f7f7;
     height: 100vh;
     display: flex;
     flex-direction: row;
@@ -8,14 +8,27 @@
 
 
 .create-album-form {
+    display: flex;
+    width: 100%;
+    justify-content: center;
 
     ::-webkit-file-upload-button {
-   display: none;
-}
+        display: none;
+    }
 
     .image-container {
         background-color: white;
+        display: flex;
+        align-items: flex-start;
+        width: 300px;
     }
+
+
+        .album-text {
+            display: flex;
+            flex-direction: column;
+        }
+    
 
     .image {
         display: inline-block;
@@ -31,40 +44,117 @@
 
     .album-name-container {
         background-color: white;
+        width: 450px;
+    }
+
+    .album-name-asterisk {
+        display: flex;
+
+        p {
+            margin-top: 11px;
+            font-size: 20px;
+            color: #54a8c2;
+        }
+    }
+
+    .border {
+        border-bottom: .5px dotted rgb(161, 161, 161);
+        width: 92%;
+        margin-left: 11px;
     }
 
     .album-name {
         background-color: white;
-        width: 70%;
+        width: 85%;
         border: 0.5px inset gainsboro;
         height: 20px;
         font-size: 22px;
         color: #afb1b0;
         padding: 10px;
+        margin: 17px 5px;
     }
 
-    label { 
-        padding: 5px;
-        background: silver;
+    label{
+        color: blue;
+        cursor: pointer;
+        color: #148fe9;
+        font-size: 18px;
     }
 
-    label > input[type=file] {
-        display: none;
+    label:hover{
+        text-decoration: underline;
     }
 
     .image-file-container {
-        background-color: lightsalmon;
+        border: 0.5px dashed #c2c2c2;
+        margin: 25px 20px;
+        height: 200px;
+        width: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .center-p{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 12px;
+            color: #999797;
+            height: 40%;
+            justify-content: space-evenly;
+
+            .together-p {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
     }
 
-    .image-file {
-        background-color: lightskyblue;
+    #image-input-id{
+        display: none;
     }
 
-    .song-file-container {
-        background-color: limegreen;
+    #audio-input-id{
+        display: none;
     }
 
     .song-file {
         background-color: mediumslateblue;
+    }
+
+    .album-preview-box {
+        display: flex;           
+        flex-direction: column;
+    }
+}
+
+.song-file-container {
+    p {
+        padding: 20px;
+        font-weight: bold;
+        color: grey;
+        font-variant: small-caps;
+    }
+}
+
+.album-text {
+    h1 {
+        font-size: 20px;
+        margin-left: 10px;
+    }
+
+    p {
+        margin-left: 10px;
+        font-size: 12px;
+    }
+
+    p:nth-of-type(2) {
+        font-weight: bold;
+    }
+    .album-p {
+        display: flex;
     }
 }

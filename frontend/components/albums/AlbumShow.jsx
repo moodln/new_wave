@@ -29,7 +29,9 @@ class AlbumShow extends React.Component {
             // debugger
             return null 
         } else {
-           
+           if (!this.props.album.artist.photoUrl) {
+               this.props.album.artist.photoUrl = window.artist_image
+           }
         return (
             <div>
                 <div className='album-show-container'>
@@ -63,7 +65,7 @@ class AlbumShow extends React.Component {
                                     alt={this.props.album.title} />
                             </div>
                             <div className='artist-info'>
-                                <img src={window.artist_image} alt="artist-image" />
+                                <img src={this.props.album.artist.photoUrl} alt="artist-image" />
                                 <h3>{this.props.album.artist.name}</h3>
                                 <p>{this.props.album.artist.location}</p>
                                 <button>Follow</button>
