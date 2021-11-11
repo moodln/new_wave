@@ -50,10 +50,37 @@
     .album-name-asterisk {
         display: flex;
 
+        
+
         p {
             margin-top: 11px;
             font-size: 20px;
             color: #54a8c2;
+        }
+    }
+
+    .release-date {
+        display: flex;
+        font-size: 12px;
+        justify-content: space-around;
+        align-items: center;
+        margin: 8px 5px 22px 5px;
+
+        input {
+            width: 90px;
+            color: grey;
+            font-size: 12px;
+            border: 0.5px inset gainsboro;
+        }
+
+        p:nth-of-type(2) {
+            color: rgb(145, 145, 145);
+            
+        }
+
+        p:nth-of-type(3) {
+            color: rgb(145, 145, 145);
+            
         }
     }
 
@@ -94,7 +121,7 @@
         align-items: center;
         justify-content: center;
 
-        .center-p{
+        .center-p {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -150,10 +177,14 @@
         font-size: 12px;
     }
 
-    p:nth-of-type(2) {
-        font-weight: bold;
-    }
+    // p:nth-of-type(2) {
+    //     font-weight: bold;
+    // }
     .album-p {
         display: flex;
+
+        span {
+            font-weight: bold;
+        }
     }
 }

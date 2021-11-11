@@ -80,8 +80,7 @@ class CreateAlbumForm extends React.Component {
                                     <div className='album-text'>
                                         <h1>{albumName}</h1>
                                         <div className='album-p'>
-                                            <p>by</p>
-                                            <p>{this.props.currentUser.username}</p>
+                                            <p>by <span>{this.props.currentUser.username}</span></p>
                                         </div>
                                     </div>
                                 </div>
@@ -104,6 +103,11 @@ class CreateAlbumForm extends React.Component {
                                 <div className='album-name-asterisk'>
                                     <p>*</p>    
                                     <input className='album-name' type="text" value={this.state.title} onChange={this.handleInput('title')} />
+                                </div>
+                                <div className='release-date'>
+                                    <p>release date:</p>
+                                    <input type="text" value='optional'/>
+                                    <p>mm/dd/yyyy</p><p>  leave blank to use publish date</p>
                                 </div>
                                 <div className='border'> </div>
                                 <div className='image-file-container'>
