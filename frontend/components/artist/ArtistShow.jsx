@@ -61,6 +61,7 @@ class ArtistShow extends React.Component {
         debugger
         let aboutInfo;
         let location;
+        let photoUrl;
         if (this.state.location === 'undefined' || this.state.location === null) {
             location = <p>Independence, <br/>Kansas</p>
             this.setState({location: 'Independence, Kansas'})
@@ -84,6 +85,12 @@ class ArtistShow extends React.Component {
                         </div>
         }
 
+        if (!this.state.photoUrl) {
+            photoUrl = window.artist_image;
+        } else {
+            photoUrl = this.state.photoUrl;
+        }
+
         return (
             <div className='artist-show-container'>
                 <div className='artist-show-message'>
@@ -93,7 +100,7 @@ class ArtistShow extends React.Component {
                 <form onSubmit={this.handleSubmit}>
                         <div>
                             <div className='artist-info'>
-                                <img src={this.state.photoUrl} alt="gfgfgf" />
+                                <img src={photoUrl} alt="gfgfgf" />
                                 <label htmlFor="image-input-id">Upload Profile Photo
                                 <input className='image-file'
                                     id='image-input-id' 

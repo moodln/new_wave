@@ -48,9 +48,9 @@ class Header extends React.Component {
                         <img src={window.logo} alt="new_wave logo" className='logo' />
                     </Link>
                         <div className='links-container'>
-                            <Link to='/' onClick={() => openModal('login')} value='log in'>log in</Link>
+                            <Link to='/' onClick={() => this.props.openModal('login')} value='log in'>log in</Link>
                                 
-                            <Link to='/' onClick={() => openModal('signup')} value='sign up' >sign up</Link>
+                            <Link to='/' onClick={() => this.props.openModal('signup')} value='sign up' >sign up</Link>
                                 
                             <Link to='/' onClick={this.handleDemoLogin} value='guest user'>guest user</Link>
                         </div>
