@@ -52,7 +52,8 @@ class ArtistShow extends React.Component {
         
 
         this.props.editUser(this.props.currentUser, formData)
-            .then(() => this.props.history.push(`/users/${this.props.currentUser.id}`));
+            .then(() => window.location.reload(false))
+            // .then(() => this.props.history.push(`/users/${this.props.currentUser.id}`));
 
     }
 
