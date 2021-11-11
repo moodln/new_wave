@@ -10,7 +10,10 @@ class CreateAlbumForm extends React.Component {
             title: 'album name',
             artist_id: this.props.currentUser.id,
             img_url: window.album, 
-            audio_url: null
+            audio_url: null,
+            descriptuon: 'Includes unlimited streaming via the free new wave app, plus high-quality download in MP3, FLAC and more.',
+            price: '7.00',
+            release_date: this.todaysDate()
         }
         } 
 
@@ -19,7 +22,18 @@ class CreateAlbumForm extends React.Component {
         this.handleFile = this.handleFile.bind(this);
     }
 
+    todaysDate() {
+        let today = new Date();
+        let dd = String(today.getDate()).padStart(2, '0');
+        let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        let yyyy = today.getFullYear();
+
+        return today = mm + '/' + dd + '/' + yyyy;
+
+    }
+
     handleInput(type) {
+        debugger
         return (e) => (
             this.setState({[type]: e.currentTarget.value})
         )

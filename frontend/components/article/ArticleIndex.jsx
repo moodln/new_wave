@@ -1,5 +1,4 @@
 import React from 'react';
-import HeaderContainer from '../header/header_container';
 import ArticleIndexItem from './ArticleIndexItem';
 
 class ArticleIndex extends React.Component {
