@@ -5,6 +5,7 @@ import AlbumShowContainer from './albums/album_show_container';
 import CreateAlbumContainer from './albums/create_album_form_container';
 import HeaderContainer from './header/header_container';
 import ArtistShowContainer from './artist/artist_show_container';
+import Footer from './footer/Footer';
 
 
 const App = () => (
@@ -17,6 +18,7 @@ const App = () => (
             <Route exact path='/users/:userId' component={ArtistShowContainer} />
             <Redirect to="/" />
         </Switch>
+        <Footer />
     </div>
 );
 

@@ -32,10 +32,15 @@ class Header extends React.Component {
                         <img src={window.circle} alt="blue_circle" className='circle' />
                     </Link>
                     <div className="dropdown-content">
-                        <p>hello</p>
-                        <Link onClick={this.props.logout} to='/'> logout </Link>
-                        <br />
-                        <Link to={`/users/${this.props.currentUser.id}`}> profile </Link>
+                        <div className='user-profile'>
+                            <Link to={`/users/${this.props.currentUser.id}`}>   <p>{this.props.currentUser.name}</p>
+                                <p>view site</p>
+                            </Link>
+                        </div>
+                        <div className='logout'>
+                            <Link onClick={this.props.logout} to='/'> logout </Link>
+                        </div>
+                         
                     </div>
                 </div>
             </div>
