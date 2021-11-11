@@ -683,14 +683,21 @@ img:hover {
     flex-direction: row;
     align-content: flex-start;
     justify-content: space-around;
-    align-items: center;      
+    align-items: center; 
+    
+    div {
+        color: rgb(11, 121, 185);
+        font-size: 12px;
+    }
 
     a {
         color: rgb(11, 121, 185);
         margin-right: 10px;
+        font-weight: bold;
+        font-size: 12px;
     }
     a:hover {
-        font-weight: bold;
+        text-decoration: underline;
     }
     img {
         height: 30px;
