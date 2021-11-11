@@ -17,10 +17,12 @@ class AlbumShow extends React.Component {
     }
 
     removeAlbum(albumId) {
+        e.preventDefault();
         this.props.deleteAlbum(albumId)
         if (this.props.currentUser.id === this.props.album.artist.id) {
             this.props.history.push(`/`)
         } 
+        
     }
 
     render() {

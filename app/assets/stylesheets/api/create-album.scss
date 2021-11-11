@@ -92,7 +92,7 @@
 
     .album-name {
         background-color: white;
-        width: 85%;
+        width: 380px;
         border: 0.5px inset gainsboro;
         height: 20px;
         font-size: 22px;
@@ -139,11 +139,80 @@
 
     }
 
-    #image-input-id{
+    .description {
+        p {
+            font-size: 12px;
+        }
+    }
+
+    .pricing {
+        padding: 20px;
+        display: flex;
+        height: 25%;
+        flex-direction: column;
+        justify-content: space-around;
+
+        p {
+            font-size: 12px;
+        }
+
+        p:nth-of-type(2) {
+            color: #959393;
+        }
+    }
+
+    .checkbox {
+        width: 180px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .dollars {
+        width: 130px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+        input {
+            width: 50px;
+            height: 18px;
+            border: 0.5px inset gainsboro;
+            text-align: right;
+            font-size: 12px;
+        }
+
+        p {
+            color: #0e88df;
+        }
+
+    }
+
+    .payments {
+        display: flex;
+        justify-content: space-between;
+        width: 350px;
+
+        span {
+            font-weight: bold;
+        }
+
+        p {
+            color: blue;
+        }
+    }
+
+
+
+    #image-input-id {
         display: none;
     }
 
-    #audio-input-id{
+    #audio-input-id {
+        display: none;
+    }
+
+    #description-id {
         display: none;
     }
 

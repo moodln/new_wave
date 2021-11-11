@@ -22,6 +22,17 @@ class CreateAlbumForm extends React.Component {
         this.handleFile = this.handleFile.bind(this);
     }
 
+    toggleInput() {
+        const inputBox = document.getElementById('description-id');
+        const display = inputBox.style.display;
+
+        if (display === 'none') {
+            inputBox.style.display = 'block';
+        } else {
+            inputBox.style.display = 'none';
+        }
+    }
+
     todaysDate() {
         let today = new Date();
         let dd = String(today.getDate()).padStart(2, '0');
@@ -108,6 +119,32 @@ class CreateAlbumForm extends React.Component {
                                     <p>release date:</p>
                                     <input type="text" value='optional'/>
                                     <p>mm/dd/yyyy</p><p>  leave blank to use publish date</p>
+                                </div>
+                                <div className='border'> </div>
+                                <div className='pricing'>
+                                    <p>pricing:</p>
+                                    <div className='dollars'>
+                                        <input type="text" value='7.00' />
+                                        <p>US Dollars</p>
+                                    </div>
+                                    <p>enter zero or more</p>
+                                    <div className='checkbox'>
+                                        <input type="checkbox" checked/>
+                                        <p>let fans pay more if they want</p>
+                                    </div>
+                                    <div className='payments'>
+                                        <p>Payments will go to <span>{this.props.currentUser.email}</span> via PayPal.</p>
+                                        <p>more info</p>
+                                    </div>
+                                </div>
+                                <div className='description'>
+                                    <label onClick={this.toggleInput} htmlFor="description-id">description</label>
+                                        <input className='description'
+                                            id='description-id'
+                                            type="text"
+                                            onChange={this.handleInput('description')} />
+                                    
+                                    <p>tell your fans about your work, anything you'd like them to know.</p>
                                 </div>
                                 <div className='border'> </div>
                                 <div className='image-file-container'>
