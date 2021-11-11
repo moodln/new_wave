@@ -60,7 +60,7 @@ class ArtistShow extends React.Component {
         debugger
         let aboutInfo;
         let location;
-        if (this.state.location === 'undefined') {
+        if (this.state.location === 'undefined' || this.state.location === null) {
             location = <p>Independence, <br/>Kansas</p>
         } else {
             location = <p>{this.state.location}</p>
