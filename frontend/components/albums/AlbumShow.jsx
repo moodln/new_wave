@@ -29,6 +29,7 @@ class AlbumShow extends React.Component {
             // debugger
             return null 
         } else {
+            debugger
            if (!this.props.album.artist.photoUrl) {
                this.props.album.artist.photoUrl = window.artist_image
            }
