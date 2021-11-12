@@ -33,6 +33,14 @@ class CreateAlbumForm extends React.Component {
         }
     }
 
+    // onImageChange = (event) => {
+    //     if (event.target.files && event.target.files[0]) {
+    //         this.setState({
+    //             image: URL.createObjectURL(event.target.files[0])
+    //         });
+    //     }
+    // }
+
     todaysDate() {
         let today = new Date();
         let dd = String(today.getDate()).padStart(2, '0');
@@ -53,6 +61,7 @@ class CreateAlbumForm extends React.Component {
     handleFile(type) {
         return (e) => {
             return this.setState({[type]: e.currentTarget.files[0]})
+                
         }
     }
 
@@ -154,6 +163,7 @@ class CreateAlbumForm extends React.Component {
                                             type="file"
                                             title='Upload Album Art'
                                             accept="image/png, image/jpeg"
+                                            
                                             onChange={this.handleFile('img_url')} />
                                     </label>
                                     <div className='center-p'>
