@@ -86,7 +86,7 @@ class CreateAlbumForm extends React.Component {
                             <div className='album-preview-box'>
                                 <div className='image-container'>
                                     <div className='image'>
-                                        <img src={this.state.img_url} alt="default image" />                                   
+                                        <img src={window.album} alt="default image" />                                   
                                     </div>
                                     <div className='album-text'>
                                         <h1>{albumName}</h1>

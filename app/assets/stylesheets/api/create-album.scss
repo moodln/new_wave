@@ -233,6 +233,16 @@
     .album-preview-box {
         display: flex;           
         flex-direction: column;
+        button {
+                margin: 38px 91px;
+    background: whitesmoke;
+    border: 0.5px solid #d9d6d6;
+    font-weight: bold;
+    color: #138fe9;
+    padding: 4px;
+    border-radius: 2px;
+    width: 85px;
+        }
     }
 }
 
