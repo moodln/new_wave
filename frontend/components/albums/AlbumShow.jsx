@@ -11,6 +11,7 @@ class AlbumShow extends React.Component {
     }
     componentDidMount() {
         this.props.fetchAlbum(this.props.match.params.albumId)
+        
     }
 
     // componentDidUpdate() {
@@ -52,6 +53,7 @@ class AlbumShow extends React.Component {
             } else {
                 artistAlbums = [];
             }
+            
         return (
             
             <div>
@@ -77,7 +79,9 @@ class AlbumShow extends React.Component {
                                     <p>Send as Gift</p>
                                 
                                     <div className='song-list'>
-                                        <button onClick={this.playAudio}><img src={window.play} alt="play_button" className='play' /></button>
+                                        <button onClick={this.playAudio}>
+                                            <img src={window.play} alt="play_button" className='play' />
+                                        </button>
                                         <p>1. {this.props.album.songTitle}</p>
                                         <p>3:44</p>
                                     </div>
