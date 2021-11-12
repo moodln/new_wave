@@ -6,20 +6,9 @@ New Wave is a single page clone of BandCamp - a website that hosts artists' musi
 [live site](https://newwwave.herokuapp.com/#/)
 
  
-* Ruby version
+# Upload Songs
 
-* System dependencies
 
-* Configuration
 
-* Database creation
+https://user-images.githubusercontent.com/88460822/141483816-42f76bb3-e231-4d28-a08a-f0a700994cec.mov
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
