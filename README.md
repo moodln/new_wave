@@ -8,7 +8,11 @@ New Wave is a single page clone of BandCamp - a website that hosts artists' musi
  
 # Upload Songs
 
-![Screen Recording 2021-11-12 at 9 34 25 AM](https://user-images.githubusercontent.com/88460822/141489852-194bdea2-6516-4e20-988a-1841149685d0.gif)
+
+
+
+
+https://user-images.githubusercontent.com/88460822/141491129-822d34cc-9b17-4a35-bf2d-25cb6989cf41.mov
 
 
 
