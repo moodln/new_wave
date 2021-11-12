@@ -304,6 +304,7 @@ body {
     overflow: hidden;
     margin: 1.5px 0px 1.5px 0px;
 
+
 }
 
 .img1 {
@@ -379,8 +380,9 @@ body {
         padding: 7px;
         border-radius: 5px;
         width: 95px;
-        
+        cursor: pointer;
     }
+
 }
 
 img:hover { 
@@ -507,6 +509,7 @@ img:hover {
     flex-direction: column;
     border-left: 0.4px solid grey;
     border-right: 0.4px solid grey;
+    border-bottom: 0.4px solid grey;
     margin-top: 35px;
 
      p {
@@ -561,6 +564,9 @@ img:hover {
 }
 
 .album-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 
     audio {
         margin-top: 26px;
@@ -622,6 +628,19 @@ img:hover {
             left: 0;
         }
     }
+
+    button {
+        background-color: white;
+        color: #0085c7;
+        font-weight: bold;
+        border-radius: 3px;
+        border: 0.5px solid #b8b7b7;
+        padding: 6px;
+        height: 29px;
+        width: 119px;
+        margin: 9px 10px;
+        font-size: 12px;
+    }
 }
 
 .album-display {
@@ -651,27 +670,49 @@ img:hover {
         width: 125px;
     }
 
+
     button {
-    background-color: white;
-    color: #0085c7;
-    font-weight: bold;
-    border-radius: 3px;
-    border: 0.5px solid #b8b7b7;
-    padding: 6px;
-    height: 29px;
-    width: 119px;
-    margin: 9px 10px;
-    font-size: 12px;
+        background-color: white;
+        color: #0085c7;
+        font-weight: bold;
+        border-radius: 3px;
+        border: 0.5px solid #b8b7b7;
+        padding: 6px;
+        height: 29px;
+        width: 119px;
+        margin: 9px 10px;
+        font-size: 12px;
     }
 
     p:nth-of-type(2n) {
         color: black;
     }
 
+    p:nth-of-type(3) {
+        font-size: 14px;
+        color: black;
+        margin: 11px 0px 11px 5px;
+    }
+
     img {
         width: 128px;
         height: 100px;
         margin: 0px 10px 10px;
+    }
+
+    .artist-albums {
+        img {
+            width: 120px;
+            height: 120px;
+            margin: 0px 10px;
+            border: .5px solid #727272;
+        }
+
+        p {
+            margin: 0px 10px 13px;
+            padding: 0px;
+            color: #727272;
+        }
     }
 }
 

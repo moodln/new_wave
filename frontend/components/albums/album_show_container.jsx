@@ -4,7 +4,7 @@ import AlbumShow from './AlbumShow';
 
 const mapStateToProps = (state, ownProps) => ({
     album: state.entities.albums[ownProps.match.params.albumId],
-    currentUser: state.entities.users[state.session.id],
+    currentUser: state.entities.users[state.session.id]
 });
 
 const mapDispatchToProps = (dispatch) => ({
