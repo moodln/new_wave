@@ -8,9 +8,9 @@ New Wave is a single page clone of BandCamp - a website that hosts artists' musi
  
 # Upload Songs
 
+![Screen Recording 2021-11-12 at 9 34 25 AM](https://user-images.githubusercontent.com/88460822/141489852-194bdea2-6516-4e20-988a-1841149685d0.gif)
 
 
-https://user-images.githubusercontent.com/88460822/141483816-42f76bb3-e231-4d28-a08a-f0a700994cec.mov
 
 After a user is logged in, they will have the option to create their own album. They will be able to upload audio and image files, and include a title. This feature was implemented using the FormData object and AWS. 
 
@@ -22,9 +22,9 @@ The image and audio files are passed back to the frontend by grabbing them in th
 
 #Song Player 
 
+![Screen Recording 2021-11-12 at 9 46 28 AM](https://user-images.githubusercontent.com/88460822/141489584-5aa0a10f-35bf-4a13-95e2-e27fd1100c06.gif)
 
 
-https://user-images.githubusercontent.com/88460822/141485587-d7d209fd-f9a0-42ee-8da9-3e1d4083515a.mov
 
 Users can navigate to an artist's show page, where there is a song player attached. The song player includes a play and pause button, as well as volume control. There is another button displayed next to the track listings, which also allows the user to play the song associated with the track listing. This was incorporated by implementing a callback to an onClick function. 
 
