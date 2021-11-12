@@ -29,7 +29,7 @@ class AlbumShow extends React.Component {
 
             if (this.props.currentUser.id === this.props.album.artist.id) {
                 this.props.deleteAlbum(albumId)
-                this.props.history.push(`/`)
+                .then(() => this.props.history.push(`/`));
             } 
         } 
     }
