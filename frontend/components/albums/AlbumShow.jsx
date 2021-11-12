@@ -11,7 +11,6 @@ class AlbumShow extends React.Component {
     }
     componentDidMount() {
         this.props.fetchAlbum(this.props.match.params.albumId)
-        this.forceUpdate();
     }
 
     // componentDidUpdate() {
@@ -47,7 +46,12 @@ class AlbumShow extends React.Component {
            if (!this.props.album.artist.photoUrl) {
                this.props.album.artist.photoUrl = window.artist_image
            }
-            const artistAlbums = Object.values(this.props.album.artist.albums)
+            let artistAlbums;
+            if (this.props.album.artist.albums) {
+                artistAlbums = Object.values(this.props.album.artist.albums)
+            } else {
+                artistAlbums = [];
+            }
         return (
             
             <div>
