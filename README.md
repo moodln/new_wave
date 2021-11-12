@@ -19,3 +19,16 @@ After a user is logged in, they will have the option to create their own album. 
 The image and audio files are passed back to the frontend by grabbing them in the json.jbuilder file and using the Ruby `url_for` method to convert them into a url that the frontend can render.
 
 <img width="314" alt="Screen Shot 2021-11-12 at 9 42 39 AM" src="https://user-images.githubusercontent.com/88460822/141484858-7396d3a0-1166-42fe-a7b2-3dca4828f017.png">
+
+#Song Player 
+
+
+
+https://user-images.githubusercontent.com/88460822/141485587-d7d209fd-f9a0-42ee-8da9-3e1d4083515a.mov
+
+Users can navigate to an artist's show page, where there is a song player attached. The song player includes a play and pause button, as well as volume control. There is another button displayed next to the track listings, which also allows the user to play the song associated with the track listing. This was incorporated by implementing a callback to an onClick function. 
+
+<img width="487" alt="Screen Shot 2021-11-12 at 9 53 01 AM" src="https://user-images.githubusercontent.com/88460822/141486412-ab826984-9151-41fe-b0b9-eca1b73cc1b1.png">
+
+
+<img width="361" alt="Screen Shot 2021-11-12 at 9 52 26 AM" src="https://user-images.githubusercontent.com/88460822/141486315-b3ee208c-474f-4cd6-90ba-6ae7d51e135f.png">
