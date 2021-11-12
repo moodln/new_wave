@@ -32,3 +32,8 @@ Users can navigate to an artist's show page, where there is a song player attach
 
 
 <img width="361" alt="Screen Shot 2021-11-12 at 9 52 26 AM" src="https://user-images.githubusercontent.com/88460822/141486315-b3ee208c-474f-4cd6-90ba-6ae7d51e135f.png">
+
+# Future Directions 
+
+* Search Functionality
+* Genre Tags
