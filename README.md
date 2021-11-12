@@ -8,9 +8,9 @@ New Wave is a single page clone of BandCamp - a website that hosts artists' musi
  
 # Upload Songs
 
+![Screen Recording 2021-11-12 at 9 34 25 AM](https://user-images.githubusercontent.com/88460822/141489852-194bdea2-6516-4e20-988a-1841149685d0.gif)
 
 
-https://user-images.githubusercontent.com/88460822/141483816-42f76bb3-e231-4d28-a08a-f0a700994cec.mov
 
 After a user is logged in, they will have the option to create their own album. They will be able to upload audio and image files, and include a title. This feature was implemented using the FormData object and AWS. 
 
