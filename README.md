@@ -5,7 +5,7 @@ New Wave is a single page clone of BandCamp - a website that hosts artists' musi
 
 [live site](https://newwwave.herokuapp.com/#/)
 
-
+ 
 * Ruby version
 
 * System dependencies
