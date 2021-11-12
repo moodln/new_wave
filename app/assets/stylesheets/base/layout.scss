@@ -448,6 +448,7 @@ img:hover {
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
+    
 }
 
 .album-index {
@@ -457,17 +458,21 @@ img:hover {
     align-content: space-around;
     align-items: flex-start;
     flex-wrap: wrap;
-    overflow: auto;
+    width: 100%;
+    margin-left: 1%;
+    margin-right: 1%;
+    height: 200px;
+    overflow-x: auto;
     // white-space: nowrap;
+    flex-direction: column;
 }
 
 .album {
     margin: 20px;
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
     inline-size: 150px;
     overflow-wrap: break-word;
+    flex-direction: column;
 
     img {
         border: 1px solid black;

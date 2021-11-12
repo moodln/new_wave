@@ -11,7 +11,7 @@ class Api::ArticlesController < ApplicationController
     end 
 
     def article_params 
-        params.require(:article).permit(:title, :description, :photo)
+        params.require(:article).permit(:title, :description, :photo, :artist)
     end 
 
 end 

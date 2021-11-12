@@ -13,6 +13,11 @@ class User < ApplicationRecord
         foreign_key: :artist_id, 
         class_name: :Album, 
         dependent: :destroy
+
+    has_one :article, 
+      primary_key: :id, 
+      foreign_key: :artist_id, 
+      class_name: :Article
     
     has_one_attached :photo
 

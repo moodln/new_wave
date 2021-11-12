@@ -1,1 +1,1 @@
-json.extract! @article, :photo
+json.extract! @article, :photo, :artist

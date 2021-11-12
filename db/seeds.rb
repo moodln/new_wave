@@ -50,7 +50,7 @@
     cawesgAlbum.photo.attach(
         io: open('https://new-wave-aa-seeds.s3.amazonaws.com/cawesgAlbum.jpeg'),
         filename: 'cawesgAlbum.jpeg')
-    tsegueAlbum = Album.create!(title: 'Ethiopiques, vol. 21: Emahoy(Piano Solo)', artist_id: tsegueArtist.id)
+    tsegueAlbum = Album.create!(title: 'Ethiopiques, vol. 21', artist_id: tsegueArtist.id)
     tsegueAlbum.photo.attach(
         io: open('https://new-wave-aa-seeds.s3.amazonaws.com/tsegue.jpg'),
         filename: 'tsegue.jpg')
@@ -113,7 +113,7 @@
     
 
         
-    stereoArticle = Article.create!(title: 'New Wave Weekly', description: 'Tim Gane and Laetitia Sadier pick their favourite tracks')     
+    stereoArticle = Article.create!(title: 'New Wave Weekly', description: 'Tim Gane and Laetitia Sadier pick their favourite tracks', artist_id: stereoAtrist.id)     
     stereoArticle.photo.attach(
         io: open('https://new-wave-aa-seeds.s3.amazonaws.com/stereolab2.jpeg'),
         filename: 'stereolab2.jpeg')
@@ -121,7 +121,7 @@
         io: open('https://new-wave-aa-seeds.s3.amazonaws.com/stereolab.jpeg'),
         filename: 'stereolab.jpeg')
 
-    broadcastArticle = Article.create!(title: 'Broadcast', description: 'The Noise Made By People')
+    broadcastArticle = Article.create!(title: 'Broadcast', description: 'The Noise Made By People', artist_id: broadcastArtist.id)
     broadcastArticle.photo.attach(
         io: open('https://new-wave-aa-seeds.s3.amazonaws.com/Broadcast_in_2010.jpeg'), 
         filename: 'Broadcast_in_2010.jpeg')
@@ -129,7 +129,7 @@
         io: open('https://new-wave-aa-seeds.s3.amazonaws.com/Broadcast_in_2010.jpeg'), 
         filename: 'Broadcast_in_20102.jpeg')
 
-    esgArticle = Article.create!(title: 'ESG', description: 'Come Away With ESG')
+    esgArticle = Article.create!(title: 'ESG', description: 'Come Away With ESG', artist_id: esgArtist.id)
     esgArticle.photo.attach(
         io: open('https://new-wave-aa-seeds.s3.amazonaws.com/ESG.jpeg'),
         filename: 'ESG.jpeg')
@@ -142,5 +142,6 @@
 
 
     puts "created #{demoUser.username}"
+    puts "created '#{esgArticle.title}' with '#{esgArticle.artist_id}' attachment"
     puts "created #{beatAlbum.title}"
     puts "created #{stereoArticle.title} with #{stereoArticle.photo.filename}"

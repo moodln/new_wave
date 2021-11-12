@@ -1,5 +1,6 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
+
 
 class AlbumShow extends React.Component {
     constructor(props) {
@@ -10,8 +11,15 @@ class AlbumShow extends React.Component {
     }
     componentDidMount() {
         this.props.fetchAlbum(this.props.match.params.albumId)
+        this.forceUpdate();
     }
 
+    // componentDidUpdate() {
+    //     if (!this.props.album) {
+    //         this.forceUpdate();
+    //     }
+    //     this.render();
+    // }
     playAudio() {
         document.getElementById('audio').play()
     }
@@ -30,10 +38,11 @@ class AlbumShow extends React.Component {
     render() {
         // debugger
         if (!this.props.album) {
+            
             // debugger
             return null 
+
         } else {
-            
             debugger
            if (!this.props.album.artist.photoUrl) {
                this.props.album.artist.photoUrl = window.artist_image
