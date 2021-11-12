@@ -3,6 +3,8 @@
 
 New Wave is a single page clone of BandCamp - a website that hosts artists' music and allows fans to follow and purchase songs or albums from artists. New wave was built using React, Redux, and Ruby on Rails; and it incorporates Amazon Web Services S3 to store, upload, and stream audio and image files. 
 
+[live site](https://newwwave.herokuapp.com/#/)
+
 
 * Ruby version
 
