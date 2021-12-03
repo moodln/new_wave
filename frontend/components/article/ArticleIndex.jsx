@@ -13,7 +13,10 @@ class ArticleIndex extends React.Component {
             <div>
                 <div className='article-index'>
                     {articles.map((article, idx) => (
-                        <ArticleIndexItem key={idx} article={article} idx={idx} />
+                        <ArticleIndexItem key={idx} 
+                            article={article} 
+                            idx={idx}
+                            albumId={article.artist.albums} />
                     ))}
                 </div>
                 <div className='splash-text'>
