@@ -308,10 +308,10 @@ body {
 
 .article:first-child {
     position: relative;
-    color: rgb(241, 228, 228);
+    color: white;
     font-size: 35px;
     font-weight: 500;
-    text-shadow: 0px 1px 2px #050505;
+    text-shadow: 0px 0px 2px #050505;
     max-width: 100vw;
     height: 60.5vh;
     width: 60vw;
@@ -358,16 +358,21 @@ body {
 
 
 .article {
-    color: rgb(231, 231, 231);
+    color: white;
     font-size: 35px;
     font-weight: 500;
     text-shadow: 0px 1px 2px #050505;
+
+    img {
+        width: 100%;
+        height: auto;
+    }
 
     h2 {
         position: absolute;
         bottom: 130px;
         left: 45px;
-        background-image: radial-gradient(rgba(0,0,0,1), rgba(0,0,0,0));
+        // background-image: radial-gradient(rgba(0,0,0,1), rgba(0,0,0,0));
         letter-spacing: 1px;
     }
 
@@ -377,7 +382,7 @@ body {
         left: 45px;
         font-size: 14px;
         font-weight: 400;
-        background-image: radial-gradient(rgba(0,0,0,1), rgba(0,0,0,0));
+        // background-image: radial-gradient(rgba(0,0,0,1), rgba(0,0,0,0));
         overflow-wrap: break-word;
         letter-spacing: 1px;
         overflow: hidden;
@@ -389,7 +394,7 @@ body {
         bottom: 40px;
         left: 45px;
         background: rgba(0, 0, 0, 0.4);
-        color: rgb(231, 231, 231);
+        color: white;
         border: 1px solid white;
         // font-weight: bold;
         padding: 7px;
@@ -414,7 +419,7 @@ img:hover {
     z-index: 2;
     font-size: 18px;
     height: 22px;
-    background-image: radial-gradient(rgba(0,0,0,1), rgba(0,0,0,0));
+    // background-image: radial-gradient(rgba(0,0,0,1), rgba(0,0,0,0));
 }
 
 .class1 p {
