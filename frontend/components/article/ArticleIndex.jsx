@@ -1,5 +1,6 @@
 import React from 'react';
 import ArticleIndexItem from './ArticleIndexItem';
+import MainArticle from './MainArticle';
 
 class ArticleIndex extends React.Component {
     componentDidMount() {
@@ -7,16 +8,28 @@ class ArticleIndex extends React.Component {
     }
 
     render() {
+        if (this.props.articles.length < 1) {
+            return null;
+        } 
         const { articles } = this.props;
+        const mainArticle = articles[0]
+        const secondaryArticles = articles.slice(1);
         
+
+        // debugger
+        // console.log("main article", mainArticle.artist)
+        // console.log("articles", this.props)
+        // console.log('secondaryArticles', secondaryArticles)
         return (
             <div>
                 <div className='article-index'>
-                    {articles.map((article, idx) => (
+                    <MainArticle article={mainArticle}
+                        album={mainArticle.artist.albums} />
+                    {secondaryArticles.map((article, idx) => (
                         <ArticleIndexItem key={idx} 
                             article={article} 
                             idx={idx}
-                            albumId={article.artist.albums} />
+                            album={article.artist.albums} />
                     ))}
                 </div>
                 <div className='splash-text'>

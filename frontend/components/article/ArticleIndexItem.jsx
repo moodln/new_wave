@@ -3,9 +3,8 @@ import { Link } from "react-router-dom";
 
 
 const ArticleIndexItem = (props) => {
-    const {article, idx} = props;
-    const album = Object.values(props.article.artist.albums)[0]
-    const albumId = album.id
+    const {article, idx, album} = props;
+    const albumId = Object.values(album)[0].id
     debugger
     return (
         <div className={`article class${idx}`}>
@@ -16,9 +15,6 @@ const ArticleIndexItem = (props) => {
                 <h2>{article.title}:</h2>
                 <p>{article.description}</p>
             </div>
-            <Link to='/'>
-                <button>explore</button>
-            </Link>
         </div>
     )
 }
