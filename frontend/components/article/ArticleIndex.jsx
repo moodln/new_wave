@@ -14,12 +14,7 @@ class ArticleIndex extends React.Component {
         const { articles } = this.props;
         const mainArticle = articles[0]
         const secondaryArticles = articles.slice(1);
-        
 
-        // debugger
-        // console.log("main article", mainArticle.artist)
-        // console.log("articles", this.props)
-        // console.log('secondaryArticles', secondaryArticles)
         return (
             <div>
                 <div className='article-index'>
