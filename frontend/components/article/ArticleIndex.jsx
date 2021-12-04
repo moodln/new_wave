@@ -18,14 +18,17 @@ class ArticleIndex extends React.Component {
         return (
             <div>
                 <div className='article-index'>
-                    <MainArticle article={mainArticle}
-                        album={mainArticle.artist.albums} />
-                    {secondaryArticles.map((article, idx) => (
-                        <ArticleIndexItem key={idx} 
-                            article={article} 
-                            idx={idx}
-                            album={article.artist.albums} />
-                    ))}
+                    <div className='main-article-container'>
+                        <MainArticle article={mainArticle}
+                            album={mainArticle.artist.albums} />
+                    </div>
+                    <div className='secondary-article-container'>
+                        {secondaryArticles.map((article, idx) => (
+                            <ArticleIndexItem key={idx} 
+                                article={article}
+                                album={article.artist.albums} />
+                        ))}
+                    </div>
                 </div>
                 <div className='splash-text'>
                 <p>Fans have paid artists $467 million using new wave, and $16.8 million in the last 30 days alone.</p>

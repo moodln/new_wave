@@ -6,7 +6,7 @@ const MainArticle = (props) => {
     const albumId = Object.values(album)[0].id
 
     return (
-        <div className={'main-article'}>
+        <div>
             <Link to={`albums/${albumId}`} state={album}>
                 <img className="main-image" src={article.photoUrl} alt={article.title} />
             </Link>
