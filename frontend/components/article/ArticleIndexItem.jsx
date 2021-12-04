@@ -3,22 +3,19 @@ import { Link } from "react-router-dom";
 
 
 const ArticleIndexItem = (props) => {
-    const {article, idx} = props;
-    const albumId = Object.values(props.article.artist.albums)[0].id
-    const album = Object.values(props.article.artist.albums)[0]
+    const {article, idx, album} = props;
+    const albumId = Object.values(album)[0].id
     debugger
     return (
-        <div className={`article class${idx}`}>
+        <div className='article-index-item'>
             <Link to={`/albums/${albumId}`} state={album}>
-                <img className={`img${idx}`} src={article.photoUrl} alt={article.title} />
+                {/* <div className='secondary-image' style={{backgroundImage: `url(${article.photoUrl})`}}></div> */}
+                <img src={article.photoUrl} alt={article.title} />
             </Link>
-            <div className={`container-${idx}`}>
+            <div>
                 <h2>{article.title}:</h2>
                 <p>{article.description}</p>
             </div>
-            <Link to='/'>
-                <button>explore</button>
-            </Link>
         </div>
     )
 }

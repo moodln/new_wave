@@ -1,5 +1,6 @@
 import React from 'react';
 import ArticleIndexItem from './ArticleIndexItem';
+import MainArticle from './MainArticle';
 
 class ArticleIndex extends React.Component {
     componentDidMount() {
@@ -7,14 +8,27 @@ class ArticleIndex extends React.Component {
     }
 
     render() {
+        if (this.props.articles.length < 1) {
+            return null;
+        } 
         const { articles } = this.props;
-        
+        const mainArticle = articles[0]
+        const secondaryArticles = articles.slice(1);
+
         return (
             <div>
                 <div className='article-index'>
-                    {articles.map((article, idx) => (
-                        <ArticleIndexItem key={idx} article={article} idx={idx} />
-                    ))}
+                    <div className='main-article-container'>
+                        <MainArticle article={mainArticle}
+                            album={mainArticle.artist.albums} />
+                    </div>
+                    <div className='secondary-article-container'>
+                        {secondaryArticles.map((article, idx) => (
+                            <ArticleIndexItem key={idx} 
+                                article={article}
+                                album={article.artist.albums} />
+                        ))}
+                    </div>
                 </div>
                 <div className='splash-text'>
                 <p>Fans have paid artists $467 million using new wave, and $16.8 million in the last 30 days alone.</p>
