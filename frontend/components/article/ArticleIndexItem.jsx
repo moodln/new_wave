@@ -7,7 +7,7 @@ const ArticleIndexItem = (props) => {
     const albumId = Object.values(album)[0].id
     debugger
     return (
-        <div>
+        <div className='article-index-item'>
             <Link to={`/albums/${albumId}`} state={album}>
                 {/* <div className='secondary-image' style={{backgroundImage: `url(${article.photoUrl})`}}></div> */}
                 <img src={article.photoUrl} alt={article.title} />

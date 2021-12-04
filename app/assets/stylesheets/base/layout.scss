@@ -303,15 +303,67 @@ body {
     align-content: center;
     justify-content: space-between;
     box-sizing: border-box;
+    height: 60vh;
+    overflow: hidden;
 
 }
 
 .main-article-container {
     box-sizing: border-box;
+    position: relative;
+    color: white;
+
     img {
         width: 100%;
         height: auto;
         object-fit: contain;
+    }
+
+    h2 {
+        position: absolute;
+        bottom: 115px;
+        left: 10px;
+    }
+
+    p {
+        position: absolute;
+        bottom: 95px;
+        left: 10px;
+    }
+
+    a > button {
+        position: absolute;
+        bottom: 85px;
+    }
+}
+
+.article-index-item {
+    // height: 30%;
+    // width: 100%;
+    // object-fit: contain;
+    position: relative;
+    color: #f9f9f9;
+    // overflow: hidden;
+    box-sizing: border-box;
+    margin: 0px 0px 2px 2px;
+
+    img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        
+    }
+
+    h2 {
+        position: absolute;
+        top: 95px;
+        left: 10px;
+    }
+
+    p {
+        position: absolute;
+        top: 115px;
+        left: 10px;
     }
 }
 
@@ -319,12 +371,8 @@ body {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-
-    a > img {
-        width: 100%;
-        height: auto;
-        object-fit: contain;
-    }
+    width: 50vw;
+    padding: 0px 2px;
 }
 
 
