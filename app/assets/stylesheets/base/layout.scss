@@ -308,15 +308,28 @@ body {
 
 }
 
+// .main-article-container:hover {
+//     background: white;
+// }
+
 .main-article-container {
     box-sizing: border-box;
     position: relative;
     color: white;
+    background: #7fb1ff;
+    margin: 2px 0px;
 
     img {
         width: 100%;
         height: auto;
         object-fit: contain;
+        opacity: 0.7;
+        transition: 0.3s;
+        
+    }
+
+    img:hover {
+        opacity: 0.6;
     }
 
     h2 {
@@ -338,7 +351,7 @@ body {
 }
 
 .article-index-item {
-    height: 50%;
+    height: 33%;
     // width: 100%;
     // object-fit: contain;
     position: relative;
@@ -346,13 +359,19 @@ body {
     // overflow: hidden;
     box-sizing: border-box;
     margin: 0px 0px 2px 2px;
+    background: #ffffff;
 
     img {
         width: 100%;
         height: auto;
         object-fit: contain;
-        
-        
+        opacity: 0.9;
+        transition: 0.3s;
+        padding: 2px 0px;
+    }
+
+    img:hover {
+        opacity: 0.8;
     }
 
     h2 {
@@ -372,8 +391,8 @@ body {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    width: 50vw;
-    padding: 0px 2px;
+    width: 40vw;
+    // padding: 0px 2px;
 }
 
 
@@ -476,9 +495,9 @@ body {
 
 }
 
-img:hover { 
-  opacity: .9; 
-}
+// img:hover { 
+//   opacity: .9; 
+// }
 
 // .container-1 {
 //     position: relative;
