@@ -18,13 +18,14 @@
     ApplicationRecord.connection.reset_pk_sequence!('songs')
 
     demoUser = User.create!(username: 'guest', email: 'demo@demo.com', password: 'password')
-    boweryArtist = User.create!(username: 'bowery_electric', name: 'Bowery Electric', email: 'bowery@gmail.com', password: 'password', location: 'NYC', about: 'American post-rock band, formed in 1993', artist: true)
+    boweryArtist = User.create!(username: 'bowery electric', name: 'Bowery Electric', email: 'bowery@gmail.com', password: 'password', location: 'NYC', about: 'American post-rock band, formed in 1993', artist: true)
     esgArtist = User.create!(username: 'ESG', email: 'esg@esg.com', password: 'password', location: 'The Bronx, NYC', about: 'ESG is an American funk rock band formed in the South Bronx in 1978. ESG has been influential across a wide range of musical genres, including hip hop, and dance-punk.', artist: true)
-    tsegueArtist = User.create!(username: 'tsegue_maryam_guebrou', name: 'Tsegue Maryam Guebrou',email: 'tsegue@gmail.com', password: 'password', location: 'addis ababa, ethiopia', about: 'Emahoy Tsegué-Maryam Guèbrou is an Ethiopian nun known for her piano playing and compositions.', artist: true)
-    cocteauArtist = User.create!(username: 'cocteau_twins', name: 'Cocteau Twins', email: 'cocteau@gmail.com', password: 'password', location: 'grangemouth, scotland', about: 'Cocteau Twins were a Scottish dream pop band active from 1979 to 1997.', artist: true)
-    latinAtrist = User.create!(username: 'latin_playboys', name: 'Latin Playboys', email: 'latin@gmail.com', password: 'password', location: 'East Los Angeles, California', artist: true)
+    tsegueArtist = User.create!(username: 'tsegue maryam guebrou', name: 'Tsegue Maryam Guebrou',email: 'tsegue@gmail.com', password: 'password', location: 'addis ababa, ethiopia', about: 'Emahoy Tsegué-Maryam Guèbrou is an Ethiopian nun known for her piano playing and compositions.', artist: true)
+    cocteauArtist = User.create!(username: 'cocteau twins', name: 'Cocteau Twins', email: 'cocteau@gmail.com', password: 'password', location: 'grangemouth, scotland', about: 'Cocteau Twins were a Scottish dream pop band active from 1979 to 1997.', artist: true)
+    latinAtrist = User.create!(username: 'latin playboys', name: 'Latin Playboys', email: 'latin@gmail.com', password: 'password', location: 'East Los Angeles, California', artist: true)
     stereoAtrist = User.create!(username: 'stereolab', name: 'Stereolab', email: 'stereolab@gmail.com', password: 'password', location: 'London, England', artist: true, about: 'Stereolab are an English-French avant-pop band formed in London in 1990. Led by the songwriting team of Tim Gane and Lætitia Sadier, the group\'s music combines influences from krautrock, lounge and 1960s pop music, often incorporating a repetitive motorik beat with heavy use of vintage electronic keyboards and female vocals sung in English and French.')
     broadcastArtist = User.create!(username: 'broadcast', name: 'Broadcast', email: 'broadcast@gmail.com', password: 'password', location: 'Birmingham, England', artist: true, about: 'Broadcast were an English electronic band formed in Birmingham in 1995 by Trish Keenan (vocals, keyboards, guitar) and James Cargill (bass). Their musical style blended elements of 1960s American psychedelia with experimental electronica, incorporating samples from various sources, and earned the band a cult following.')
+    mosesArtist = User.create!(username: 'moses sumney', name: 'Moses Sumney', email: 'moses@gmail.com', password: 'password', location: 'San Bernardino, California', artist: true, about: 'Moses Sumney is a Ghanaian-American singer-songwriter. His self-recorded EP, Mid-City Island, was released in 2014. He released another five-song EP in 2016, titled Lamentations. His first full-length album, Aromanticism, was released in September 2017. His second studio album, Græ, was released in 2020.')
     # ('about' from Wikipedia)
     broadcastAlbum1 = Album.create(title: 'Haha Sound', artist_id: broadcastArtist.id)
     broadcastAlbum1.photo.attach(
@@ -33,7 +34,11 @@
     broadcastAlbum2 = Album.create(title: 'The Future Crayon', artist_id: broadcastArtist.id)
     broadcastAlbum2.photo.attach(
         io: open('https://new-wave-aa-seeds.s3.amazonaws.com/future.jpeg'), 
-        filename: 'peng.jpeg')
+        filename: 'future.jpeg')
+    mosesAlbum = Album.create(title: 'græ, Part 1', artist_id: mosesArtist.id)
+    mosesAlbum.photo.attach(
+        io: open('https://new-wave-aa-seeds.s3.amazonaws.com/grae.jpeg'), 
+        filename: 'grae.jpeg')
     stereoAlbum = Album.create!(title: 'Peng!', artist_id: stereoAtrist.id)
     stereoAlbum.photo.attach(
         io: open('https://new-wave-aa-seeds.s3.amazonaws.com/peng.jpeg'), 
@@ -110,6 +115,12 @@
         io: open('https://new-wave-aa-seeds.s3.amazonaws.com/Broadcast+-+Illumination.mp3'),
         filename: 'Illumination.mp3'
     )
+
+    cutMeSong = Song.create!(title: 'Cut Me', album_id: mosesAlbum.id)
+    cutMeSong.audio.attach(
+        io: open('https://new-wave-aa-seeds.s3.amazonaws.com/Moses+Sumney+-+Cut+Me+++A+COLORS+SHOW.mp3'),
+        filename: 'Moses Sumney - Cut Me A COLORS SHOW.mp3'
+    )
     
 
         
@@ -136,6 +147,13 @@
     esgArtist.photo.attach(
         io: open('https://new-wave-aa-seeds.s3.amazonaws.com/ESG.jpeg'),
         filename: 'ESG2.jpeg')
+
+    mosesArticle = Article.create!(title: 'Moses Sumney', description: 'All Colors with Moses Sumney', artist_id: mosesArtist.id)     
+    mosesArticle.photo.attach(
+        io: open('https://new-wave-aa-seeds.s3.amazonaws.com/Moses%2BGatefold.jpeg'),
+        filename: 'Moses+Gatefold.jpeg')
+
+
     
 
 
