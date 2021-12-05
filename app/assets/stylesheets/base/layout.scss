@@ -3,8 +3,10 @@ body {
 }
 
 .logo {
-    height: 55px;
-    width: 174px;
+    height: 47px;
+    width: 151px;
+    margin: 0px 20px;
+    margin-top: 5px;
 }
 
 .splash-text {
@@ -48,14 +50,14 @@ body {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    margin: 20px;
+    // margin: 20px;
 
     width: 30vw;
     font-size: 16px;
     position: absolute;
     z-index: 300;
-    top: 4px;
-    right: -22px;
+    top: 20px;
+    right: 5px;
 }
 
 .links-container .links{
@@ -597,7 +599,7 @@ body {
     flex-wrap: wrap;
     width: 100%;
     margin-left: 1%;
-    margin-right: 1%;
+    // margin-right: 1%;
     height: 200px;
     overflow-x: auto;
     // white-space: nowrap;
