@@ -32,7 +32,7 @@ class SessionForm extends React.Component {
         return ( 
             <div className='modal-content'>
                 <Link to='/'>
-                    <img src={window.logo} alt="new_wave logo" className='logo' />
+                    <img src={window.login_logo} alt="new_wave logo" className='login-logo' />
                 </Link>
                 <p>{errors}</p>
                 <form onSubmit={this.handleSubmit} className={`session-form ${formType}`}>
