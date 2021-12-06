@@ -28,7 +28,9 @@ class SessionForm extends React.Component {
     render() {
         let { errors, formType } = this.props;
         let content;
+        let button;
         formType === 'login' ? content = 'Log In' : content = 'Sign up for a new wave account'
+        formType === 'login' ? button = 'Log In' : button = 'Sign up'
         return ( 
             <div className='modal-content'>
                 <Link onClick={() => this.props.closeModal()}>
@@ -37,25 +39,25 @@ class SessionForm extends React.Component {
                 <p>{errors}</p>
                 <form onSubmit={this.handleSubmit} className={`session-form ${formType}`}>
                     <h1>{content}</h1>
-                    {/* <div className='username'> */}
-                    <label>Username </label>
-                        <input type="text" 
-                            value={this.state.username} 
-                            onChange={this.update('username')} />
-                    {/* </div> */}
-                    {/* <div className='email'> */}
-                    <label>Email </label>
-                        <input type="text"
-                            value={this.state.email}
-                            onChange={this.update('email')} />    
-                    {/* </div> */}
-                    {/* <div className='password'> */}
-                    <label>Password </label>
-                        <input type="password"
-                            value={this.state.password}
-                            onChange={this.update('password')} />
-                    {/* </div> */}
-                    <button>{formType}</button>
+                    <div className='session-input'>
+                        <label>Username 
+                            <input type="text" 
+                                value={this.state.username} 
+                                onChange={this.update('username')} />
+                        </label>
+                        <label>Email 
+                            <input type="text"
+                                value={this.state.email}
+                                onChange={this.update('email')} />  
+                        </label>  
+
+                        <label>Password 
+                            <input type="password"
+                                value={this.state.password}
+                                onChange={this.update('password')} />
+                        </label>
+                        <button>{button}</button>
+                    </div>
 
                 </form>
             </div>

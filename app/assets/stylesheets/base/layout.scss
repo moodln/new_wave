@@ -211,11 +211,18 @@ body {
 .session-form {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-items: center;
     // background-color: lightblue;
     // border-radius: 10px;
     height: 100%;
+}
+
+.session-input {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .session-form > h1 {
@@ -226,17 +233,19 @@ body {
     border-bottom-color: rgb(224, 223, 223);
     width: 95%;
     text-align: center;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    // border-top-left-radius: 10px;
+    // border-top-right-radius: 10px;
     color:rgba(19, 19, 19, 0.7)
 }
 
 .session-form label {
     margin-top: 30px;
     // background-color: royalblue;
-    width: 70%;
+    width: 50%;
     font-size: 17px;
     color:rgb(34, 33, 33);
+    display: flex; 
+    justify-content: space-evenly;
 }
 
 .session-form input {
@@ -265,7 +274,7 @@ body {
 }
 
 .login > h1{
-    padding: 36px;
+    padding: 45px;
     width: 65%;
     color: black;
     font-size: 18px;

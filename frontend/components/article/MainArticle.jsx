@@ -18,7 +18,7 @@ const MainArticle = (props) => {
                 <button>explore
                     
                 </button>
-                <i class="fas fa-long-arrow-alt-right"></i>
+                <i className="fas fa-long-arrow-alt-right"></i>
             </Link>
         </div>
     )
