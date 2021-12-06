@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 class SessionForm extends React.Component {
@@ -30,6 +31,9 @@ class SessionForm extends React.Component {
         formType === 'login' ? content = 'Log In' : content = 'Sign up for a new wave account'
         return ( 
             <div className='modal-content'>
+                <Link to='/'>
+                    <img src={window.logo} alt="new_wave logo" className='logo' />
+                </Link>
                 <p>{errors}</p>
                 <form onSubmit={this.handleSubmit} className={`session-form ${formType}`}>
                     <h1>{content}</h1>
