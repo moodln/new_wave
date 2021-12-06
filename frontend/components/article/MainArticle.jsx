@@ -15,7 +15,10 @@ const MainArticle = (props) => {
                 <p>{article.description}</p>
             </div>
             <Link to={`albums/${albumId}`}>
-                <button>explore</button>
+                <button>explore
+                    
+                </button>
+                <i class="fas fa-long-arrow-alt-right"></i>
             </Link>
         </div>
     )

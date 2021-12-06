@@ -368,7 +368,28 @@ body {
         letter-spacing: 0.5px;
         cursor: pointer;
         text-shadow: black 1px 0 10px;
+        transition: 0.3s;
     }
+
+    // a > button > i {
+    //     // display: none;
+    //     width: 0;
+    //     // -webkit-transition: width 1s;
+    //     transition: 0.3s;
+    //     // vertical-align: middle;
+    //     white-space: nowrap;
+    //     overflow: hidden;
+    // }
+
+    a > button:hover {
+        width: 100px;
+        fill: white;
+        // vertical-align: middle;
+    }
+
+    // a > button:hover i {
+    //     display: inline-block;
+    // }
 }
 
 .article-index-item {
