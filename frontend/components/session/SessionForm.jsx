@@ -31,7 +31,7 @@ class SessionForm extends React.Component {
         formType === 'login' ? content = 'Log In' : content = 'Sign up for a new wave account'
         return ( 
             <div className='modal-content'>
-                <Link to='/'>
+                <Link onClick={() => this.props.closeModal()}>
                     <img src={window.login_logo} alt="new_wave logo" className='login-logo' />
                 </Link>
                 <p>{errors}</p>

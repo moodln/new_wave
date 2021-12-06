@@ -214,14 +214,15 @@ body {
     justify-content: space-around;
     align-items: center;
     // background-color: lightblue;
-    border-radius: 10px;
+    // border-radius: 10px;
+    height: 100%;
 }
 
 .session-form > h1 {
     padding: 10px;
     font-size: 20px;
     font-weight: normal;
-    background-color: rgb(235, 235, 235);
+    // background-color: rgb(235, 235, 235);
     border-bottom-color: rgb(224, 223, 223);
     width: 95%;
     text-align: center;
@@ -264,11 +265,12 @@ body {
 }
 
 .login > h1{
-    padding: 10px;
+    padding: 36px;
     width: 65%;
-    font-size: 17px;
-    // background-color: pink;
-    border-bottom: 2px dotted rgb(141, 145, 145);
+    color: black;
+    font-size: 18px;
+    font-weight: 400;
+    border-bottom: 2px dotted #c5c7c7;
 }
 
 .login {
