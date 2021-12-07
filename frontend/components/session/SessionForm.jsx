@@ -65,24 +65,29 @@ class SessionForm extends React.Component {
         let content;
         let button;
         let ex;
+        
         if (formType === 'login') {
             content = 'Log In';
             button = 'Log In';
-            ex = ''
+            ex = '';
+            
         } else {
             content = 'Sign up for a new wave account';
             button = 'Sign Up';
-            ex = 'X'
+            ex = 'X';
         }
         
         return ( 
             <div className='modal-content'>
-                <Link onClick={() => this.handleClose()}>
+                <Link to='/' onClick={() => this.handleClose()}>
                     <img src={window.login_logo} alt="new_wave logo" className='login-logo' />
                 </Link>
                 
                 <form onSubmit={this.handleSubmit} className={`session-form ${formType}`}>
-                    <h1>{content}</h1>
+                    <div className='session-header'>
+                        <h1>{content}</h1>
+                        <h1>{ex}</h1>
+                    </div>
                     <div className='session-input'>
                         <div className="sesion-info">
                             <label>Username 
