@@ -197,11 +197,25 @@ body {
     .session-header {
         width: 100%;
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-between;
+        align-items: center;
         background: #f0f1f1;
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;
         height: 45px;
+
+        h1 {
+            margin-left: 124px;
+            font-size: 20px;
+            font-weight: 300;
+        }
+
+        span {
+            font-weight: 700;
+            color: #8b8989;
+            font-size: 16px;
+            margin: 23px;
+        }
     }
 }
 
