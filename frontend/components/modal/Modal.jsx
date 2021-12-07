@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import LoginFormContainer from '../session/login_form_container';
 import SignupFormContainer from '../session/signup_form_container';
 
-function Modal({ modal, errors, handleErrors, closeModal, openModal }) {
+function Modal({ modal }) {
     if (!modal) {
         return null;
     }
@@ -20,7 +20,7 @@ function Modal({ modal, errors, handleErrors, closeModal, openModal }) {
             return null;
     }
     return (
-        <div className={`modal-background-${modal}`} onClick={handleErrors}>
+        <div className={`modal-background-${modal}`}>
             <div className={`modal-child-${modal}`} onClick={e => e.stopPropagation()}>
                 {component}
             </div>
@@ -35,13 +35,6 @@ const mapStateToProps = state => {
     };
 };
 
-const handleErrors = (errors) => {
-    if (!errors) {
-        return closeModal;
-    } else {
-        return openModal;
-    }
-}
 
 const mapDispatchToProps = dispatch => {
     return {

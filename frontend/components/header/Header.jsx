@@ -5,7 +5,7 @@ import Modal from '../modal/Modal.jsx';
 class Header extends React.Component {
     constructor(props) {
         super(props);
-
+        
         this.handleDemoLogin = this.handleDemoLogin.bind(this);
     }
 
@@ -19,6 +19,14 @@ class Header extends React.Component {
         }
         this.props.handleDemo(demoUser);
     }
+
+    openModalWithoutErrors(type) {
+        if (this.props.errors) {
+            this.props.clearErrors();
+        }
+        this.props.openModal(type)
+    }
+
 
     render() {
     if (this.props.currentUser) {
@@ -53,9 +61,9 @@ class Header extends React.Component {
                         <img src={window.logo} alt="new_wave logo" className='logo' />
                     </Link>
                         <div className='links-container'>
-                            <Link to='/' onClick={() => this.props.openModal('login')} value='log in'>log in</Link>
+                            <Link to='/' onClick={() => this.openModalWithoutErrors('login')} value='log in'>log in</Link>
                                 
-                            <Link to='/' onClick={() => this.props.openModal('signup')} value='sign up' >sign up</Link>
+                            <Link to='/' onClick={() => this.openModalWithoutErrors('signup')} value='sign up' >sign up</Link>
                                 
                             <Link to='/' onClick={this.handleDemoLogin} value='guest user'>guest user</Link>
                         </div>
