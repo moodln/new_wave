@@ -5,8 +5,9 @@ import Modal from '../modal/Modal.jsx';
 class Header extends React.Component {
     constructor(props) {
         super(props);
-
+        
         this.handleDemoLogin = this.handleDemoLogin.bind(this);
+        this.logoutUser = this.logoutUser.bind(this);
     }
 
     handleDemoLogin(e) {
@@ -18,6 +19,18 @@ class Header extends React.Component {
             password: 'password'
         }
         this.props.handleDemo(demoUser);
+    }
+
+    openModalWithoutErrors(type) {
+        if (this.props.errors) {
+            this.props.clearErrors();
+        }
+        this.props.openModal(type)
+    }
+
+    logoutUser() {
+        this.props.closeModal();
+        this.props.logout()
     }
 
     render() {
@@ -33,12 +46,13 @@ class Header extends React.Component {
                     </Link>
                     <div className="dropdown-content">
                         <div className='user-profile'>
-                            <Link to={`/users/${this.props.currentUser.id}`}>   <p>{this.props.currentUser.name}</p>
+                            <Link to={`/users/${this.props.currentUser.id}`}>  
+                                <p>{this.props.currentUser.name}</p>
                                 <p>view site</p>
                             </Link>
                         </div>
                         <div className='logout'>
-                            <Link onClick={this.props.logout} to='/'> logout </Link>
+                            <Link onClick={this.logoutUser} to='/'> logout </Link>
                         </div>
                          
                     </div>
@@ -53,9 +67,9 @@ class Header extends React.Component {
                         <img src={window.logo} alt="new_wave logo" className='logo' />
                     </Link>
                         <div className='links-container'>
-                            <Link to='/' onClick={() => this.props.openModal('login')} value='log in'>log in</Link>
+                            <Link to='/' onClick={() => this.openModalWithoutErrors('login')} value='log in'>log in</Link>
                                 
-                            <Link to='/' onClick={() => this.props.openModal('signup')} value='sign up' >sign up</Link>
+                            <Link to='/' onClick={() => this.openModalWithoutErrors('signup')} value='sign up' >sign up</Link>
                                 
                             <Link to='/' onClick={this.handleDemoLogin} value='guest user'>guest user</Link>
                         </div>

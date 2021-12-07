@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 class SessionForm extends React.Component {
@@ -8,16 +9,29 @@ class SessionForm extends React.Component {
         this.state = {
             username: '',
             email: '',
-            password: ''
+            password: '',
+            // errors: this.props.errors
         }
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleClose = this.handleClose.bind(this);
     }
 
     handleSubmit(e) {
         e.preventDefault();
 
         this.props.processForm(this.state);
+        debugger
+        if (!this.props.errors) {
+            this.props.closeModal();
+        } 
+        
+    }
+
+    handleClose() {
         this.props.closeModal();
+        // this.setState({
+        //     errors: {}
+        // })
     }
 
     update(type) {
@@ -25,34 +39,65 @@ class SessionForm extends React.Component {
     }
 
     render() {
-        let { errors, formType } = this.props;
+        // if (this.props.errors !== this.state.errors) {
+        //     this.setState({
+        //         errors: this.props.errors
+        //     })
+        // }
+        let { formType } = this.props;
         let content;
-        formType === 'login' ? content = 'Log In' : content = 'Sign up for a new wave account'
+        let button;
+        let ex;
+        
+        if (formType === 'login') {
+            content = 'Log In';
+            button = 'Log In';
+            ex = '';
+            
+        } else {
+            content = 'Sign up for a new wave account';
+            button = 'Sign Up';
+            ex = 'X';
+        }
+        
         return ( 
             <div className='modal-content'>
-                <p>{errors}</p>
+                <Link to='/' onClick={() => this.handleClose()}>
+                    <img src={window.login_logo} alt="new_wave logo" className='login-logo' />
+                </Link>
+                
                 <form onSubmit={this.handleSubmit} className={`session-form ${formType}`}>
-                    <h1>{content}</h1>
-                    {/* <div className='username'> */}
-                    <label>Username </label>
-                        <input type="text" 
-                            value={this.state.username} 
-                            onChange={this.update('username')} />
-                    {/* </div> */}
-                    {/* <div className='email'> */}
-                    <label>Email </label>
-                        <input type="text"
-                            value={this.state.email}
-                            onChange={this.update('email')} />    
-                    {/* </div> */}
-                    {/* <div className='password'> */}
-                    <label>Password </label>
-                        <input type="password"
-                            value={this.state.password}
-                            onChange={this.update('password')} />
-                    {/* </div> */}
-                    <button>{formType}</button>
+                    <div className='session-header'>
+                        <h1>{content}</h1>
+                        <p>{ex}</p>
+                    </div>
+                    <div className='session-input'>
+                        <div className="sesion-info">
+                            <label>Username 
+                                <input type="text" 
+                                    value={this.state.username} 
+                                    onChange={this.update('username')} />
+                            </label>
+                            <label>Email 
+                                <input type="text"
+                                    value={this.state.email}
+                                    onChange={this.update('email')} />  
+                            </label>  
 
+                            <label>Password 
+                                <input type="password"
+                                    value={this.state.password}
+                                    onChange={this.update('password')} />
+                            </label>
+                        </div>
+                        <button>{button}</button>
+                        <div className='session-errors'>
+                            {this.props.errors.map(error => 
+                                <li key={error.length}>
+                                    {error} 
+                                </li>)}
+                        </div> 
+                    </div>
                 </form>
             </div>
         )

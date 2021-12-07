@@ -5,7 +5,7 @@ import { openModal, closeModal } from '../../actions/modal_actions';
 import SessionForm from './SessionForm';
 
 const mSTP = (state) => ({
-    errors: Object.values(state.errors), 
+    errors: state.errors.session, 
     formType: 'login'
 });
 
