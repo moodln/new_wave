@@ -61,11 +61,20 @@ class SessionForm extends React.Component {
                 errors: this.props.errors
             })
         }
-        let { errors, formType } = this.props;
+        let { formType } = this.props;
         let content;
         let button;
-        formType === 'login' ? content = 'Log In' : content = 'Sign up for a new wave account'
-        formType === 'login' ? button = 'Log In' : button = 'Sign up'
+        let ex;
+        if (formType === 'login') {
+            content = 'Log In';
+            button = 'Log In';
+            ex = ''
+        } else {
+            content = 'Sign up for a new wave account';
+            button = 'Sign Up';
+            ex = 'X'
+        }
+        
         return ( 
             <div className='modal-content'>
                 <Link onClick={() => this.handleClose()}>
