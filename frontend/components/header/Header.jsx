@@ -7,6 +7,7 @@ class Header extends React.Component {
         super(props);
         
         this.handleDemoLogin = this.handleDemoLogin.bind(this);
+        this.logoutUser = this.logoutUser.bind(this);
     }
 
     handleDemoLogin(e) {
@@ -27,6 +28,11 @@ class Header extends React.Component {
         this.props.openModal(type)
     }
 
+    logoutUser() {
+        this.props.closeModal();
+        this.props.logout()
+    }
+
 
     render() {
     if (this.props.currentUser) {
@@ -41,12 +47,13 @@ class Header extends React.Component {
                     </Link>
                     <div className="dropdown-content">
                         <div className='user-profile'>
-                            <Link to={`/users/${this.props.currentUser.id}`}>   <p>{this.props.currentUser.name}</p>
+                            <Link to={`/users/${this.props.currentUser.id}`}>  
+                                <p>{this.props.currentUser.name}</p>
                                 <p>view site</p>
                             </Link>
                         </div>
                         <div className='logout'>
-                            <Link onClick={this.props.logout} to='/'> logout </Link>
+                            <Link onClick={this.logoutUser} to='/'> logout </Link>
                         </div>
                          
                     </div>

@@ -29,7 +29,7 @@ class SessionForm extends React.Component {
 
         this.props.processForm(this.state);
         debugger
-        if (this.props.errors.length < 1) {
+        if (!this.props.errors) {
             this.props.closeModal();
         } 
         
