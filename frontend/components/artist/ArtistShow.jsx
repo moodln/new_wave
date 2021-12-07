@@ -102,8 +102,22 @@ class ArtistShow extends React.Component {
                 <div className='artist-show-message'>
                     <h1>This is your artist homepage.</h1>
                     <Link to='/albums'>Add an album</Link>
+                    <div className='user-albums'>
+                    <p>your albums</p>
+                        <ul>
+                            {artistAlbums.map(album => {
+                                return (
+                                <li key={album.id}>
+                                    <div className='artist-albums'>
+                                        <Link to={`/albums/${album.id}`} ><img src={album.albumUrl} alt={album.title} /></Link>
+                                        <p>{album.title}</p>
+                                    </div>
+                                </li>
+                            )})}
+                        </ul>
+                    </div>
                 </div>
-                <form onSubmit={this.handleSubmit}>
+                    <form onSubmit={this.handleSubmit}>
                         <div>
                             <div className='artist-info'>
                                 <img src={photoUrl} alt="gfgfgf" />
@@ -122,19 +136,6 @@ class ArtistShow extends React.Component {
                         </div>
                         <button>submit</button>
                     </form>
-{/* 
-                    <p>your albums</p>
-                    <ul>
-                        {artistAlbums.map(album => {
-                            return (
-                            <li key={album.id}>
-                                <div className='artist-albums'>
-                                    <Link to={`/albums/${album.id}`} ><img src={album.albumUrl} alt={album.title} /></Link>
-                                    <p>{album.title}</p>
-                                </div>
-                            </li>
-                        )})}
-                    </ul> */}
             </div>
         )
     }
