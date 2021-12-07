@@ -62,11 +62,18 @@ class ArtistShow extends React.Component {
         let aboutInfo;
         let location;
         let photoUrl;
+        let artistAlbums;
         if (this.state.location === 'undefined' || this.state.location === null) {
             location = <p>Independence, <br/>Kansas</p>
             this.setState({location: 'Independence, Kansas'})
         } else {
             location = <p>{this.state.location}</p>
+        }
+
+        if (this.props.currentUser.albums) {
+                artistAlbums = Object.values(this.props.currentUser.albums)
+         } else {
+                artistAlbums = [];
         }
         // if (!this.state.about) {
         //     this.state.about = 'add artist bio'
@@ -115,6 +122,19 @@ class ArtistShow extends React.Component {
                         </div>
                         <button>submit</button>
                     </form>
+{/* 
+                    <p>your albums</p>
+                    <ul>
+                        {artistAlbums.map(album => {
+                            return (
+                            <li key={album.id}>
+                                <div className='artist-albums'>
+                                    <Link to={`/albums/${album.id}`} ><img src={album.albumUrl} alt={album.title} /></Link>
+                                    <p>{album.title}</p>
+                                </div>
+                            </li>
+                        )})}
+                    </ul> */}
             </div>
         )
     }
