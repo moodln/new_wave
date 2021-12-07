@@ -150,6 +150,23 @@ body {
   z-index: 10;
 }
 
+li {
+    margin-top: 5px;
+    color: #ad0000;
+    transition: 0.3s;
+    // -webkit-animation: glow 0.8s ease-in-out alternate;
+}
+
+
+// @-webkit-keyframes glow {
+//   from {
+//     text-shadow: 0 0 3px #ad0000;
+//   }
+//   to {
+//     text-shadow: 0 0 2px #fff;
+//   }
+// }
+
 .modal-background-login {
   position: fixed;
   top: 0;
@@ -247,7 +264,14 @@ body {
             color: #8b8989;
             font-size: 15px;
             margin: 23px;
+            cursor: pointer;
+            transition: 0.3s;
         }
+
+        span:hover {
+            color: black;
+        }
+        
     }
 }
 
