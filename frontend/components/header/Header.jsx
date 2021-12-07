@@ -33,7 +33,6 @@ class Header extends React.Component {
         this.props.logout()
     }
 
-
     render() {
     if (this.props.currentUser) {
         return (

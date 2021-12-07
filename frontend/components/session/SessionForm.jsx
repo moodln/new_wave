@@ -10,19 +10,11 @@ class SessionForm extends React.Component {
             username: '',
             email: '',
             password: '',
-            errors: this.props.errors
+            // errors: this.props.errors
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleClose = this.handleClose.bind(this);
     }
-
-    // componentDidMount() {
-    //     if (this.state.errors.length > 1) {
-    //         this.setState({
-    //             errors: {}
-    //         })
-    //     }
-    // }
 
     handleSubmit(e) {
         e.preventDefault();
@@ -37,30 +29,21 @@ class SessionForm extends React.Component {
 
     handleClose() {
         this.props.closeModal();
-        this.setState({
-            errors: {}
-        })
+        // this.setState({
+        //     errors: {}
+        // })
     }
 
     update(type) {
         return (e) => this.setState({ [type]: e.currentTarget.value })
     }
 
-    // componentDidUpdate(prevProps) {
-    //     debugger
-    //     if (this.props.formType !== prevProps.formType) {
-    //         this.props.errors = [];
-    //     }
-    // }
-
-
-
     render() {
-        if (this.props.errors !== this.state.errors) {
-            this.setState({
-                errors: this.props.errors
-            })
-        }
+        // if (this.props.errors !== this.state.errors) {
+        //     this.setState({
+        //         errors: this.props.errors
+        //     })
+        // }
         let { formType } = this.props;
         let content;
         let button;
@@ -109,7 +92,10 @@ class SessionForm extends React.Component {
                         </div>
                         <button>{button}</button>
                         <div className='session-errors'>
-                            {this.state.errors}
+                            {this.props.errors.map(error => 
+                                <li key={error.length}>
+                                    {error} 
+                                </li>)}
                         </div> 
                     </div>
                 </form>

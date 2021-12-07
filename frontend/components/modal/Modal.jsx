@@ -1,5 +1,5 @@
 import React from 'react';
-import { closeModal, openModal } from '../../actions/modal_actions';
+import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import LoginFormContainer from '../session/login_form_container';
 import SignupFormContainer from '../session/signup_form_container';
@@ -42,11 +42,9 @@ const mapStateToProps = state => {
     };
 };
 
-
 const mapDispatchToProps = dispatch => {
     return {
-        closeModal: () => dispatch(closeModal()),
-        handleErrors: () => dispatch(handleErrors())
+        closeModal: () => dispatch(closeModal())
     };
 };
 
