@@ -204,7 +204,6 @@ li {
     .session-form { 
         
         label {
-            width: 50%;
             font-size: 16px;
             color: #222121;
             display: flex;
@@ -324,7 +323,7 @@ li {
 // }
 
 .session-input {
-    width: 75%;
+    margin-top: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -346,7 +345,6 @@ li {
 .session-form label {
     // margin-top: 30px;
     // background-color: royalblue;
-    width: 50%;
     font-size: 17px;
     color:rgb(34, 33, 33);
     display: flex; 
@@ -364,13 +362,13 @@ li {
 .session-form button {
     background-color: #0b9fcd;;
     color: white;
-    width: 40%;
+    width: 309px;
     height: 37px;
     font-size: 17px;
     font-weight: 500;
     letter-spacing: .5px;
     // padding: 5px;
-    margin-top: 40px;
+    margin-top: 23px;
     border: none;
     // border-radius: 5px;
 }
@@ -387,9 +385,9 @@ li {
 }
 
 .login input{
-    width: 60%;
+    width: 300px;
     margin: 10px 20px;
-    padding: 5px;
+    margin-right: 96px;
     border: 1px solid #c5c5c5;
     font-size: 16px;
     font-family: inherit;
@@ -399,9 +397,9 @@ li {
     border: 1px solid #c5c5c5;
 }
 
-.login button {
-    width: 45%;
-}
+// .login button {
+//     width: 45%;
+// }
 
 // .username {
 //     display: flex;
