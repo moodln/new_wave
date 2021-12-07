@@ -50,13 +50,13 @@ class SessionForm extends React.Component {
         let ex;
         
         if (formType === 'login') {
-            content = 'Log In';
-            button = 'Log In';
+            content = 'Log in';
+            button = 'Log in';
             ex = '';
             
         } else {
             content = 'Sign up for a new wave account';
-            button = 'Sign Up';
+            button = 'Sign up';
             ex = <span>&#10005;</span>;
         }
         
@@ -78,7 +78,7 @@ class SessionForm extends React.Component {
                                     value={this.state.username} 
                                     onChange={this.update('username')} />
                             </label>
-                            <label>Email 
+                            <label>Email address
                                 <input type="text"
                                     value={this.state.email}
                                     onChange={this.update('email')} />  
