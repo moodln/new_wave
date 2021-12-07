@@ -127,16 +127,6 @@ body {
     }
 }
 
-// .welcome-message a {
-//     text-decoration: none;
-//     font-weight: 500;
-//     color: black;
-// }
-
-// .welcome-message a:hover {
-//     text-decoration: underline;
-// }
-
 .welcome-message-link {
     position: relative;
     left: 879px;
@@ -192,6 +182,25 @@ body {
     .modal-content {
         border-radius: 5px;
         background: white;
+    }
+
+    .session-form { 
+        
+        label {
+            width: 50%;
+            font-size: 17px;
+            color: #222121;
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+        }
+
+        input {
+            width: 360px;
+            height: 30px;
+            border-radius: 0;
+            border: 1px solid #bbbdbd;
+        }
     }
 
     .session-header {
