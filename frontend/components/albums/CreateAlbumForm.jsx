@@ -9,11 +9,12 @@ class CreateAlbumForm extends React.Component {
         this.state = {
             title: 'album name',
             artist_id: this.props.currentUser.id,
-            img_url: window.album, 
+            img_url: null, 
             audio_url: null,
             descriptuon: 'Includes unlimited streaming via the free new wave app, plus high-quality download in MP3, FLAC and more.',
             price: '7.00',
-            release_date: this.todaysDate()
+            release_date: this.todaysDate(),
+            image: window.album
         }
         } 
 
@@ -33,10 +34,10 @@ class CreateAlbumForm extends React.Component {
         }
     }
 
-    // onImageChange = (event) => {
-    //     if (event.target.files && event.target.files[0]) {
+    // onImageChange = (file) => {
+    //     if (file) {
     //         this.setState({
-    //             image: URL.createObjectURL(event.target.files[0])
+    //             image: URL.createObjectURL(file)
     //         });
     //     }
     // }
@@ -52,7 +53,6 @@ class CreateAlbumForm extends React.Component {
     }
 
     handleInput(type) {
-        debugger
         return (e) => (
             this.setState({[type]: e.currentTarget.value})
         )
@@ -60,8 +60,14 @@ class CreateAlbumForm extends React.Component {
 
     handleFile(type) {
         return (e) => {
-            return this.setState({[type]: e.currentTarget.files[0]})
-                
+            if (type === 'audio_url') {
+                return this.setState({[type]: e.currentTarget.files[0]})
+            } else {
+                return this.setState({
+                    [type]: e.currentTarget.files[0],
+                    image: URL.createObjectURL(e.currentTarget.files[0])
+                })
+            }
         }
     }
 
@@ -76,7 +82,7 @@ class CreateAlbumForm extends React.Component {
         debugger
         this.props.createAlbum(formData)
             .then(response => {
-                debugger
+                // debugger
                 return this.props.history.push(`/albums/${response.album.id}`)
             })
             
@@ -95,7 +101,7 @@ class CreateAlbumForm extends React.Component {
                             <div className='album-preview-box'>
                                 <div className='image-container'>
                                     <div className='image'>
-                                        <img src={window.album} alt="default image" />                                   
+                                        <img src={this.state.image} alt="default image" />                                   
                                     </div>
                                     <div className='album-text'>
                                         <h1>{albumName}</h1>
