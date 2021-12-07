@@ -5,7 +5,7 @@ class ArtistShow extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = this.props.currentUser
+        this.state = this.props.currentUser;
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleFile = this.handleFile.bind(this);
         this.handleInput = this.handleInput.bind(this);
@@ -68,22 +68,21 @@ class ArtistShow extends React.Component {
         } else {
             location = <p>{this.state.location}</p>
         }
-        if (!this.state.about) {
-            this.state.about = 'add artist bio'
-            aboutInfo = <input type="text" 
-                            value={this.state.about} 
-                            onChange={this.handleInput('about')} />
-        } else {
+        // if (!this.state.about) {
+        //     this.state.about = 'add artist bio'
+        // } else {
+        //     this.state.about = 'edit bio'
+        // }
             aboutInfo = <div className='edit-about-info'>
                             <p>{this.state.about}</p>
-                            <label onClick={this.toggleInput} htmlFor='about-info-id'>edit bio
+                            <label onClick={this.toggleInput} htmlFor='about-info-id'>edit bio</label>
                             <input type="text"
                                 id='about-info-id' 
-                                value={this.state.about} 
-                                onChange={this.handleInput('about')} />
-                            </label>
+                                value={this.state.about}
+                                onChange={this.handleInput('about')} 
+                                style={{display: 'none'}} />
                         </div>
-        }
+        
 
         if (!this.state.photoUrl) {
             photoUrl = window.artist_image;
