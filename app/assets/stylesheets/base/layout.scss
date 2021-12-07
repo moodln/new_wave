@@ -181,14 +181,17 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: white;
-    //   padding: 30px;
-    height: 60vh;
-    width: 50vw;
-    border-radius: 10px;
+    height: 85vh;
+    width: 45vw;
+    
 
     .login-logo {
         display: none;
+    }
+
+    .modal-content {
+        border-radius: 5px;
+        background: white;
     }
 }
 
