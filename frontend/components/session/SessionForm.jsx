@@ -57,7 +57,7 @@ class SessionForm extends React.Component {
         } else {
             content = 'Sign up for a new wave account';
             button = 'Sign Up';
-            ex = 'X';
+            ex = <span>&#10005;</span>;
         }
         
         return ( 
