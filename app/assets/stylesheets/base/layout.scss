@@ -181,7 +181,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 85vh;
+    height: 84vh;
     width: 45vw;
     
 
@@ -192,6 +192,12 @@ body {
     .modal-content {
         border-radius: 5px;
         background: white;
+    }
+
+    .session-header {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
     }
 }
 

@@ -69,7 +69,7 @@ class SessionForm extends React.Component {
                 <form onSubmit={this.handleSubmit} className={`session-form ${formType}`}>
                     <div className='session-header'>
                         <h1>{content}</h1>
-                        <h1>{ex}</h1>
+                        <p>{ex}</p>
                     </div>
                     <div className='session-input'>
                         <div className="sesion-info">
