@@ -1,6 +1,8 @@
 import { connect } from 'react-redux';
 import ArtistAlbums from './ArtistAlbums';
 import { fetchAlbums } from '../../actions/album_actions';
+import { edit } from '../../actions/session_actions'
+
 
 const mSTP = (state, ownProps) => {
     debugger
@@ -9,7 +11,8 @@ const mSTP = (state, ownProps) => {
 }
 
 const mDTP = (dispatch) => ({
-    fetchAlbums: () => dispatch(fetchAlbums())
+    fetchAlbums: () => dispatch(fetchAlbums()),
+    editUser: (user, formData) => dispatch(edit(user, formData)),
 })
 
 const ArtistAlbumsContainer = connect(mSTP, mDTP)(ArtistAlbums);

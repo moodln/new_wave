@@ -82,16 +82,6 @@ class ArtistShow extends React.Component {
             location = <p>{this.state.location}</p>
         }
 
-        // if (this.props.currentUser.albums) {
-        //         artistAlbums = Object.values(this.props.currentUser.albums)
-        //  } else {
-        //         artistAlbums = [];
-        // }
-        // if (!this.state.about) {
-        //     this.state.about = 'add artist bio'
-        // } else {
-        //     this.state.about = 'edit bio'
-        // }
             aboutInfo = <div className='edit-about-info'>
                             <p>{this.state.about}</p>
                             <label onClick={this.toggleInput} htmlFor='about-info-id'>edit bio</label>
