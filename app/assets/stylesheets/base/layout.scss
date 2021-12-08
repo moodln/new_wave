@@ -397,31 +397,8 @@ li {
     border: 1px solid #c5c5c5;
 }
 
-// .login button {
-//     width: 45%;
-// }
 
-// .username {
-//     display: flex;
-//     justify-content: space-evenly;
-//     background-color: pink;
-//     margin-bottom: 5px;
-// }
 
-// .username input {
-//     margin-bottom: 0px;
-//     background-color: blue;
-// }
-
-// .email {
-//     display: flex;
-//     justify-content: space-evenly;
-// }
-
-// .password {
-//     display: flex;
-//     justify-content: space-evenly;
-// }
 .article-index {
     display: flex;
     flex-direction: row;
@@ -429,14 +406,11 @@ li {
     align-content: center;
     justify-content: space-between;
     box-sizing: border-box;
-    height: calc(37.5vw);
+    height: calc(34.5vw);
     overflow: hidden;
 
 }
 
-// .main-article-container:hover {
-//     background: white;
-// }
 
 .main-article-container {
     box-sizing: border-box;
@@ -496,25 +470,12 @@ li {
         transition: 0.3s;
     }
 
-    // a > button > i {
-    //     // display: none;
-    //     width: 0;
-    //     // -webkit-transition: width 1s;
-    //     transition: 0.3s;
-    //     // vertical-align: middle;
-    //     white-space: nowrap;
-    //     overflow: hidden;
-    // }
 
     a > button:hover {
         width: 100px;
         fill: white;
         // vertical-align: middle;
     }
-
-    // a > button:hover i {
-    //     display: inline-block;
-    // }
 }
 
 .article-index-item {
@@ -543,7 +504,7 @@ li {
 
     h2 {
         position: absolute;
-        top: 84px;
+        bottom: 35px;
         left: 10px;
         font-weight: 500;
         letter-spacing: .5px;
@@ -553,11 +514,11 @@ li {
 
     p {
         position: absolute;
-        top: 103px;
+        bottom: 20px;
         left: 10px;
         font-variant: all-small-caps;
         font-weight: 500;
-        font-size: 14px;
+        font-size: 13px;
         letter-spacing: 0.5px;
         text-shadow: black 1px 0 10px;
     }
