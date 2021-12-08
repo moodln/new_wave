@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ArtistPhoto from './ArtistPhoto';
 
 class ArtistShow extends React.Component {
     constructor(props) {
@@ -120,15 +121,18 @@ class ArtistShow extends React.Component {
                     <form onSubmit={this.handleSubmit}>
                         <div>
                             <div className='artist-info'>
-                                <img src={photoUrl} alt="gfgfgf" />
-                                <label htmlFor="image-input-id">Upload Profile Photo
-                                <input className='image-file'
-                                    id='image-input-id' 
-                                    type="file" 
-                                    title='add artist photo' 
-                                    accept="image/png, image/jpeg" 
-                                    onChange={this.handleFile('img_url')} />
-                                </label>
+                                <ArtistPhoto imgUrl={photoUrl} handlePhoto={this.handleFile}/>
+                                {/* <div className="profile-photo">
+                                    <img src={photoUrl} alt="gfgfgf" />
+                                    <label htmlFor="image-input-id">add profile photo
+                                    <input className='image-file'
+                                        id='image-input-id' 
+                                        type="file" 
+                                        title='add artist photo' 
+                                        accept="image/png, image/jpeg" 
+                                        onChange={this.handleFile('img_url')} />
+                                    </label>
+                                </div> */}
                                 <h3>{this.props.currentUser.username}</h3>
                                 {location}
                                 {aboutInfo}
