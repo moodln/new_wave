@@ -11,6 +11,12 @@ class ArtistShow extends React.Component {
         this.handleInput = this.handleInput.bind(this);
     }
 
+    componentDidMount() {
+        debugger
+        this.props.fetchAlbums();
+        debugger
+    }
+
     toggleInput() {
         const inputBox = document.getElementById('about-info-id');
         const display = inputBox.style.display;
@@ -59,10 +65,15 @@ class ArtistShow extends React.Component {
 
     render() {
         debugger
+        if (this.props.albums.length === 0) return null;
         let aboutInfo;
         let location;
         let photoUrl;
-        let artistAlbums;
+        let artistAlbums = this.props.albums.filter(album => album.artist.id === this.props.currentUser.id )
+        if (artistAlbums.length > 0) {
+            this.props.history.push(`/albums/${artistAlbums[artistAlbums.length - 1].id}`)
+        }
+        debugger
         if (this.state.location === 'undefined' || this.state.location === null) {
             location = <p>Independence, <br/>Kansas</p>
             this.setState({location: 'Independence, Kansas'})
@@ -70,11 +81,11 @@ class ArtistShow extends React.Component {
             location = <p>{this.state.location}</p>
         }
 
-        if (this.props.currentUser.albums) {
-                artistAlbums = Object.values(this.props.currentUser.albums)
-         } else {
-                artistAlbums = [];
-        }
+        // if (this.props.currentUser.albums) {
+        //         artistAlbums = Object.values(this.props.currentUser.albums)
+        //  } else {
+        //         artistAlbums = [];
+        // }
         // if (!this.state.about) {
         //     this.state.about = 'add artist bio'
         // } else {
@@ -109,7 +120,7 @@ class ArtistShow extends React.Component {
                                 return (
                                 <li key={album.id}>
                                     <div className='artist-albums'>
-                                        <Link to={`/albums/${album.id}`} ><img src={album.albumUrl} alt={album.title} /></Link>
+                                        <Link to={`/albums/${album.id}`} ><img src={album.photoUrl} alt={album.title} /></Link>
                                         <p>{album.title}</p>
                                     </div>
                                 </li>
