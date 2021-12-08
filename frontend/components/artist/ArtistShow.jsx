@@ -71,7 +71,8 @@ class ArtistShow extends React.Component {
         let photoUrl;
         let artistAlbums = this.props.albums.filter(album => album.artist.id === this.props.currentUser.id )
         if (artistAlbums.length > 0) {
-            this.props.history.push(`/albums/${artistAlbums[artistAlbums.length - 1].id}`)
+            this.props.history.push(`./artist/albums/${this.props.currentUser.id}`)
+            // this.props.history.push(`albums/${artistAlbums[artistAlbums.length - 1].id}`)
         }
         debugger
         if (this.state.location === 'undefined' || this.state.location === null) {
@@ -113,7 +114,7 @@ class ArtistShow extends React.Component {
                 <div className='artist-show-message'>
                     <h1>This is your artist homepage.</h1>
                     <Link to='/albums'>Add an album</Link>
-                    <div className='user-albums'>
+                    {/* <div className='user-albums'>
                     <p>your albums</p>
                         <ul>
                             {artistAlbums.map(album => {
@@ -126,7 +127,7 @@ class ArtistShow extends React.Component {
                                 </li>
                             )})}
                         </ul>
-                    </div>
+                    </div> */}
                 </div>
                     <form onSubmit={this.handleSubmit}>
                         <div>

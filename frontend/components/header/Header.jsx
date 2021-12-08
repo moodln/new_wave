@@ -38,9 +38,14 @@ class Header extends React.Component {
         console.log(this.props.currentUser)
         return (
             <div className='welcome-message'>
-                <Link to='/'>
-                    <img src={window.logo} alt="new_wave logo" className='logo' />
-                </Link>
+                <div className='header-left'>
+                    <Link to='/'>
+                        <img src={window.logo} alt="new_wave logo" className='logo' />
+                    </Link>
+                    <Link to='/albums'>
+                        <p>+ add</p>
+                    </Link>
+                </div>
                 <div className="dropdown">
                     <Link to='/' onClick={logout}>
                         <img src={window.circle} alt="blue_circle" className='circle' />

@@ -98,3 +98,55 @@
     }
 
 }
+
+.artist-albums {
+
+    img {
+        margin-bottom: 5px;
+    }
+
+    a > p { 
+        margin-left: 20px;
+        font-weight: 500;
+    }
+
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    .album-show-body {
+        width: 965px;
+    }
+
+    .artist-albums-body {
+        display: flex;
+        justify-content: space-between;
+
+        .artist-page-albums {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 40px 10px;
+            margin-bottom: 163px;
+        }
+
+        .artist-info {
+            padding: 25px;
+            width: 152px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+
+            img {
+                margin-top: 15px;
+            }
+
+            p {
+                margin-left: 5px;
+            }
+            
+        }
+
+    }
+
+}
