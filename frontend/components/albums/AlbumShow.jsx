@@ -14,12 +14,6 @@ class AlbumShow extends React.Component {
         
     }
 
-    // componentDidUpdate() {
-    //     if (!this.props.album) {
-    //         this.forceUpdate();
-    //     }
-    //     this.render();
-    // }
     playAudio() {
         document.getElementById('audio').play()
     }
@@ -106,7 +100,7 @@ class AlbumShow extends React.Component {
                                         return (
                                         <li key={album.id}>
                                             <div className='artist-albums'>
-                                                <Link to={`/albums/${album.id}`} ><img src={album.albumUrl} alt={album.title} /></Link>
+                                                <Link to={`/albums/redirect/${album.id}`} ><img src={album.albumUrl} alt={album.title} /></Link>
                                                 <p>{album.title}</p>
                                             </div>
                                         </li>

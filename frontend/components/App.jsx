@@ -19,6 +19,7 @@ const App = () => (
             <Route exact path='/artist/albums/:artistId' component={ArtistAlbumsContainer} />
             <Route exact path='/users/:userId' component={ArtistShowContainer} />
             <Redirect exact from="/users/artist/albums/:artistId" to="/artist/albums/:artistId" />
+            <Redirect exact from="/albums/redirect/:albumId" to="/albums/:albumId" />
             <Redirect to="/" />
         </Switch>
         <Footer />
