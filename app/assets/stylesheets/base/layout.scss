@@ -825,8 +825,10 @@ li {
         height: 100vh;
         position: relative;
         margin-bottom: 183px;
+    }
 
-
+    button {
+        cursor: pointer;
     }
 }
 
@@ -891,7 +893,7 @@ li {
     display: flex;
     justify-content: space-around;
     height: 100%;
-        margin: 70px 34px 0px 20px;
+    margin: 70px 34px 0px 20px;
 }
 
 .album-info {

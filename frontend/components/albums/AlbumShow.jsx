@@ -84,7 +84,9 @@ class AlbumShow extends React.Component {
                                     </div>
                                 </div>
                                 <div>
+                                <div className="artistButtons">
                                     {artistButtons}
+                                </div>
                                 </div>
                             </div>
                             <div className='album-display'>
