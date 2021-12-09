@@ -137,6 +137,10 @@
             flex-direction: column;
             justify-content: flex-start;
 
+            label {
+                color: #1a81db;
+            }
+
             img {
                 margin-top: 15px;
             }
@@ -151,6 +155,18 @@
                } 
             }
             
+        }
+
+        button {
+            width: 65%;
+            padding: 5px;
+            margin-left: 34px;
+            background: transparent;
+            border: 1px solid #bdbdbd;
+            border-radius: 3px;
+            color: #1a81db;
+            font-size: 12px;
+            cursor: pointer;
         }
 
     }

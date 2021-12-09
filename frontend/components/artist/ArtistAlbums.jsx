@@ -4,7 +4,12 @@ import { Link } from "react-router-dom";
 class ArtistAlbums extends React.Component {
     constructor(props) {
         super(props);
-        this.state = this.props.currentUser;
+        this.state = {
+            currentUser: this.props.currentUser,
+            about: this.props.currentUser.about,
+            img_url: this.props.currentUser.img_url,
+            image: this.props.currentUser.photoUrl
+        }
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleFile = this.handleFile.bind(this);
@@ -13,9 +18,10 @@ class ArtistAlbums extends React.Component {
 
     componentDidMount() {
         this.props.fetchAlbums();
-        if (this.state.about === 'null') {
+        console.log(this.state)
+        if (this.state.currentUser.about === 'nothing to see here, yet!') {
             this.setState({
-                about: 'nothing to see here, yet!'
+                about: 'tabula rasa'
             })
         }
     }
@@ -33,7 +39,10 @@ class ArtistAlbums extends React.Component {
 
     handleFile(type) {
         return (e) => (
-            this.setState({ [type]: e.currentTarget.files[0] })
+            this.setState({ 
+                [type]: e.currentTarget.files[0],
+                image: URL.createObjectURL(e.currentTarget.files[0]) 
+            })
         )
     }
 
@@ -48,10 +57,10 @@ class ArtistAlbums extends React.Component {
         e.preventDefault();
         const formData = new FormData();
         
-        formData.append('user[username]', this.state.username);
-        formData.append('user[id]', this.state.id);
-        formData.append('user[email]', this.state.email);
-        formData.append('user[location]', this.state.location);
+        formData.append('user[username]', this.state.currentUser.username);
+        formData.append('user[id]', this.state.currentUser.id);
+        formData.append('user[email]', this.state.currentUser.email);
+        formData.append('user[location]', this.state.currentUser.location);
         formData.append('user[about]', this.state.about);
         if (this.state.img_url) {
         formData.append('user[photo]', this.state.img_url);
@@ -113,7 +122,7 @@ class ArtistAlbums extends React.Component {
                             </div>
                             <form onSubmit={this.handleSubmit}>
                                 <div className='artist-info'>
-                                    <img src={currentUser.photoUrl} alt="artist-image" />
+                                    <img src={this.state.image} alt="artist-image" />
                                     <label htmlFor="image-input-id">Upload Profile Photo
                                     <input className='image-file'
                                         id='image-input-id' 
@@ -124,7 +133,6 @@ class ArtistAlbums extends React.Component {
                                     </label>
                                     <h3>{currentUser.name}</h3>
                                     <p>{currentUser.location}</p>
-                                    {/* <button>Follow</button> */}
                                     <p>{aboutInfo}</p>
                                 </div>
                                 <button>submit</button>
