@@ -30,12 +30,9 @@ class AlbumShow extends React.Component {
     }
 
     render() {
-        // debugger
-        if (!this.props.album) {
-            
-            // debugger
-            return null 
 
+        if (!this.props.album) {
+            return null 
         } else {
             debugger
            if (!this.props.album.artist.photoUrl) {
@@ -46,6 +43,12 @@ class AlbumShow extends React.Component {
                 artistAlbums = Object.values(this.props.album.artist.albums)
             } else {
                 artistAlbums = [];
+            }
+            let artistButtons;
+            if (this.props.currentUser.id === this.props.album.artist.id) {
+                artistButtons = <button onClick={this.removeAlbum(this.props.album.id)}>remove album</button>
+            } else {
+                artistButtons = '';
             }
             
         return (
@@ -81,7 +84,7 @@ class AlbumShow extends React.Component {
                                     </div>
                                 </div>
                                 <div>
-                                    <button onClick={this.removeAlbum(this.props.album.id)}>remove album</button>
+                                    {artistButtons}
                                 </div>
                             </div>
                             <div className='album-display'>
