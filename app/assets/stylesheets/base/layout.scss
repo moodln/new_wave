@@ -1052,7 +1052,7 @@ li {
 .footer {
     width: 100vw;
     height: 49px;
-    background-color: #dbdbdb;
+    background-color: #ebebeb;
     display: flex;
     flex-direction: row;
     align-content: flex-start;
@@ -1060,12 +1060,12 @@ li {
     align-items: center; 
     
     div {
-        color: rgb(11, 121, 185);
+        color: black;
         font-size: 12px;
     }
 
     a {
-        color: rgb(11, 121, 185);
+        color: rgb(30, 122, 197);
         margin-right: 10px;
         font-weight: bold;
         font-size: 12px;
