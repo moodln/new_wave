@@ -30,7 +30,10 @@ class ArtistShow extends React.Component {
 
     handleFile(type) {
         return (e) => (
-            this.setState({ [type]: e.currentTarget.files[0] })
+            this.setState({ 
+                [type]: e.currentTarget.files[0],
+                photoUrl: URL.createObjectURL(e.currentTarget.files[0]) 
+            })
         )
     }
 
