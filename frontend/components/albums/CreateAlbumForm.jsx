@@ -14,7 +14,10 @@ class CreateAlbumForm extends React.Component {
             descriptuon: 'Includes unlimited streaming via the free new wave app, plus high-quality download in MP3, FLAC and more.',
             price: '7.00',
             release_date: this.todaysDate(),
-            image: window.album
+            image: window.album,
+            title_error: '',
+            art_error: '',
+            track_error: '',
         }
         } 
 
@@ -73,19 +76,37 @@ class CreateAlbumForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        const formData = new FormData();
-
-        formData.append('album[title]', this.state.title);
-        formData.append('album[artist_id]', this.state.artist_id);
-        formData.append('album[photo]', this.state.img_url);
-        formData.append('album[song]', this.state.audio_url);
         debugger
-        this.props.createAlbum(formData)
-            .then(response => {
-                // debugger
-                return this.props.history.push(`/albums/${response.album.id}`)
+        if (this.state.title === 'album name') {
+            this.setState({
+                title_errors: 'album title is required'
             })
-            
+        
+        } else if (this.state.img_url === null) {
+            this.setState({
+                art_error: 'album art is required'
+            })
+        } else if (this.state.audio_url === null) {
+            this.setState({
+                track_error: 'album track is required'
+            })
+        } else {
+            debugger
+            const formData = new FormData();
+
+            formData.append('album[title]', this.state.title);
+            formData.append('album[artist_id]', this.state.artist_id);
+            formData.append('album[photo]', this.state.img_url);
+            formData.append('album[song]', this.state.audio_url);
+            debugger
+            this.props.createAlbum(formData)
+                .then(response => {
+                    // debugger
+                    return this.props.history.push(`/albums/${response.album.id}`)
+                })
+        }
+        debugger
+        console.log(this.state) 
     }
 
 
@@ -122,6 +143,9 @@ class CreateAlbumForm extends React.Component {
                                             onChange={this.handleFile('audio_url')} />
                                     </label>
                                 </div>
+                                <div id="album-track-error">
+                                    <p>{this.state.track_error}</p>
+                                </div>
                                 <button>save draft</button>
                             </div>
                             </div>
@@ -129,6 +153,9 @@ class CreateAlbumForm extends React.Component {
                                 <div className='album-name-asterisk'>
                                     <p>*</p>    
                                     <input className='album-name' type="text" value={this.state.title} onChange={this.handleInput('title')} />
+                                    <div id="album-title-error">
+                                        <p>{this.state.title_error}</p>
+                                    </div>
                                 </div>
                                 <div className='release-date'>
                                     <p>release date:</p>
@@ -179,6 +206,9 @@ class CreateAlbumForm extends React.Component {
                                         </div>
                                     <p>.jpg, .gif or .png, 10MB max</p>
                                     </div>
+                                </div>
+                                <div id="album-art-error">
+                                    <p>{this.state.art_error}</p>
                                 </div>
                             </div>
                             </form>

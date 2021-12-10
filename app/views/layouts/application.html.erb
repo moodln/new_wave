@@ -7,6 +7,14 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+      <meta property="og:title" content="new wave" />
+     <meta property='og:image' content="<%= image_url('frontpage.png') %>"/>
+     <meta property="og:description"
+       content="New Wave is a single page clone of BandCamp - a website that hosts artists' music and allows fans to follow and purchase songs or albums from artists."
+     />
+     <meta property="og:url"
+       content="https://newwwave.herokuapp.com/#/"
+     />
   </head>
 
   <body>
