@@ -76,22 +76,22 @@ class CreateAlbumForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        debugger
-        if (this.state.title === 'album name') {
-            this.setState({
-                title_errors: 'album title is required'
-            })
         
-        } else if (this.state.img_url === null) {
-            this.setState({
-                art_error: 'album art is required'
-            })
-        } else if (this.state.audio_url === null) {
-            this.setState({
-                track_error: 'album track is required'
-            })
-        } else {
-            debugger
+        // if (this.state.title === 'album name') {
+        //     this.setState({
+        //         title_errors: 'album title is required'
+        //     })
+        
+        // } else if (this.state.img_url === null) {
+        //     this.setState({
+        //         art_error: 'album art is required'
+        //     })
+        // } else if (this.state.audio_url === null) {
+        //     this.setState({
+        //         track_error: 'album track is required'
+        //     })
+        // } else {
+            
             const formData = new FormData();
 
             formData.append('album[title]', this.state.title);
@@ -104,9 +104,8 @@ class CreateAlbumForm extends React.Component {
                     // debugger
                     return this.props.history.push(`/albums/${response.album.id}`)
                 })
-        }
-        debugger
-        console.log(this.state) 
+        // }
+        
     }
 
 
