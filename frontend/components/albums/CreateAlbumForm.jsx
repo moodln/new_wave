@@ -112,6 +112,9 @@ class CreateAlbumForm extends React.Component {
     render() {
         debugger
         const errors = this.props.errors.join('').split(', ')
+        const title_error = Object.values(errors).filter(error => error.includes('title'))
+        const song_error = Object.values(errors).filter(error => error.includes('song'))
+        const photo_error = Object.values(errors).filter(error => error.includes('photo'))
         const albumName = this.state.title === 'album name' ? 'Untitled Album' : this.state.title
         if (this.state) {
             return (
@@ -145,15 +148,15 @@ class CreateAlbumForm extends React.Component {
                                     </label>
                                 </div>
                                 <div id="album-track-error">
-                                    <p>{this.state.track_error}</p>
+                                    <p>{song_error}</p>
                                 </div>
                                 <button>save draft</button>
-                                <div className='album-errors'>
+                                {/* <div className='album-errors'>
                                     {errors.map(error => 
                                         <li key={error.length}>
                                             {error} 
                                         </li>)}
-                                </div>
+                                </div> */}
                             </div>
                             </div>
                             <div className='album-name-container'> 
@@ -161,7 +164,7 @@ class CreateAlbumForm extends React.Component {
                                     <p>*</p>    
                                     <input className='album-name' type="text" value={this.state.title} onChange={this.handleInput('title')} />
                                     <div id="album-title-error">
-                                        <p>{this.state.title_error}</p>
+                                        <p>{title_error}</p>
                                     </div>
                                 </div>
                                 <div className='release-date'>
@@ -215,7 +218,7 @@ class CreateAlbumForm extends React.Component {
                                     </div>
                                 </div>
                                 <div id="album-art-error">
-                                    <p>{this.state.art_error}</p>
+                                    <p>{photo_error}</p>
                                 </div>
                             </div>
                             </form>
