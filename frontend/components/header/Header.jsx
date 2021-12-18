@@ -35,7 +35,7 @@ class Header extends React.Component {
 
     render() {
     if (this.props.currentUser) {
-        console.log(this.props.currentUser)
+        // console.log(this.props.currentUser)
         return (
             <div className='welcome-message'>
                 <div className='header-left'>

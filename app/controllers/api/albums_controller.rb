@@ -14,14 +14,29 @@ class Api::AlbumsController < ApplicationController
     end 
 
     def create 
-        @album = Album.create!(album_params)
-        # @song = Song.create!(@album.song)
+        form = params["album"]
+        errors = []
+
+        errors << 'album must have a title' if form["title"] == "album name"     
+        errors << 'you must upload a song' if form["song"] == "null" 
+        errors << 'you must have an album photo' if form["photo"] == "null"
+
         # debugger
-        if @album.save
-            render :show
-        else
-            render json: @album.errors.full_messages, status: 422
+        if errors.length > 0
+            # debugger
+            render json: errors.join(', '), status: 422
+        else 
+            # debugger
+            @album = Album.create(album_params)
+            # @song = Song.create!(@album.song)
+            # debugger
+            if @album.save
+                render :show
+            else
+                render json: @album.errors.full_messages, status: 422
+            end
         end
+        
     end 
 
     def destroy

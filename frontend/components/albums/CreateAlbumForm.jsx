@@ -110,6 +110,8 @@ class CreateAlbumForm extends React.Component {
 
 
     render() {
+        debugger
+        const errors = this.props.errors.join('').split(', ')
         const albumName = this.state.title === 'album name' ? 'Untitled Album' : this.state.title
         if (this.state) {
             return (
@@ -146,6 +148,12 @@ class CreateAlbumForm extends React.Component {
                                     <p>{this.state.track_error}</p>
                                 </div>
                                 <button>save draft</button>
+                                <div className='album-errors'>
+                                    {errors.map(error => 
+                                        <li key={error.length}>
+                                            {error} 
+                                        </li>)}
+                                </div>
                             </div>
                             </div>
                             <div className='album-name-container'> 

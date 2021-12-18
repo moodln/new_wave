@@ -18,7 +18,7 @@ class ArtistAlbums extends React.Component {
 
     componentDidMount() {
         this.props.fetchAlbums();
-        console.log(this.state)
+        // console.log(this.state)
         if (this.state.currentUser.about === 'nothing to see here, yet!') {
             this.setState({
                 about: 'tabula rasa'

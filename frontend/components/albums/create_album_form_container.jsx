@@ -5,7 +5,10 @@ import CreateAlbumForm from './CreateAlbumForm';
 
 const mSTP = (state) => {
     if (state.session.id) {
-        return {currentUser: state.entities.users[state.session.id]}
+        return {
+            currentUser: state.entities.users[state.session.id],
+            errors: state.errors.album
+        }
     } else {
         return {errors: 'you must be signed in to create a new album'}
     }

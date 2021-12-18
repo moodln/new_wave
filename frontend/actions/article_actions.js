@@ -16,7 +16,7 @@ const receiveArticle = (article) => ({
 export const fetchArticles = () => (dispatch) => {
     return ArticleApiUtil.fetchArticles()
         .then((articles) => dispatch(receiveArticles(articles)))
-        .fail((err) => console.log(err.responseJSON))
+        .fail((err) => console.log('in fetch articles', err.responseJSON))
 }
 
 export const fetchArticle = (articleId) => (dispatch) => {
