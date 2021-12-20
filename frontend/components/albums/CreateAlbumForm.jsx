@@ -160,9 +160,14 @@ class CreateAlbumForm extends React.Component {
                             </div>
                             </div>
                             <div className='album-name-container'> 
-                                <div className='album-name-asterisk'>
-                                    <p>*</p>    
-                                    <input className='album-name' type="text" value={this.state.title} onChange={this.handleInput('title')} />
+                                <div className="album-name-header-container">
+                                    <div className='album-name-asterisk'>
+                                        <p>*</p>    
+                                        <input className='album-name' 
+                                            type="text" 
+                                            value={this.state.title} 
+                                            onChange={this.handleInput('title')} />
+                                    </div>
                                     <div id="album-title-error">
                                         <p>{title_error}</p>
                                     </div>
@@ -190,7 +195,8 @@ class CreateAlbumForm extends React.Component {
                                     </div>
                                 </div>
                                 <div className='description'>
-                                    <label onClick={this.toggleInput} htmlFor="description-id">description</label>
+                                    <label onClick={this.toggleInput} 
+                                        htmlFor="description-id">description</label>
                                         <input className='description'
                                             id='description-id'
                                             type="text"

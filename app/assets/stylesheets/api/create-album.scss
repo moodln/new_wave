@@ -47,6 +47,36 @@
         width: 450px;
     }
 
+    #album-title-error {
+        p {
+            color: red;
+            margin-left: 17px;
+            z-index: 2;
+            margin-top: -13px;
+            font-size: 12px;
+        }
+    }
+
+    #album-art-error {
+        p {
+            color: red;
+            margin-left: 25px;
+            z-index: 2;
+            margin-top: -21px;
+            font-size: 12px;
+        }
+    }
+
+    #album-track-error {
+        p {
+            color: red;
+            margin-left: 1px;
+            z-index: 2;
+            margin-top: 1px;
+            font-size: 12px;
+        }
+    }
+
     .album-name-asterisk {
         display: flex;
 
