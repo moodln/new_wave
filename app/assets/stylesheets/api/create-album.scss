@@ -20,7 +20,9 @@
         background-color: white;
         display: flex;
         align-items: flex-start;
-        width: 300px;
+        width: 450px;
+        border-left: 1px solid #007eff;
+        margin-top: 20px;
     }
 
 
@@ -34,12 +36,12 @@
         display: inline-block;
         background-color: white;
         border: .5px dashed rgb(175, 175, 175);
+        margin: 10px;
     }
 
     img {
-        height: 80px;
-        width: 80px;
-        opacity: 0.2;
+        height: 65px;
+        width: 70px;
     }
 
     .album-name-container {
@@ -294,6 +296,7 @@
     h1 {
         font-size: 20px;
         margin-left: 10px;
+        margin-top: 10px;
     }
 
     p {
