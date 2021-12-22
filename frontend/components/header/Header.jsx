@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Modal from '../modal/Modal.jsx';
+import SearchBarContainer from '../searchbar/searchbar_container.js';
 
 class Header extends React.Component {
     constructor(props) {
@@ -45,6 +46,7 @@ class Header extends React.Component {
                     <Link to='/albums'>
                         <p>+ add</p>
                     </Link>
+                    <SearchBarContainer />
                 </div>
                 <div className="dropdown">
                     <Link to='/' onClick={logout}>
@@ -69,16 +71,19 @@ class Header extends React.Component {
         return (
             <div>
                 <Modal />
-                    <Link to='/'>
-                        <img src={window.logo} alt="new_wave logo" className='logo' />
-                    </Link>
-                        <div className='links-container'>
-                            <Link to='/' onClick={() => this.openModalWithoutErrors('login')} value='log in'>log in</Link>
-                                
-                            <Link to='/' onClick={() => this.openModalWithoutErrors('signup')} value='sign up' >sign up</Link>
-                                
-                            <Link to='/' onClick={this.handleDemoLogin} value='guest user'>guest user</Link>
-                        </div>
+                    <div className='header-left'>
+                        <Link to='/'>
+                            <img src={window.logo} alt="new_wave logo" className='logo' />
+                        </Link>
+                        <SearchBarContainer />
+                    </div>
+                    <div className='links-container'>
+                        <Link to='/' onClick={() => this.openModalWithoutErrors('login')} value='log in'>log in</Link>
+                            
+                        <Link to='/' onClick={() => this.openModalWithoutErrors('signup')} value='sign up' >sign up</Link>
+                            
+                        <Link to='/' onClick={this.handleDemoLogin} value='guest user'>guest user</Link>
+                    </div>
                 </div >
             )
         }
