@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const ArticleIndexItem = (props) => {
     const {article, idx, album} = props;
     const albumId = Object.values(album)[0].id
-    debugger
+    // debugger
     return (
         <div className='article-index-item'>
             <Link to={`/albums/redirect/${albumId}`} >
