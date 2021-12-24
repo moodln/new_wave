@@ -25,11 +25,36 @@ body {
        cursor: pointer;
     }
 
-    // .search {
-    //     .content-search {
-    //         display: none;
-    //     }
-    // }
+    .search {
+
+        input {
+            position: relative;
+            padding: 9px;
+            width: 275px;
+            border: none;
+            background: #efefef;
+            letter-spacing: .4px;
+
+            
+        }
+
+        input:focus-visible {
+                outline: none;
+                outline-color: none;
+                outline-style: none;
+                outline-width: 0px;
+            }
+
+        
+
+        .content-search {
+            position: absolute;
+            top: 47px;
+            background: orange;
+            z-index: 3;
+            width: 293px;
+        }
+    }
 }
 
 .splash-text {
