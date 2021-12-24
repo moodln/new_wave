@@ -26,10 +26,16 @@ class SearchBar extends React.Component {
         })
     }
 
-    albumNavigation(artistId) {
+    albumNavigation(e, artistId) {
+        this.handleInputClick();
+        e.preventDefault();
         let albums = Object.values(this.props.albums).filter(album => album.artist.id === artistId)
         let album = albums[0];
-        debugger
+        this.setState({
+            query: ''
+        })
+        
+        // debugger
         this.props.history.push(`/albums/redirect/${album.id}`)
     }
 
@@ -65,9 +71,9 @@ class SearchBar extends React.Component {
         return(
             <div>
                 <div className="search">
-                    <form onSubmit={() => {
+                    <form onSubmit={(e) => {
                         debugger
-                        return this.albumNavigation(selectedArtist.id)}}>
+                        return this.albumNavigation(e, selectedArtist.id)}}>
                         <input type="text" 
                             placeholder="Search for artist or album" 
                             value={this.state.query} 
@@ -103,7 +109,7 @@ class SearchBar extends React.Component {
                                     }).map((artist, idx) => (
                                         <li className="artist-search-dropdown-item"
                                             key={idx}
-                                            onClick={() => this.albumNavigation(artist.id)}>
+                                            onClick={(e) => this.albumNavigation(e, artist.id)}>
                                                 {artist.name}
                                         </li>
                                     ))

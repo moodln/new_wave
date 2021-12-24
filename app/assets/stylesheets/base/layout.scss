@@ -50,9 +50,27 @@ body {
         .content-search {
             position: absolute;
             top: 47px;
-            background: orange;
+            background: rgb(255, 156, 63);
             z-index: 3;
             width: 293px;
+        }
+
+        li {
+            margin-top: 5px;
+            padding: 10px;
+            // margin-left: 10px;
+            cursor: pointer;
+            color: white;
+            letter-spacing: .3px;
+            font-size: 14px;
+            font-weight: 500;
+            // text-shadow: black 1px 0 10px;
+        }
+
+        li:hover {
+            background-color: rgb(255, 193, 136);
+            opacity: 0.5px;
+            color: white;
         }
     }
 }
