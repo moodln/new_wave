@@ -34,7 +34,7 @@ body {
             border: none;
             background: #efefef;
             letter-spacing: .4px;
-
+            border-radius: 2px;
             
         }
 
@@ -53,6 +53,8 @@ body {
             background: rgb(255, 156, 63);
             z-index: 3;
             width: 293px;
+            height: 338px;
+            overflow-y: scroll;
         }
 
         li {
