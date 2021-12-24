@@ -81,7 +81,8 @@ class ArtistAlbums extends React.Component {
 
         let aboutInfo = <div className='user-about-info'>
                             <p>{this.state.about}</p>
-                            <label onClick={this.toggleInput} htmlFor='about-info-id'>edit bio</label>
+                            <label onClick={this.toggleInput} 
+                                htmlFor='about-info-id'>edit bio</label>
                             <input type="text"
                                 id='about-info-id' 
                                 value={this.state.about}

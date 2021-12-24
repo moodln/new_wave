@@ -7,12 +7,10 @@ class SearchBar extends React.Component {
         super(props)
 
         this.state = {
-            query: '',
-            // selectedArtist: []
+            query: ''
         }
 
         this.updateQuery = this.updateQuery.bind(this);
-        // this.updateArtist = this.updateArtist.bind(this);
         this.albumNavigation = this.albumNavigation.bind(this);
     }
 
@@ -28,17 +26,23 @@ class SearchBar extends React.Component {
         })
     }
 
-    // updateArtist(artist) {
-    //     this.setState ({
-    //         selectedArtist: artist.id
-    //     })
-    // }
-
     albumNavigation(artistId) {
         let albums = Object.values(this.props.albums).filter(album => album.artist.id === artistId)
         let album = albums[0];
         debugger
         this.props.history.push(`/albums/redirect/${album.id}`)
+    }
+
+    handleInputClick() {
+        const dropdown = document.getElementsByClassName('content-search')[0];
+        // debugger
+        const display = dropdown.style.display;
+
+        if (display === 'none') {
+            dropdown.style.display = 'block';
+        } else {
+            dropdown.style.display = 'none';
+        }
     }
 
     render() {
@@ -57,7 +61,7 @@ class SearchBar extends React.Component {
                 artists.push(article.artist)
             }            
         })
-        // debugger
+
         return(
             <div>
                 <div className="search">
@@ -68,10 +72,12 @@ class SearchBar extends React.Component {
                             placeholder="Search for artist or album" 
                             value={this.state.query} 
                             onChange={this.updateQuery}
+                            onClick={this.handleInputClick}
                         />
                     
                 
-                        <div className="content-search">
+                        <div className="content-search"
+                            style={{display: 'none'}}>
                         
                             <ul className="search-dropdown">
                                 
@@ -79,7 +85,7 @@ class SearchBar extends React.Component {
                                     artists.filter(artist => {
                                         let idx = (artist.name.length - this.state.query.length) * -1
                                         if (this.state.query === '') {
-                                            return '';
+                                            return artist;
                                         } else if (artist.name.slice(0, idx).toLowerCase().includes(this.state.query.toLowerCase())) {
                                             console.log('query', this.state.query, this.state.query.length)
                                             console.log('artist', artist.name.slice(0, idx), artist.name.slice(0, idx).length, artist.name.length)
