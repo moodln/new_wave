@@ -45,7 +45,7 @@ class SearchBar extends React.Component {
         if (!this.props.albums || !this.props.articles) return null;
         
         const artists = [];
-        let selectedArtist = [];
+        let selectedArtist = '';
         const { articles, albums } = this.props;
         this.props.albums.map(album => {
             if (!artists.includes(album.artist.name)) {
@@ -61,9 +61,9 @@ class SearchBar extends React.Component {
         return(
             <div>
                 <div className="search">
-                    <form onSubmit={(selectedArtist) => {
+                    <form onSubmit={() => {
                         debugger
-                        return this.albumNavigation(selectedArtist.slice(-1)[0].id)}}>
+                        return this.albumNavigation(selectedArtist.id)}}>
                         <input type="text" 
                             placeholder="Search for artist or album" 
                             value={this.state.query} 
@@ -79,10 +79,19 @@ class SearchBar extends React.Component {
                                     artists.filter(artist => {
                                         let idx = (artist.name.length - this.state.query.length) * -1
                                         if (this.state.query === '') {
-                                            return artist;
+                                            return '';
                                         } else if (artist.name.slice(0, idx).toLowerCase().includes(this.state.query.toLowerCase())) {
-                                            // debugger
-                                            selectedArtist.push(artist)
+                                            console.log('query', this.state.query, this.state.query.length)
+                                            console.log('artist', artist.name.slice(0, idx), artist.name.slice(0, idx).length, artist.name.length)
+                                            console.log(artist)
+                                            console.log('-------')
+                                            
+                                            return artist;
+                                        } else if (this.state.query.toLowerCase() === artist.name.toLowerCase()) {
+                                            console.log('in else query', this.state.query)
+                                            console.log('in else artist', artist.name.slice(0, idx))
+                                            debugger
+                                            selectedArtist = artist;
                                             return artist;
                                         }
                                     }).map((artist, idx) => (
