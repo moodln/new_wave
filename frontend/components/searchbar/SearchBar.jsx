@@ -90,33 +90,40 @@ class SearchBar extends React.Component {
                             <ul className="search-dropdown">
                                 
                                 {
-                                    Array.from(artists.entries()).map( entry => {
-                                        let name = entry[0];
+                                    Array.from(artists.entries()).filter( entry => {
+                                        // let name = entry[0];
                                         let artist = entry[1];
-                                        let idx = (name.length - this.state.query.length) * -1
+                                        // debugger
+                                        let idx = (entry[0].length - this.state.query.length) * -1
                                         if (this.state.query === '') {
-                                            return artist;
-                                        } else if (artist.name.slice(0, idx).toLowerCase().includes(this.state.query.toLowerCase())) {
-                                            console.log('query', this.state.query, this.state.query.length)
-                                            console.log('artist', artist.name.slice(0, idx), artist.name.slice(0, idx).length, artist.name.length)
-                                            console.log(artist)
-                                            console.log('-------')
-                                            
-                                            return artist;
-                                        } else if (this.state.query.toLowerCase() === artist.name.toLowerCase()) {
-                                            console.log('in else query', this.state.query)
-                                            console.log('in else artist', artist.name.slice(0, idx))
                                             debugger
+                                            console.log(artist)
+                                            return artist;
+                                        } else if (entry[0].slice(0, idx).toLowerCase().includes(this.state.query.toLowerCase())) {
+                                            // debugger
+                                            console.log('query', this.state.query, this.state.query.length)
+                                            console.log('artist', entry[0].slice(0, idx), entry[0].slice(0, idx).length, entry[0].length)
+                                            console.log(typeof artist, artist)
+                                            console.log('-------')
+                                            // debugger
+                                            return artist;
+                                        } else if (this.state.query.toLowerCase() === entry[0].toLowerCase()) {
+                                            console.log('in else query', this.state.query)
+                                            console.log('in else artist', entry[0].slice(0, idx))
+                                            // debugger
                                             selectedArtist = artist;
                                             return artist;
                                         }
-                                    }).map((artist, idx) => (
-                                        <li className="artist-search-dropdown-item"
-                                            key={idx}
-                                            onClick={(e) => this.albumNavigation(e, artist.id)}>
-                                                {artist.name}
-                                        </li>
-                                    ))
+                                    }).map((artistObject, idx) => {
+                                        debugger
+                                        return (
+                                            <li className="artist-search-dropdown-item"
+                                                key={idx}
+                                                onClick={(e) => this.albumNavigation(e, artistObject[1].id)}>
+                                                    {artistObject[0]}
+                                            </li>
+                                        )
+                                    })
                                 }
                             </ul>
                         </div>
