@@ -54,19 +54,21 @@ class SearchBar extends React.Component {
     render() {
         if (!this.props.albums || !this.props.articles) return null;
         
-        const artists = [];
+        let artists = new Map();
+        
         let selectedArtist = '';
         const { articles, albums } = this.props;
         this.props.albums.map(album => {
-            if (!artists.includes(album.artist.name)) {
-                artists.push(album.artist)
+            if (!artists.has(album.artist.name)) {
+                artists.set(album.artist.name, album.artist)
             }
         })
         this.props.articles.map(article => {
-            if (!artists.includes(article.artist.name)) {
-                artists.push(article.artist)
+            if (!artists.has(article.artist.name)) {
+                artists.set(article.artist.name, article.artist)
             }            
         })
+        console.log(artists)
 
         return(
             <div>
@@ -88,8 +90,10 @@ class SearchBar extends React.Component {
                             <ul className="search-dropdown">
                                 
                                 {
-                                    artists.filter(artist => {
-                                        let idx = (artist.name.length - this.state.query.length) * -1
+                                    Array.from(artists.entries()).map( entry => {
+                                        let name = entry[0];
+                                        let artist = entry[1];
+                                        let idx = (name.length - this.state.query.length) * -1
                                         if (this.state.query === '') {
                                             return artist;
                                         } else if (artist.name.slice(0, idx).toLowerCase().includes(this.state.query.toLowerCase())) {

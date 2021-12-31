@@ -9,8 +9,7 @@ class SessionForm extends React.Component {
         this.state = {
             username: '',
             email: '',
-            password: '',
-            // errors: this.props.errors
+            password: ''
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleClose = this.handleClose.bind(this);
@@ -29,9 +28,6 @@ class SessionForm extends React.Component {
 
     handleClose() {
         this.props.closeModal();
-        // this.setState({
-        //     errors: {}
-        // })
     }
 
     update(type) {
@@ -39,11 +35,6 @@ class SessionForm extends React.Component {
     }
 
     render() {
-        // if (this.props.errors !== this.state.errors) {
-        //     this.setState({
-        //         errors: this.props.errors
-        //     })
-        // }
         let { formType } = this.props;
         let content;
         let button;
