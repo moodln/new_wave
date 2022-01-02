@@ -19,10 +19,10 @@ class AlbumShow extends React.Component {
         document.getElementById('audio').play()
     }
 
-    removeAlbum() {
+    removeAlbum(albumId) {
         return (e) => {
             e.preventDefault();
-            debugger
+            // debugger
             if (this.props.currentUser.id === this.props.album.artist.id) {
                 this.props.deleteAlbum(albumId)
                 .then(() => this.props.history.push(`/`));
@@ -31,7 +31,7 @@ class AlbumShow extends React.Component {
     }
 
     render() {
-
+        // debugger
         if (!this.props.album || !this.props.albums) {
             return null 
         } else {
@@ -49,7 +49,7 @@ class AlbumShow extends React.Component {
             debugger
             if (this.props.currentUser){
             if (this.props.currentUser.id === this.props.album.artist.id) {
-                artistButtons = <button onClick={this.removeAlbum()}>remove album</button>
+                artistButtons = <button onClick={this.removeAlbum(this.props.album.id)}>remove album</button>
             } else {
                 artistButtons = '';
             }}

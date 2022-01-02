@@ -74,7 +74,7 @@ class SearchBar extends React.Component {
             <div>
                 <div className="search">
                     <form onSubmit={(e) => {
-                        debugger
+                        // debugger
                         return this.albumNavigation(e, selectedArtist.id)}}>
                         <input type="text" 
                             placeholder="Search for artist or album" 
@@ -115,7 +115,7 @@ class SearchBar extends React.Component {
                                             return artist;
                                         }
                                     }).map((artistObject, idx) => {
-                                        debugger
+                                        // debugger
                                         return (
                                             <li className="artist-search-dropdown-item"
                                                 key={idx}

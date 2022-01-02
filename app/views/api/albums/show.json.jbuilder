@@ -1,12 +1,14 @@
 json.extract! @album, :id, :title
 json.artist do
-    json.partial! '/api/users/user', user: @album.artist
+    @artist.albums
 end
 
 
 if @album.photo.attached? 
     json.photoUrl url_for(@album.photo)
-end
+elsif @album.song.attached?  
+    json.songUrls url_for(@song.audio)
+end 
 
 if @song 
     json.songUrls url_for(@song.audio)
