@@ -52,8 +52,8 @@ class SearchBar extends React.Component {
     }
 
     render() {
-        if (!this.props.albums || !this.props.articles) return null;
-        
+        if (this.props.albums == [] || this.props.articles == []) return null;
+            debugger
         let artists = new Map();
         
         let selectedArtist = '';
@@ -61,6 +61,8 @@ class SearchBar extends React.Component {
         this.props.albums.map(album => {
             if (!artists.has(album.artist.name)) {
                 artists.set(album.artist.name, album.artist)
+            } else if (!artists.has(album.artist.username)) {
+                artists.set(album.artist.username, album.artist)
             }
         })
         this.props.articles.map(article => {
