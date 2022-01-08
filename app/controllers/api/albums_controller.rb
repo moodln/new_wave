@@ -6,11 +6,12 @@ class Api::AlbumsController < ApplicationController
         render :index
     end 
 
-    def show 
-        @album = Album.find(params[:id])
+    def show
         # debugger
-        @song = Song.find_by(album_id: params[:id])
-        @artist = User.find_by(id: params[:artist_id])
+        @album = Album.includes(:artist).find_by(id: params[:id])
+        # debugger
+        # @song = Song.find_by(album_id: params[:id])
+        # @artist = User.find_by(id: params[:artist_id])
         
         render :show 
     end 

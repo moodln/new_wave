@@ -27,6 +27,7 @@ class SearchBar extends React.Component {
     }
 
     albumNavigation(e, artistId) {
+        debugger
         this.handleInputClick();
         e.preventDefault();
         let albums = Object.values(this.props.albums).filter(album => album.artist.id === artistId)
@@ -35,13 +36,13 @@ class SearchBar extends React.Component {
             query: ''
         })
         
-        // debugger
+        
         this.props.history.push(`/albums/redirect/${album.id}`)
     }
 
     handleInputClick() {
         const dropdown = document.getElementsByClassName('content-search')[0];
-        // debugger
+      
         const display = dropdown.style.display;
 
         if (display === 'none') {
@@ -53,7 +54,7 @@ class SearchBar extends React.Component {
 
     render() {
         if (this.props.albums == [] || this.props.articles == []) return null;
-            debugger
+      debugger
         let artists = new Map();
         
         let selectedArtist = '';
@@ -70,13 +71,11 @@ class SearchBar extends React.Component {
                 artists.set(article.artist.name, article.artist)
             }            
         })
-        console.log(artists)
 
         return(
             <div>
                 <div className="search">
                     <form onSubmit={(e) => {
-                        // debugger
                         return this.albumNavigation(e, selectedArtist.id)}}>
                         <input type="text" 
                             placeholder="Search for artist or album" 
@@ -93,31 +92,17 @@ class SearchBar extends React.Component {
                                 
                                 {
                                     Array.from(artists.entries()).filter( entry => {
-                                        // let name = entry[0];
                                         let artist = entry[1];
-                                        // debugger
                                         let idx = (entry[0].length - this.state.query.length) * -1
                                         if (this.state.query === '') {
-                                            debugger
-                                            console.log(artist)
                                             return artist;
                                         } else if (entry[0].slice(0, idx).toLowerCase().includes(this.state.query.toLowerCase())) {
-                                            // debugger
-                                            console.log('query', this.state.query, this.state.query.length)
-                                            console.log('artist', entry[0].slice(0, idx), entry[0].slice(0, idx).length, entry[0].length)
-                                            console.log(typeof artist, artist)
-                                            console.log('-------')
-                                            // debugger
                                             return artist;
                                         } else if (this.state.query.toLowerCase() === entry[0].toLowerCase()) {
-                                            console.log('in else query', this.state.query)
-                                            console.log('in else artist', entry[0].slice(0, idx))
-                                            // debugger
                                             selectedArtist = artist;
                                             return artist;
                                         }
                                     }).map((artistObject, idx) => {
-                                        // debugger
                                         return (
                                             <li className="artist-search-dropdown-item"
                                                 key={idx}

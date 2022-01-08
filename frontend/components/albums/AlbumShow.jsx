@@ -10,8 +10,8 @@ class AlbumShow extends React.Component {
 
     }
     componentDidMount() {
-        this.props.fetchAlbum(this.props.match.params.albumId),
-        this.props.fetchAlbums()
+        this.props.fetchAlbum(this.props.match.params.albumId)
+        // this.props.fetchAlbums()
         
     }
 
@@ -33,7 +33,7 @@ class AlbumShow extends React.Component {
     render() {
         // debugger
         if (!this.props.album || !this.props.albums) {
-            return null 
+            return null;
         } else {
             debugger
            if (!this.props.album.artist.photoUrl) {
