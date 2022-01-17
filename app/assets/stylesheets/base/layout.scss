@@ -829,17 +829,18 @@ li {
 }
 
 .album-index {
-    padding: 5px;
+    padding-left: 626px;
+    padding-top: 5px;
     display: flex;
     justify-content: space-evenly;
     align-content: space-around;
     align-items: flex-start;
     flex-wrap: wrap;
-    width: 100%;
+    // width: 100%;
     margin-left: 1%;
     // margin-right: 1%;
     height: 200px;
-    overflow-x: auto;
+    overflow-x: scroll;
     // white-space: nowrap;
     flex-direction: column;
 }
