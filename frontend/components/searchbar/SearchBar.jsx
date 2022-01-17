@@ -27,7 +27,7 @@ class SearchBar extends React.Component {
     }
 
     albumNavigation(e, artistId) {
-        debugger
+        // debugger
         this.handleInputClick();
         e.preventDefault();
         let albums = Object.values(this.props.albums).filter(album => album.artist.id === artistId)
@@ -54,6 +54,7 @@ class SearchBar extends React.Component {
 
     render() {
         if (this.props.albums == [] || this.props.articles == []) return null;
+        // if (this.props.albums.length <= 1 || this.props.articles.length <= 1) return null;
       debugger
         let artists = new Map();
         
@@ -76,6 +77,7 @@ class SearchBar extends React.Component {
             <div>
                 <div className="search">
                     <form onSubmit={(e) => {
+                        // debugger
                         return this.albumNavigation(e, selectedArtist.id)}}>
                         <input type="text" 
                             placeholder="Search for artist or album" 
@@ -103,6 +105,7 @@ class SearchBar extends React.Component {
                                             return artist;
                                         }
                                     }).map((artistObject, idx) => {
+                                        // debugger
                                         return (
                                             <li className="artist-search-dropdown-item"
                                                 key={idx}

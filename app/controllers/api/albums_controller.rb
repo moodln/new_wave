@@ -1,7 +1,7 @@
 class Api::AlbumsController < ApplicationController 
 
     def index
-        @albums = Album.all
+        @albums = Album.joins(:artist)
         # debugger 
         render :index
     end 

@@ -11,6 +11,11 @@ class Header extends React.Component {
         this.logoutUser = this.logoutUser.bind(this);
     }
 
+    componentDidMount() {
+        this.props.fetchAlbums();
+        this.props.fetchArticles();
+    }
+
     handleDemoLogin(e) {
         e.preventDefault();
 
@@ -35,6 +40,7 @@ class Header extends React.Component {
     }
 
     render() {
+    if (this.props.albums == [] || this.props.articles == []) return null; 
     if (this.props.currentUser) {
         // console.log(this.props.currentUser)
         return (
@@ -46,7 +52,7 @@ class Header extends React.Component {
                     <Link to='/albums'>
                         <p>+ add</p>
                     </Link>
-                    <SearchBarContainer />
+                    <SearchBarContainer articles={this.props.articles} albums={this.props.albums}/>
                 </div>
                 <div className="dropdown">
                     <Link to='/' onClick={logout}>
@@ -75,7 +81,7 @@ class Header extends React.Component {
                         <Link to='/'>
                             <img src={window.logo} alt="new_wave logo" className='logo' />
                         </Link>
-                        <SearchBarContainer />
+                        <SearchBarContainer articles={this.props.articles} albums={this.props.albums}/>
                     </div>
                     <div className='links-container'>
                         <Link to='/' onClick={() => this.openModalWithoutErrors('login')} value='log in'>log in</Link>
