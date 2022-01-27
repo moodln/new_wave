@@ -28,12 +28,16 @@ class CreateAlbumForm extends React.Component {
 
     toggleInput() {
         const inputBox = document.getElementById('description-id');
+        const descriptionDiv = document.getElementsByClassName('description');
+        // console.log(descriptionDiv);
         const display = inputBox.style.display;
-
+        // debugger
         if (display === 'none') {
             inputBox.style.display = 'block';
+            descriptionDiv[0].children[2].style.display = 'none';
         } else {
             inputBox.style.display = 'none';
+            descriptionDiv[0].children[2].style.display = 'block';
         }
     }
 
