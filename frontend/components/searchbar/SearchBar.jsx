@@ -15,6 +15,11 @@ class SearchBar extends React.Component {
     }
 
     componentDidMount() {
+        debugger
+        if (this.props.history.location.pathname.includes('/albums/')){
+            debugger
+            this.props.fetchAlbum(this.props.history.location.pathname.slice(8))
+        };
         this.props.fetchAlbums();
         this.props.fetchArticles();
     }
@@ -53,6 +58,7 @@ class SearchBar extends React.Component {
     }
 
     render() {
+        if (this.props.history.location.pathname.includes('/albums/')) return null;
         if (this.props.albums == [] || this.props.articles == []) return null;
         // if (this.props.albums.length <= 1 || this.props.articles.length <= 1) return null;
       debugger

@@ -134,7 +134,7 @@ class ArtistAlbums extends React.Component {
                                     </label>
                                     <h3>{currentUser.name}</h3>
                                     <p>{currentUser.location}</p>
-                                    <p>{aboutInfo}</p>
+                                    {aboutInfo}
                                 </div>
                                 <button>submit</button>
                             </form>

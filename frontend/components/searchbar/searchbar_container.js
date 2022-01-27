@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import SearchBar from "./SearchBar";
-import { fetchAlbums } from "../../actions/album_actions";
+import { fetchAlbums, fetchAlbum } from "../../actions/album_actions";
 import { fetchArticles } from "../../actions/article_actions";
 
 const mapStateToProps = (state) => ({
@@ -10,7 +10,8 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
     fetchArticles: () => dispatch(fetchArticles()),
-    fetchAlbums: () => dispatch(fetchAlbums())
+    fetchAlbums: () => dispatch(fetchAlbums()),
+    fetchAlbum: (albumId) => dispatch(fetchAlbum(albumId))
 })
 
 const SearchBarContainer = connect(mapStateToProps, mapDispatchToProps)(SearchBar);
