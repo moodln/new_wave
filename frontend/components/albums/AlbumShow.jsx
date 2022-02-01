@@ -74,7 +74,7 @@ class AlbumShow extends React.Component {
                                 <div>
                                     <h2>{album.title}</h2>
                                     <p>by {album.artist.name}</p>
-                                    <audio controls src={album.songUrls} type='audio/mpeg' id='audio'/>
+                                    <audio controls src={album.songUrl} type='audio/mpeg' id='audio'/>
                                     <h4>Digital Album</h4>
                                     <p>Streaming + Download</p>
                                     <p>Includes unlimited streaming via the free new_wave app, plus high-quality download in MP3, FLAC and more.</p>

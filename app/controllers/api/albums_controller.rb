@@ -9,6 +9,7 @@ class Api::AlbumsController < ApplicationController
     def show
         # debugger
         @album = Album.includes(:artist).find_by(id: params[:id])
+        # @album.song.attach(@album.song)
         # debugger
         # @song = Song.find_by(album_id: params[:id])
         # @artist = User.find_by(id: params[:artist_id])
