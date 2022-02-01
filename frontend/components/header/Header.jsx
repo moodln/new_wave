@@ -81,8 +81,9 @@ class Header extends React.Component {
                 <Modal />
                     <div className='header-left'>
                         <Link to='/'>
-                            <img src={window.logo} alt="new_wave logo" className='logo' />
-                        </Link>
+                            <div className="logo">
+                                <img src={window.logo} alt="new_wave logo" className='logo' /><p>new wave</p>
+                            </div>                        </Link>
                         <SearchBarContainer articles={this.props.articles} albums={this.props.albums}/>
                     </div>
                     <div className='links-container'>
