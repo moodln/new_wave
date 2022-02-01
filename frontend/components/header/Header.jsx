@@ -46,9 +46,11 @@ class Header extends React.Component {
         return (
             <div className='welcome-message'>
                 <div className='header-left'>
-                    <Link to='/'>
-                        <img src={window.logo} alt="new_wave logo" className='logo' />
-                    </Link>
+                        <Link to='/'>
+                    <div className="logo">
+                            <img src={window.logo} alt="new_wave logo" className='logo' /><p>new wave</p>
+                    </div>
+                        </Link>
                     <Link to='/albums'>
                         <p>+ add</p>
                     </Link>
