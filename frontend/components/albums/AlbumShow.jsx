@@ -46,12 +46,18 @@ class AlbumShow extends React.Component {
                album.artist.photoUrl = window.artist_image
            }
             let artistAlbums;
+            let artistLocation;
             if (album.artist.albums) {
                 artistAlbums = Object.values(album.artist.albums)
             } else {
                 artistAlbums = [];
             }
             let artistButtons;
+            if (album.artist.location === null) {
+                artistLocation = 'Independence, Kansas';
+            } else {
+                artistLocation = album.artist.location;
+            }
             debugger
             if (this.props.currentUser){
             if (this.props.currentUser.id === album.artist.id) {
@@ -105,7 +111,7 @@ class AlbumShow extends React.Component {
                             <div className='artist-info'>
                                 <img src={album.artist.photoUrl} alt="artist-image" />
                                 <h3>{album.artist.name}</h3>
-                                <p>{album.artist.location}</p>
+                                <p>{artistLocation}</p>
                                 <button>Follow</button>
                                 <p>{album.artist.about}</p>
                                 <p>discography</p>
