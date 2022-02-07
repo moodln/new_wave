@@ -6,15 +6,18 @@ class AlbumShow extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            albumId: parseInt(this.props.match.params.albumId)
+            albumId: parseInt(this.props.match.params.albumId),
+            album: ''
         }
         this.removeAlbum = this.removeAlbum.bind(this);
 
     }
     componentDidMount() {
-        this.props.fetchAlbum(this.props.match.params.albumId)
-        this.props.fetchAlbums()
-        
+        this.props.fetchAlbum(this.props.match.params.albumId);
+        this.props.fetchAlbums();
+        this.setState({
+            album: this.props.album
+        })
     }
 
     playAudio() {
@@ -33,11 +36,11 @@ class AlbumShow extends React.Component {
     }
 
     render() {
-        // debugger
-        if (!this.props.album || this.props.albums === []) {
+        debugger
+        if (this.props.albums.length === 0) {
             return null;
         } else {
-            let album = this.props.albums.filter(album => album.id === this.state.albumId)[0]
+            let [album] = this.props.albums.filter(album => album.id === this.state.albumId)
             debugger
            if (!album.artist.photoUrl) {
                album.artist.photoUrl = window.artist_image

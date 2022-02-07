@@ -19,11 +19,16 @@ class ArtistAlbums extends React.Component {
     componentDidMount() {
         this.props.fetchAlbums();
         // console.log(this.state)
-        if (this.state.currentUser.about === 'nothing to see here, yet!') {
+        if (this.state.currentUser.about === null) {
             this.setState({
                 about: 'tabula rasa'
             })
         }
+        if (!this.state.currentUser.photoUrl) {
+            this.setState({
+                image: window.artist_image
+            })
+        } 
     }
 
     toggleInput() {
@@ -123,6 +128,7 @@ class ArtistAlbums extends React.Component {
                             </div>
                             <form onSubmit={this.handleSubmit}>
                                 <div className='artist-info'>
+                                    debugger
                                     <img src={this.state.image} alt="artist-image" />
                                     <label htmlFor="image-input-id">Upload Profile Photo
                                     <input className='image-file'

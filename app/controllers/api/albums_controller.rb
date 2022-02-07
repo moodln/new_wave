@@ -32,7 +32,8 @@ class Api::AlbumsController < ApplicationController
         else 
             # debugger
             @album = Album.create(album_params)
-            # @song = Song.create!(@album.song)
+            # @song = Song.create(@album.song)
+            # @song.album_id = @album.id
             # debugger
             if @album.save
                 render :show

@@ -169,7 +169,8 @@ class CreateAlbumForm extends React.Component {
                                         <p>*</p>    
                                         <input className='album-name' 
                                             type="text" 
-                                            value={this.state.title} 
+                                            placeholder={this.state.title}
+                                            
                                             onChange={this.handleInput('title')} />
                                     </div>
                                     <div id="album-title-error">

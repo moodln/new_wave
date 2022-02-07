@@ -6,11 +6,11 @@ class Album < ApplicationRecord
         foreign_key: :artist_id, 
         class_name: :User
 
-    has_one :song,
+    has_one :track,
         primary_key: :id,
         foreign_key: :album_id,
         class_name: :Song
 
     has_one_attached :photo
-    # has_one_attached :song
+    has_one_attached :song
 end 
