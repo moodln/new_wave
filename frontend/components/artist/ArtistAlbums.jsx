@@ -128,7 +128,7 @@ class ArtistAlbums extends React.Component {
                             </div>
                             <form onSubmit={this.handleSubmit}>
                                 <div className='artist-info'>
-                                    debugger
+                                    
                                     <img src={this.state.image} alt="artist-image" />
                                     <label htmlFor="image-input-id">Upload Profile Photo
                                     <input className='image-file'
