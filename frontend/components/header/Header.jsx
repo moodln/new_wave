@@ -77,7 +77,7 @@ class Header extends React.Component {
         )
     } else {
         return (
-            <div>
+            <div className="header-home">
                 <Modal />
                     <div className='header-left'>
                         <Link to='/'>

@@ -2,7 +2,10 @@ body {
     font: 14px/1.2307692308 'Helvetica Neue',Helvetica,Arial,sans-serif;
 }
 
-
+.header-home {
+    margin-top: 10px;
+    margin-bottom: 16px;
+}
 
 .header-left {
     display: flex;
@@ -165,7 +168,7 @@ body {
     font-size: 16px;
     position: absolute;
     z-index: 300;
-    top: 20px;
+    top: 30px;
     right: 5px;
 }
 
@@ -992,7 +995,7 @@ li {
 .album-info {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    margin-top: 10px;
 
     audio {
         margin-top: 26px;
