@@ -91,7 +91,7 @@ class SearchBar extends React.Component {
                             onChange={this.updateQuery}
                             onClick={this.handleInputClick}
                         />
-                    
+                        <img src={window.search} alt="" onClick={this.handleInputClick}/>
                 
                         <div className="content-search"
                             style={{display: 'none'}}>

@@ -8,6 +8,7 @@ const Footer = () => {
             <div>
                 <a href='https://github.com/moodln/new_wave' ><img src={window.github} alt="" /></a>
                 <a href='https://www.linkedin.com/in/madeline-wilson-044a19226/' ><img src={window.linkedin} alt="" /></a>
+                
             </div>
         </div>
     )

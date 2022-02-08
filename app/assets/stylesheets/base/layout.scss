@@ -50,16 +50,33 @@ body {
 }
 
     .search {
+        form {
+            display: flex;
+        }
 
         input {
             position: relative;
             padding: 9px;
-            width: 275px;
+            width: 238px;
             border: none;
             background: #efefef;
             letter-spacing: .4px;
-            border-radius: 2px;
+            border-bottom-left-radius: 5px;
+            border-top-left-radius: 5px;
             
+        }
+
+        img {
+            height: 20px;
+            width: auto;
+            background: #efefef;
+            padding: 8px;
+            border-bottom-right-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+
+        img:hover {
+            cursor: pointer;
         }
 
         input:focus-visible {
