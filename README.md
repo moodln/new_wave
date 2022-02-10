@@ -19,13 +19,17 @@ New Wave is a single page clone of BandCamp - a website that hosts artists' musi
 
 After a user is logged in, they will have the option to create their own album. They will be able to upload audio and image files, and include a title. This feature was implemented using the FormData object and AWS. 
 
+<p align="center">
 <img width="572" alt="Screen Shot 2021-11-12 at 9 41 24 AM" src="https://user-images.githubusercontent.com/88460822/141484680-4f289525-6723-42ad-885d-0130f75aece4.png">
-
+</p>
+ 
 The image and audio files are passed back to the frontend by grabbing them in the json.jbuilder file and using the Ruby `url_for` method to convert them into a url that the frontend can render.
 
+<p align="center">
 <img width="314" alt="Screen Shot 2021-11-12 at 9 42 39 AM" src="https://user-images.githubusercontent.com/88460822/141484858-7396d3a0-1166-42fe-a7b2-3dca4828f017.png">
+</p>
 
-#Song Player 
+# Song Player 
 
 
 <p align="center">
@@ -36,10 +40,13 @@ The image and audio files are passed back to the frontend by grabbing them in th
 
 Users can navigate to an artist's show page, where there is a song player attached. The song player includes a play and pause button, as well as volume control. There is another button displayed next to the track listings, which also allows the user to play the song associated with the track listing. This was incorporated by implementing a callback to an onClick function. 
 
+<p align="center">
 <img width="487" alt="Screen Shot 2021-11-12 at 9 53 01 AM" src="https://user-images.githubusercontent.com/88460822/141486412-ab826984-9151-41fe-b0b9-eca1b73cc1b1.png">
+</p>
 
-
+<p align="center">
 <img width="361" alt="Screen Shot 2021-11-12 at 9 52 26 AM" src="https://user-images.githubusercontent.com/88460822/141486315-b3ee208c-474f-4cd6-90ba-6ae7d51e135f.png">
+</p>
 
 # Future Directions 
 
