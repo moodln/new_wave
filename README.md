@@ -58,26 +58,26 @@ This functionality was achieved by first gathering all available data and feedin
   <ul className="search-dropdown">
                                 
      {
-         Array.from(artists.entries()).filter( entry => {
-             let artist = entry[1];
-             let idx = (entry[0].length - this.state.query.length) * -1
-             if (this.state.query === '') {
-                 return artist;
-             } else if (entry[0].slice(0, idx).toLowerCase().includes(this.state.query.toLowerCase())) {
-                 return artist;
-             } else if (this.state.query.toLowerCase() === entry[0].toLowerCase()) {
-                 selectedArtist = artist;
-                 return artist;
-             }
-         }).map((artistObject, idx) => {
-             return (
-                 <li className="artist-search-dropdown-item"
-                     key={idx}
-                     onClick={(e) => this.albumNavigation(e, artistObject[1].id)}>
-                         {artistObject[0]}
-                 </li>
-             )
-         })
+       Array.from(artists.entries()).filter( entry => {
+           let artist = entry[1];
+           let idx = (entry[0].length - this.state.query.length) * -1
+           if (this.state.query === '') {
+               return artist;
+           } else if (entry[0].slice(0, idx).toLowerCase().includes(this.state.query.toLowerCase())) {
+               return artist;
+           } else if (this.state.query.toLowerCase() === entry[0].toLowerCase()) {
+               selectedArtist = artist;
+               return artist;
+           }
+       }).map((artistObject, idx) => {
+           return (
+               <li className="artist-search-dropdown-item"
+                   key={idx}
+                   onClick={(e) => this.albumNavigation(e, artistObject[1].id)}>
+                       {artistObject[0]}
+               </li>
+           )
+       })
      }
   </ul>
 ```
