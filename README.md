@@ -82,10 +82,20 @@ This functionality was achieved by first gathering all available data and feedin
   </ul>
 ```
 
- 
-<p align="center">
-<img src="https://user-images.githubusercontent.com/88460822/153452207-15b9c782-ff54-4a9f-ab8a-e21a9a9e28ae.png" />
-</p>
+```javascript 
+albumNavigation(e, artistId) {
+        this.handleInputClick();
+        e.preventDefault();
+        let albums = Object.values(this.props.albums).filter(album => album.artist.id === artistId)
+        let album = albums[0];
+        this.setState({
+            query: ''
+        })
+        
+        
+        this.props.history.push(`/albums/redirect/${album.id}`)
+}
+```
 
 
 
