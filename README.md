@@ -34,8 +34,9 @@ The image and audio files are passed back to the frontend by grabbing them in th
 Users are able to search for different artists by using the searchbar, which appears on every page. 
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/88460822/153449360-4ca58bbd-0688-43c1-9051-dd6e91c4c672.mov" width="800" height="auto" />
+<img src="https://user-images.githubusercontent.com/88460822/153449568-67f84d0c-b586-419f-9e79-740ae3d5b955.gif" width="800" height="auto" />
 </p>
+
 
 
 # Future Directions 
