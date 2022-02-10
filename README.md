@@ -37,6 +37,18 @@ Users are able to search for different artists by using the searchbar, which app
 <img src="https://user-images.githubusercontent.com/88460822/153449568-67f84d0c-b586-419f-9e79-740ae3d5b955.gif" width="800" height="auto" />
 </p>
 
+On click, the user will see a list of artists available in a dropdown menu. Users have the option to select an artist from this dropdown menu, or to manually type an artist's name in the searchbar. User input will be received and will activate the filter functionality, which in turn will provide the user with the filtered response to choose from. When a user clicks on an artist's name in the dropdown menu, they will be brought to that artist's page. 
+
+This functionality was achieved by first gathering all available data and feeding it into the dropdown menu as an Array. I could then filter through this data based on user input, which was acquired by way of attaching event listeners to the input element. From there, once the user submits their request, another event listener handles the user's input and redirects the user to the appropriate page. 
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/88460822/153452193-eda7cd1e-7148-43d8-96ed-d55e6739e69d.png" />
+</p>
+ 
+<p align="center">
+<img src="https://user-images.githubusercontent.com/88460822/153452207-15b9c782-ff54-4a9f-ab8a-e21a9a9e28ae.png" />
+</p>
+
 
 
 # Future Directions 
