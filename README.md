@@ -18,11 +18,24 @@ New Wave is a single page clone of BandCamp - a website that hosts artists' musi
 
 
 After a user is logged in, they will have the option to create their own album. They will be able to upload audio and image files, and include a title. This feature was implemented using the FormData object and AWS. 
+```javascript
+    handleSubmit(e) {
+        e.preventDefault();
+            
+            const formData = new FormData();
 
-<p align="center">
-<img width="572" alt="Screen Shot 2021-11-12 at 9 41 24 AM" src="https://user-images.githubusercontent.com/88460822/141484680-4f289525-6723-42ad-885d-0130f75aece4.png">
-</p>
- 
+            formData.append('album[title]', this.state.title);
+            formData.append('album[artist_id]', this.state.artist_id);
+            formData.append('album[photo]', this.state.img_url);
+            formData.append('album[song]', this.state.audio_url);
+            debugger
+            this.props.createAlbum(formData)
+                .then(response => {
+                    return this.props.history.push(`/albums/${response.album.id}`)
+                })
+        
+    }
+```
 The image and audio files are passed back to the frontend by grabbing them in the json.jbuilder file and using the Ruby `url_for` method to convert them into a url that the frontend can render.
 
 <p align="center">
