@@ -10,7 +10,7 @@ New Wave is a single page clone of BandCamp - a website that hosts artists' musi
 
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/88460822/153444762-fcf31d3a-e7d3-4e1b-bf8e-1518528e5ea6.gif" width="800" height="auto" />
+<img src="https://user-images.githubusercontent.com/88460822/153445782-a34c5212-8216-4299-9b64-cd5cd8133b60.gif" width="800" height="auto" />
 </p>
 
 
