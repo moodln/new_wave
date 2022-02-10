@@ -54,9 +54,34 @@ On click, the user will see a list of artists available in a dropdown menu. User
 
 This functionality was achieved by first gathering all available data and feeding it into the dropdown menu as an Array. I could then filter through this data based on user input, which was acquired by way of attaching event listeners to the input element. From there, once the user submits their request, another event listener handles the user's input and redirects the user to the appropriate page. 
 
-<p align="center">
-<img src="https://user-images.githubusercontent.com/88460822/153452193-eda7cd1e-7148-43d8-96ed-d55e6739e69d.png" />
-</p>
+```javascript
+   <ul className="search-dropdown">
+                                
+                                {
+                                    Array.from(artists.entries()).filter( entry => {
+                                        let artist = entry[1];
+                                        let idx = (entry[0].length - this.state.query.length) * -1
+                                        if (this.state.query === '') {
+                                            return artist;
+                                        } else if (entry[0].slice(0, idx).toLowerCase().includes(this.state.query.toLowerCase())) {
+                                            return artist;
+                                        } else if (this.state.query.toLowerCase() === entry[0].toLowerCase()) {
+                                            selectedArtist = artist;
+                                            return artist;
+                                        }
+                                    }).map((artistObject, idx) => {
+                                        return (
+                                            <li className="artist-search-dropdown-item"
+                                                key={idx}
+                                                onClick={(e) => this.albumNavigation(e, artistObject[1].id)}>
+                                                    {artistObject[0]}
+                                            </li>
+                                        )
+                                    })
+                                }
+                            </ul>
+```
+
  
 <p align="center">
 <img src="https://user-images.githubusercontent.com/88460822/153452207-15b9c782-ff54-4a9f-ab8a-e21a9a9e28ae.png" />
