@@ -27,7 +27,10 @@ The image and audio files are passed back to the frontend by grabbing them in th
 
 #Song Player 
 
-![Screen Recording 2021-11-12 at 9 46 28 AM](https://user-images.githubusercontent.com/88460822/141489584-5aa0a10f-35bf-4a13-95e2-e27fd1100c06.gif)
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/88460822/153446450-a659c0cc-607d-49e8-a9fa-34a25bb0b20b.gif" width="800" height="auto" />
+</p>
 
 
 
