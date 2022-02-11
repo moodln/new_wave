@@ -27,7 +27,6 @@ class AlbumShow extends React.Component {
     removeAlbum(albumId) {
         return (e) => {
             e.preventDefault();
-            // debugger
             if (this.props.currentUser.id === this.props.album.artist.id) {
                 this.props.deleteAlbum(albumId)
                 .then(() => this.props.history.push(`/`));
@@ -36,12 +35,12 @@ class AlbumShow extends React.Component {
     }
 
     render() {
-        debugger
+        
         if (this.props.albums.length === 0) {
             return null;
         } else {
             let [album] = this.props.albums.filter(album => album.id === this.state.albumId)
-            debugger
+            
            if (!album.artist.photoUrl) {
                album.artist.photoUrl = window.artist_image
            }
@@ -58,7 +57,7 @@ class AlbumShow extends React.Component {
             } else {
                 artistLocation = album.artist.location;
             }
-            debugger
+            
             if (this.props.currentUser){
             if (this.props.currentUser.id === album.artist.id) {
                 artistButtons = <button onClick={this.removeAlbum(album.id)}>remove album</button>
