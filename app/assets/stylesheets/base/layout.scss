@@ -1159,25 +1159,32 @@ li {
 
 .footer {
     width: 100vw;
-    height: 49px;
-    background-color: #ebebeb;
+    height: 91px;
+    background-color: #4a7485;;
     display: flex;
-    flex-direction: row;
-    align-content: flex-start;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center; 
+    color: #d4d6d7;
     
     div {
-        color: black;
-        font-size: 12px;
+        padding: 20px;
+
+        svg {
+            fill: #2f4a54;
+            // transition: .3s ease-in;
+        }
+
+        svg:hover {
+            fill:#011c26;
+        }
     }
 
     a {
-        color: rgb(30, 122, 197);
-        margin-right: 10px;
-        font-weight: bold;
-        font-size: 12px;
+        margin: 10px;
+        padding: 10px;
     }
+
     a:hover {
         text-decoration: underline;
     }
