@@ -1,6 +1,9 @@
 body {
     font: 14px/1.2307692308 'Helvetica Neue',Helvetica,Arial,sans-serif;
+    overflow-x: hidden;
 }
+
+
 
 .header-home {
     margin-top: 10px;
@@ -528,7 +531,11 @@ li {
 
 }
 
+// .article-index {
+//     display: grid;
+// }
 
+// blue bottom shows up at window/broswer width of 1584px
 .main-article-container {
     box-sizing: border-box;
     position: relative;
@@ -536,9 +543,9 @@ li {
     background: #7fb1ff;
     margin: 2px 0px;
 
-    img {
+    img { // max width/height: 978x550
         width: 100%;
-        height: auto;
+        height: 100%;
         object-fit: contain;
         opacity: 0.7;
         transition: 0.3s;
@@ -1163,12 +1170,13 @@ li {
     background-color: #4a7485;;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center; 
     color: #d4d6d7;
     
     div {
-        padding: 20px;
+        padding: 8px;
+        padding-top: 17px;
 
         svg {
             fill: #2f4a54;

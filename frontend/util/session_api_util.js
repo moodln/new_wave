@@ -15,7 +15,7 @@ export const signup = user => (
 );
 
 export const edit = (user, formData) => {
-    debugger
+    
     return $.ajax({
         method: 'PATCH',
         url: `/api/users/${user.id}`,

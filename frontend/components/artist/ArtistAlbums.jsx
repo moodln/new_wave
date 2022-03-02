@@ -70,7 +70,7 @@ class ArtistAlbums extends React.Component {
         if (this.state.img_url) {
         formData.append('user[photo]', this.state.img_url);
         }
-        debugger
+        
 
         
 
@@ -96,7 +96,7 @@ class ArtistAlbums extends React.Component {
                         </div>
         
         let { albums, currentUser } = this.props;
-        debugger
+        
         return (
             <div className='artist-albums'>
                 <div className='album-show-container'>
@@ -109,7 +109,7 @@ class ArtistAlbums extends React.Component {
                         <div className="artist-albums-body">
                             <div className="artist-page-albums">
                                     {albums.filter(album => {
-                                        debugger
+                                        
                                         if (album.artist.id === currentUser.id) {
                                             return album;
                                         }

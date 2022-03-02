@@ -28,7 +28,7 @@ After a user is logged in, they will have the option to create their own album. 
             formData.append('album[artist_id]', this.state.artist_id);
             formData.append('album[photo]', this.state.img_url);
             formData.append('album[song]', this.state.audio_url);
-            debugger
+            
             this.props.createAlbum(formData)
                 .then(response => {
                     return this.props.history.push(`/albums/${response.album.id}`)

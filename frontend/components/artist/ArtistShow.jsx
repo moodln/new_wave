@@ -12,9 +12,9 @@ class ArtistShow extends React.Component {
     }
 
     componentDidMount() {
-        debugger
+        
         this.props.fetchAlbums();
-        debugger
+        
     }
 
     toggleInput() {
@@ -56,7 +56,7 @@ class ArtistShow extends React.Component {
         if (this.state.img_url) {
         formData.append('user[photo]', this.state.img_url);
         }
-        debugger
+        
 
         
 
@@ -67,7 +67,7 @@ class ArtistShow extends React.Component {
     }
 
     render() {
-        debugger
+        
         if (this.props.albums.length === 0) return null;
         let aboutInfo;
         let location;
@@ -77,7 +77,7 @@ class ArtistShow extends React.Component {
             this.props.history.push(`./artist/albums/${this.props.currentUser.id}`)
             // this.props.history.push(`albums/${artistAlbums[artistAlbums.length - 1].id}`)
         }
-        debugger
+        
         if (this.state.location === 'undefined' || this.state.location === null) {
             location = <p>Independence, <br/>Kansas</p>
             this.setState({location: 'Independence, Kansas'})

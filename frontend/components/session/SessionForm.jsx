@@ -19,7 +19,7 @@ class SessionForm extends React.Component {
         e.preventDefault();
 
         this.props.processForm(this.state);
-        debugger
+       
         if (!this.props.errors) {
             this.props.closeModal();
         } 

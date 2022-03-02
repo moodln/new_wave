@@ -87,7 +87,7 @@ class CreateAlbumForm extends React.Component {
             formData.append('album[artist_id]', this.state.artist_id);
             formData.append('album[photo]', this.state.img_url);
             formData.append('album[song]', this.state.audio_url);
-            debugger
+            
             this.props.createAlbum(formData)
                 .then(response => {
                     return this.props.history.push(`/albums/${response.album.id}`)
@@ -97,7 +97,7 @@ class CreateAlbumForm extends React.Component {
 
 
     render() {
-        debugger
+        
         const errors = this.props.errors.join('').split(', ')
         const title_error = Object.values(errors).filter(error => error.includes('title'))
         const song_error = Object.values(errors).filter(error => error.includes('song'))

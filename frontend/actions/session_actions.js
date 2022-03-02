@@ -42,7 +42,6 @@ export const signup = (user) => (dispatch) => {
 }
 
 export const edit = (user, formData) => (dispatch) => {
-    debugger
     return SessionApiUtil.edit(user, formData)
         .then((user) => dispatch(receiveCurrentUser(user)))
         .fail(errors => dispatch(receiveErrors(errors)))

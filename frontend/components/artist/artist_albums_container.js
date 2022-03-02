@@ -5,7 +5,7 @@ import { edit } from '../../actions/session_actions'
 
 
 const mSTP = (state, ownProps) => {
-    debugger
+    
    return {currentUser: state.entities.users[ownProps.match.params.artistId],
     albums: Object.values(state.entities.albums)}
 }
