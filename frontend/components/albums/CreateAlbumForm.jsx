@@ -87,6 +87,7 @@ class CreateAlbumForm extends React.Component {
             formData.append('album[artist_id]', this.state.artist_id);
             formData.append('album[photo]', this.state.img_url);
             formData.append('album[song]', this.state.audio_url);
+            formData.append('album[release_date]', this.state.release_date);
             
             this.props.createAlbum(formData)
                 .then(response => {
@@ -162,7 +163,7 @@ class CreateAlbumForm extends React.Component {
                                 </div>
                                 <div className='release-date'>
                                     <p>release date:</p>
-                                    <input type="text" value='optional'/>
+                                    <input type="text" placeholder='optional' onChange={this.handleInput('release_date')}/>
                                     <p>mm/dd/yyyy</p><p>  leave blank to use publish date</p>
                                 </div>
                                 <div className='border'> </div>
