@@ -29,9 +29,9 @@ class CreateAlbumForm extends React.Component {
     toggleInput() {
         const inputBox = document.getElementById('description-id');
         const descriptionDiv = document.getElementsByClassName('description');
-        // console.log(descriptionDiv);
+        
         const display = inputBox.style.display;
-        // debugger
+        
         if (display === 'none') {
             inputBox.style.display = 'block';
             descriptionDiv[0].children[2].style.display = 'none';
@@ -80,13 +80,16 @@ class CreateAlbumForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-            
+            // const date = Date.parse(this.state.release_date);
+            // const newDate = new Date(date);
+            debugger
             const formData = new FormData();
 
             formData.append('album[title]', this.state.title);
             formData.append('album[artist_id]', this.state.artist_id);
             formData.append('album[photo]', this.state.img_url);
             formData.append('album[song]', this.state.audio_url);
+            formData.append('album[release_date]', this.state.release_date);
             
             this.props.createAlbum(formData)
                 .then(response => {
@@ -162,7 +165,9 @@ class CreateAlbumForm extends React.Component {
                                 </div>
                                 <div className='release-date'>
                                     <p>release date:</p>
-                                    <input type="text" value='optional'/>
+                                    <input type="text" 
+                                        placeholder='optional' 
+                                        onChange={this.handleInput('release_date')}/>
                                     <p>mm/dd/yyyy</p><p>  leave blank to use publish date</p>
                                 </div>
                                 <div className='border'> </div>

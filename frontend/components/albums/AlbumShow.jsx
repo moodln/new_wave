@@ -37,7 +37,9 @@ class AlbumShow extends React.Component {
             return null;
         } else {
             let [album] = this.props.albums.filter(album => album.id === this.state.albumId)
-            
+            let releaseDate = new Date(album.release_date.replace(/-/g, '\/'));
+            releaseDate = String(releaseDate).slice(4, 15);
+            debugger
            if (!album.artist.photoUrl) {
                album.artist.photoUrl = window.artist_image
            }
@@ -92,6 +94,9 @@ class AlbumShow extends React.Component {
                                         </button>
                                         <p>1. {album.songTitle}</p>
                                         <p>3:44</p>
+                                    </div>
+                                    <div className='release-date'>
+                                        <p>released {releaseDate}</p> 
                                     </div>
                                 </div>
                                 <div>

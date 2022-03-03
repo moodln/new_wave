@@ -25,16 +25,12 @@ class Api::AlbumsController < ApplicationController
         errors << 'you must upload a song' if form["song"] == "null" 
         errors << 'you must have an album photo' if form["photo"] == "null"
 
-        # debugger
         if errors.length > 0
-            # debugger
             render json: errors.join(', '), status: 422
         else 
-            # debugger
             @album = Album.create(album_params)
             # @song = Song.create(@album.song)
             # @song.album_id = @album.id
-            # debugger
             if @album.save
                 render :show
             else
@@ -56,6 +52,6 @@ class Api::AlbumsController < ApplicationController
     end 
 
     def album_params 
-        params.require(:album).permit(:title, :artist_id, :photo, :song)
+        params.require(:album).permit(:title, :artist_id, :photo, :song, :release_date, :price, :description)
     end 
 end 
