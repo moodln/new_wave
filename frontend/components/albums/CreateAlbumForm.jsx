@@ -90,6 +90,7 @@ class CreateAlbumForm extends React.Component {
             formData.append('album[photo]', this.state.img_url);
             formData.append('album[song]', this.state.audio_url);
             formData.append('album[release_date]', this.state.release_date);
+            formData.append('album[price]', this.state.price);
             
             this.props.createAlbum(formData)
                 .then(response => {
@@ -174,7 +175,9 @@ class CreateAlbumForm extends React.Component {
                                 <div className='pricing'>
                                     <p>pricing:</p>
                                     <div className='dollars'>
-                                        <input type="text" value='7.00' />
+                                        <input type="text" 
+                                            placeholder='7.00'
+                                            onChange={this.handleInput('price')} />
                                         <p>US Dollars</p>
                                     </div>
                                     <p>enter zero or more</p>

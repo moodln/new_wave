@@ -37,6 +37,8 @@ class AlbumShow extends React.Component {
             return null;
         } else {
             let [album] = this.props.albums.filter(album => album.id === this.state.albumId)
+            debugger
+            
             let releaseDate = new Date(album.release_date.replace(/-/g, '\/'));
             releaseDate = String(releaseDate).slice(4, 15);
             debugger
@@ -95,7 +97,8 @@ class AlbumShow extends React.Component {
                                         <p>1. {album.songTitle}</p>
                                         <p>3:44</p>
                                     </div>
-                                    <div className='release-date'>
+                                    <div className='description release-date'>
+                                        <p>{album.description}</p>
                                         <p>released {releaseDate}</p> 
                                     </div>
                                 </div>
