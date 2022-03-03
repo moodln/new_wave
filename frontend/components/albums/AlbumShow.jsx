@@ -37,7 +37,7 @@ class AlbumShow extends React.Component {
             return null;
         } else {
             let [album] = this.props.albums.filter(album => album.id === this.state.albumId)
-            let releaseDate = new Date(album.release_date);
+            let releaseDate = new Date(album.release_date.replace(/-/g, '\/'));
             releaseDate = String(releaseDate).slice(4, 15);
             debugger
            if (!album.artist.photoUrl) {

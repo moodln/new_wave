@@ -80,7 +80,9 @@ class CreateAlbumForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-            
+            // const date = Date.parse(this.state.release_date);
+            // const newDate = new Date(date);
+            // debugger
             const formData = new FormData();
 
             formData.append('album[title]', this.state.title);
@@ -163,7 +165,9 @@ class CreateAlbumForm extends React.Component {
                                 </div>
                                 <div className='release-date'>
                                     <p>release date:</p>
-                                    <input type="text" placeholder='optional' onChange={this.handleInput('release_date')}/>
+                                    <input type="text" 
+                                        placeholder='optional' 
+                                        onChange={this.handleInput('release_date')}/>
                                     <p>mm/dd/yyyy</p><p>  leave blank to use publish date</p>
                                 </div>
                                 <div className='border'> </div>
