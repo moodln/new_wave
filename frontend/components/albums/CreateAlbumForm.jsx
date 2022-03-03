@@ -82,7 +82,7 @@ class CreateAlbumForm extends React.Component {
         e.preventDefault();
             // const date = Date.parse(this.state.release_date);
             // const newDate = new Date(date);
-            // debugger
+            debugger
             const formData = new FormData();
 
             formData.append('album[title]', this.state.title);
