@@ -20,8 +20,13 @@ class AlbumShow extends React.Component {
         })
     }
 
-    playAudio() {
-        document.getElementById('audio').play()
+    playAudio(album) {
+        let audio = document.getElementById('audio');
+        let source = document.getElementById('audioSource');
+        source.src = album.songUrls[1];
+        debugger
+        audio.load();
+        audio.play();
     }
 
     removeAlbum(album) {
@@ -83,7 +88,10 @@ class AlbumShow extends React.Component {
                                 <div>
                                     <h2>{album.title}</h2>
                                     <p>by {album.artist.name}</p>
-                                    <audio controls src={album.songUrls[0]} type='audio/mpeg' id='audio'/>
+                                    <audio controls type='audio/mpeg' id='audio'>
+                                        <source id='audioSource' src={album.songUrls[0]}></source>
+                                    </audio>
+
                                     <h4>Digital Album</h4>
                                     <p>Streaming + Download</p>
                                     <p>Includes unlimited streaming via the free new_wave app, plus high-quality download in MP3, FLAC and more.</p>
@@ -91,7 +99,7 @@ class AlbumShow extends React.Component {
                                     <p>Send as Gift</p>
                                 
                                     <div className='song-list'>
-                                        <button onClick={this.playAudio}>
+                                        <button onClick={() => this.playAudio(album)}>
                                             <img src={window.play} alt="play_button" className='play' />
                                         </button>
                                         <p>1. {album.songTitle}</p>

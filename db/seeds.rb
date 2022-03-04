@@ -18,15 +18,60 @@
     ApplicationRecord.connection.reset_pk_sequence!('songs')
 
     demoUser = User.create!(username: 'guest', email: 'demo@demo.com', password: 'password')
+
     boweryArtist = User.create!(username: 'bowery electric', name: 'Bowery Electric', email: 'bowery@gmail.com', password: 'password', location: 'NYC', about: 'American post-rock band, formed in 1993', artist: true)
+    boweryArtist.photo.attach(
+        io: open('https://new-wave-aa-seeds.s3.amazonaws.com/Bowery_Electric.jpeg'),
+        filename: 'Bowery_Electric.jpeg'
+    )
+
     esgArtist = User.create!(username: 'ESG', email: 'esg@esg.com', password: 'password', location: 'The Bronx, NYC', about: 'ESG is an American funk rock band formed in the South Bronx in 1978. ESG has been influential across a wide range of musical genres, including hip hop, and dance-punk.', artist: true)
-    tsegueArtist = User.create!(username: 'tsegue maryam guebrou', name: 'Tsegue Maryam Guebrou',email: 'tsegue@gmail.com', password: 'password', location: 'addis ababa, ethiopia', about: 'Emahoy Tsegué-Maryam Guèbrou is an Ethiopian nun known for her piano playing and compositions.', artist: true)
+    esgArtist.photo.attach(
+        io: open('https://new-wave-aa-seeds.s3.amazonaws.com/ESG.jpeg'),
+        filename: 'ESG2.jpeg')
+
+    tsegueArtist = User.create!(username: 'tsegue maryam guebrou', name: 'Tsegue Maryam Guebrou',email: 'tsegue@gmail.com', password: 'password', location: 'addis ababa, ethiopia', about: 'Emahoy Tsegué-Maryam Guèbrou is an Ethiopian nun known for her piano playing and compositions. (Photograph: Gali Tibbon)', artist: true)
+    tsegueArtist.photo.attach(
+        io: open('https://new-wave-aa-seeds.s3.amazonaws.com/emahoy-tsegue.jpeg'),
+        filename: 'emahoy-tsegue.jpeg'
+    )
+
     cocteauArtist = User.create!(username: 'cocteau twins', name: 'Cocteau Twins', email: 'cocteau@gmail.com', password: 'password', location: 'grangemouth, scotland', about: 'Cocteau Twins were a Scottish dream pop band active from 1979 to 1997.', artist: true)
+    cocteauArtist.photo.attach(
+        io: open('https://new-wave-aa-seeds.s3.amazonaws.com/cocteau-twins-e1595306164263.jpeg'),
+        filename: 'cocteau-twins-e1595306164263.jpeg'
+    )
+
     latinAtrist = User.create!(username: 'latin playboys', name: 'Latin Playboys', email: 'latin@gmail.com', password: 'password', location: 'East Los Angeles, California', artist: true)
+    latinAtrist.photo.attach(
+        io: open('https://new-wave-aa-seeds.s3.amazonaws.com/latin-playboys.jpeg'),
+        filename: 'latin-playboys.jpeg'
+    )
+
     stereoAtrist = User.create!(username: 'stereolab', name: 'Stereolab', email: 'stereolab@gmail.com', password: 'password', location: 'London, England', artist: true, about: 'Stereolab are an English-French avant-pop band formed in London in 1990. Led by the songwriting team of Tim Gane and Lætitia Sadier, the group\'s music combines influences from krautrock, lounge and 1960s pop music, often incorporating a repetitive motorik beat with heavy use of vintage electronic keyboards and female vocals sung in English and French.')
+    stereoAtrist.photo.attach(
+        io: open('https://new-wave-aa-seeds.s3.amazonaws.com/stereolab.jpeg'),
+        filename: 'stereolab.jpeg')
+
     broadcastArtist = User.create!(username: 'broadcast', name: 'Broadcast', email: 'broadcast@gmail.com', password: 'password', location: 'Birmingham, England', artist: true, about: 'Broadcast were an English electronic band formed in Birmingham in 1995 by Trish Keenan (vocals, keyboards, guitar) and James Cargill (bass). Their musical style blended elements of 1960s American psychedelia with experimental electronica, incorporating samples from various sources, and earned the band a cult following.')
-    mosesArtist = User.create!(username: 'moses sumney', name: 'Moses Sumney', email: 'moses@gmail.com', password: 'password', location: 'San Bernardino, California', artist: true, about: 'Moses Sumney is a Ghanaian-American singer-songwriter. His self-recorded EP, Mid-City Island, was released in 2014. He released another five-song EP in 2016, titled Lamentations. His first full-length album, Aromanticism, was released in September 2017. His second studio album, Græ, was released in 2020.')
+    broadcastArtist.photo.attach(
+        io: open('https://new-wave-aa-seeds.s3.amazonaws.com/Broadcast_in_2010.jpeg'), 
+        filename: 'Broadcast_in_20102.jpeg')
+
+    mosesArtist = User.create!(username: 'moses sumney', name: 'Moses Sumney', email: 'moses@gmail.com', password: 'password', location: 'San Bernardino, California', artist: true, about: 'Moses Sumney is a Ghanaian-American singer-songwriter. His self-recorded EP, Mid-City Island, was released in 2014. He released another five-song EP in 2016, titled Lamentations. His first full-length album, Aromanticism, was released in September 2017. His second studio album, Græ, was released in 2020. (Photograph: Spencer Kelly)')
+    mosesArtist.photo.attach(
+        io: open('https://new-wave-aa-seeds.s3.amazonaws.com/Moses+Sumney.png'),
+        filename: 'Moses Sumney.png'
+    )
+
+    bloodOrangeArtist = User.create!(username: 'blood orange', name: 'Blood Orange', email: 'orange@gmail.com', password: 'password', location: 'New York, New York', artist: true, about: 'Devonté Hynes (born David Joseph Michael Hynes, 23 December 1985), also known as Blood Orange and formerly Lightspeed Champion, is an English singer, songwriter, record producer and director based in New York City. From 2004 to 2006, Hynes was a member of the band Test Icicles, playing guitar, synth, and occasionally performing vocals. They released one full-length album in 2005. Hynes went on to release two solo studio albums as Lightspeed Champion and subsequently five more as Blood Orange, between 2008 and 2019.
+
+    He has written, played or produced for and with artists such as Tinashe, Solange Knowles, Connan Mockasin, Tei Shi, Sky Ferreira, FKA twigs, Haim, Florence and the Machine, Carly Rae Jepsen, The Chemical Brothers, Kylie Minogue, A$AP Rocky, Mac Miller, Blondie, Harry Styles, Jazmine Sullivan, and Mariah Carey. (Photograph: Mamadi Doumbouya)')
     # ('about' from Wikipedia)
+    bloodOrangeArtist.photo.attach(
+        io: open('https://new-wave-aa-seeds.s3.amazonaws.com/blood-orange.jpeg'),
+        filename: 'blood-orange.jpeg'
+    )
 
     broadcastAlbum1desc = "
     Haha Sound is a sharp turn from Broadcast's debut full-length, The Noise Made by People, 
@@ -69,6 +114,24 @@
     broadcastAlbum2.photo.attach(
         io: open('https://new-wave-aa-seeds.s3.amazonaws.com/future.jpeg'), 
         filename: 'future.jpeg')
+
+    bloodOrangeDesc = "Coastal Grooves is the debut LP record by Blood Orange. 
+    It was released August 30, 2011 under Domino Recording Company. 
+    The album featured no guest appearances and was produced by Ariel Rechtshaid in Los Angeles. 
+    Domino Record Company describes the album as highlighting the glamour and drama of New York City in the 1980s.
+    
+    
+    (Description from https://en.wikipedia.org/wiki/Coastal_Grooves)"
+
+    bloodOrangeAlbum = Album.create(title: 'Coastal Grooves',
+        artist_id: bloodOrangeArtist.id, 
+        release_date: '08/08/2011', 
+        description: bloodOrangeDesc)
+    bloodOrangeAlbum.photo.attach(
+        io: open('https://new-wave-aa-seeds.s3.amazonaws.com/Screen+Shot+2022-03-04+at+11.11.20+AM.png'),
+        filename: 'Screen Shot 2022-03-04 at 11.11.20 AM.png'
+    )
+
 
     mosesDesc = "On græ, Moses Sumney lets out everything inside of him. 
     The album is bigger, in every sense—longer, for starters, 
@@ -225,7 +288,7 @@
     )
     heavenSong = Song.create!(title: 'Heaven or Las Vegas', album_id: cocteauAlbum.id)
     heavenSong.audio.attach(
-        io: open('https://new-wave-aa-seeds.s3.amazonaws.com/Cocteau+Twins+~+Heaven+Or+Las+Vegas+(Remastered)+HQ+Audio.mp3').
+        io: open('https://new-wave-aa-seeds.s3.amazonaws.com/Cocteau+Twins+~+Heaven+Or+Las+Vegas+(Remastered)+HQ+Audio.mp3'),
         filename: 'Cocteau Twins ~ Heaven Or Las Vegas (Remastered) HQ Audio.mp3'
     )
     manifoldSong = Song.create!(title: 'Manifold De Amour', album_id: latinAlbum.id)
@@ -238,10 +301,25 @@
         io: open('https://new-wave-aa-seeds.s3.amazonaws.com/ESG+-+Dance.mp3'),
         filename: 'Dance.mp3'
     )
+    moodySong = Song.create!(title: "You're No Good", album_id: esgMoodyEp.id)
+    moodySong.audio.attach(
+        io: open("https://new-wave-aa-seeds.s3.amazonaws.com/ESG+-+You're+no+Good.mp3"),
+        filename: "ESG - You're no Good.mp3"
+    )
     moodySong = Song.create!(title: 'UFO', album_id: esgMoodyEp.id)
     moodySong.audio.attach(
         io: open('https://new-wave-aa-seeds.s3.amazonaws.com/ESG+-+UFO.mp3'),
+        filename: 'ESG - Moody.mp3'
+    )
+    moodySong = Song.create!(title: 'Moody', album_id: esgMoodyEp.id)
+    moodySong.audio.attach(
+        io: open('https://new-wave-aa-seeds.s3.amazonaws.com/ESG+-+Moody.mp3'),
         filename: 'UFO.mp3'
+    )
+    moodySong = Song.create!(title: 'Moody - Spaced Out', album_id: esgMoodyEp.id)
+    moodySong.audio.attach(
+        io: open('https://new-wave-aa-seeds.s3.amazonaws.com/Moody+(Spaced+Out).mp3'),
+        filename: 'Moody (Spaced Out).mp3'
     )
     beatSong = Song.create!(title: 'Empty Words', album_id: beatAlbum.id)
     beatSong.audio.attach(
@@ -271,6 +349,16 @@
         io: open('https://new-wave-aa-seeds.s3.amazonaws.com/Moses+Sumney+-+Cut+Me+++A+COLORS+SHOW.mp3'),
         filename: 'Moses Sumney - Cut Me A COLORS SHOW.mp3'
     )
+    cutMeSong = Song.create!(title: 'Polly', album_id: mosesAlbum.id)
+    cutMeSong.audio.attach(
+        io: open('https://new-wave-aa-seeds.s3.amazonaws.com/Moses+Sumney+-+Polly.mp3'),
+        filename: 'Moses Sumney - Polly.mp3'
+    )
+    bloodOrangeSong = Song.create!(title: 'Champagne Coast', album_id: bloodOrangeAlbum.id)
+    bloodOrangeSong.audio.attach(
+        io: open('https://new-wave-aa-seeds.s3.amazonaws.com/Blood+Orange+-+Champagne+Coast.mp3'),
+        filename: 'Blood Orange - Champagne Coast.mp3'
+    )
     
 
         
@@ -278,25 +366,19 @@
     stereoArticle.photo.attach(
         io: open('https://new-wave-aa-seeds.s3.amazonaws.com/stereolab2.jpeg'),
         filename: 'stereolab2.jpeg')
-    stereoAtrist.photo.attach(
-        io: open('https://new-wave-aa-seeds.s3.amazonaws.com/stereolab.jpeg'),
-        filename: 'stereolab.jpeg')
+    
 
     broadcastArticle = Article.create!(title: 'Broadcast', description: 'The Noise Made By People', artist_id: broadcastArtist.id)
     broadcastArticle.photo.attach(
         io: open('https://new-wave-aa-seeds.s3.amazonaws.com/Broadcast_in_2010.jpeg'), 
         filename: 'Broadcast_in_2010.jpeg')
-    broadcastArtist.photo.attach(
-        io: open('https://new-wave-aa-seeds.s3.amazonaws.com/Broadcast_in_2010.jpeg'), 
-        filename: 'Broadcast_in_20102.jpeg')
+    
 
     esgArticle = Article.create!(title: 'ESG', description: 'Come Away With ESG', artist_id: esgArtist.id)
     esgArticle.photo.attach(
         io: open('https://new-wave-aa-seeds.s3.amazonaws.com/ESG.jpeg'),
         filename: 'ESG.jpeg')
-    esgArtist.photo.attach(
-        io: open('https://new-wave-aa-seeds.s3.amazonaws.com/ESG.jpeg'),
-        filename: 'ESG2.jpeg')
+    
 
     mosesArticle = Article.create!(title: 'Moses Sumney', description: 'All Colors with Moses Sumney', artist_id: mosesArtist.id)     
     mosesArticle.photo.attach(
