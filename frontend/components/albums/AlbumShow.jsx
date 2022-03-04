@@ -37,11 +37,11 @@ class AlbumShow extends React.Component {
             return null;
         } else {
             let [album] = this.props.albums.filter(album => album.id === this.state.albumId)
-            debugger
+            // debugger
             
             let releaseDate = new Date(album.release_date.replace(/-/g, '\/'));
             releaseDate = String(releaseDate).slice(4, 15);
-            debugger
+            // debugger
            if (!album.artist.photoUrl) {
                album.artist.photoUrl = window.artist_image
            }
@@ -83,7 +83,7 @@ class AlbumShow extends React.Component {
                                 <div>
                                     <h2>{album.title}</h2>
                                     <p>by {album.artist.name}</p>
-                                    <audio controls src={album.songUrl} type='audio/mpeg' id='audio'/>
+                                    <audio controls src={album.songUrls[0]} type='audio/mpeg' id='audio'/>
                                     <h4>Digital Album</h4>
                                     <p>Streaming + Download</p>
                                     <p>Includes unlimited streaming via the free new_wave app, plus high-quality download in MP3, FLAC and more.</p>

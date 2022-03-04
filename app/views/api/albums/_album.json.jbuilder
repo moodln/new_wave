@@ -4,5 +4,5 @@ json.release_date album.release_date
 json.description album.description
 json.price album.price
 json.photoUrl url_for(album.photo) if album.photo.attached?
-json.songUrl url_for(album.track.audio) if album.track && album.track.audio.attached?
-json.songUrl url_for(album.song) if album.song.attached?
+
+json.songUrls album.songs.map { |file| url_for(file.audio) }

@@ -28,13 +28,23 @@
     mosesArtist = User.create!(username: 'moses sumney', name: 'Moses Sumney', email: 'moses@gmail.com', password: 'password', location: 'San Bernardino, California', artist: true, about: 'Moses Sumney is a Ghanaian-American singer-songwriter. His self-recorded EP, Mid-City Island, was released in 2014. He released another five-song EP in 2016, titled Lamentations. His first full-length album, Aromanticism, was released in September 2017. His second studio album, Græ, was released in 2020.')
     # ('about' from Wikipedia)
 
-    broadcastAlbum1desc = "Haha Sound is a sharp turn from Broadcast's debut full-length, The Noise Made by People, and their early singles (collected on 1997's Work and Non-Work). 
-    \r\n
-    As their album titles indicate, Broadcast are steeped in the exploration of the detail and nuance of 'noise' and 'sounds.' On The Noise Made by People, the band created seamless, languid, soothing dreamscapes; here they've opted for a more cluttered, percussive rattle. 
-    \r\n
-    As she has in the past, vocalist Trish Keenan still seems as if she's singing lullabies, though the rest of the group is more intent on inflicting nightmares. Keenan's opening confession and request, 'I am gray/ Still on the page/ Colour me in,' is heeded over the course of the record by her bandmates as her detached vocals and fragile melodies are accompanied by a carnival of vintage electronics and sometimes-cacophonous sheets of polyrhythms. 
-    \r\n
-    \r\n
+    broadcastAlbum1desc = "
+    Haha Sound is a sharp turn from Broadcast's debut full-length, The Noise Made by People, 
+    and their early singles (collected on 1997's Work and Non-Work). 
+    
+    As their album titles indicate, Broadcast are steeped in the exploration 
+    of the detail and nuance of 'noise' and 'sounds.' On The Noise Made by People, 
+    the band created seamless, languid, soothing dreamscapes; 
+    here they've opted for a more cluttered, percussive rattle. 
+    
+    As she has in the past, vocalist Trish Keenan still seems as if she's singing lullabies, 
+    though the rest of the group is more intent on inflicting nightmares. 
+    Keenan's opening confession and request, 'I am gray/ Still on the page/ Colour me in,' 
+    is heeded over the course of the record by her bandmates as her detached vocals 
+    and fragile melodies are accompanied by a carnival of vintage electronics 
+    and sometimes-cacophonous sheets of polyrhythms. 
+    
+    
     (Description from https://pitchfork.com/reviews/albums/947-haha-sound/)"
 
     broadcastAlbum1 = Album.create(title: 'Haha Sound', 
@@ -45,9 +55,12 @@
         io: open('https://new-wave-aa-seeds.s3.amazonaws.com/hahasoung.jpeg'), 
         filename: 'hahasound.jpeg')
 
-    broadcastAlbum2desc = "The Future Crayon is a rarities and B-sides compilation by British indie electronic band Broadcast, released on 21 August 2006 by Warp. It collects all the tracks released on singles, EPs and compilations from 1999 to 2003, with the exception of 'Drums on Fire'.
-    \r\n
-    \r\n
+    broadcastAlbum2desc = "The Future Crayon is a rarities and B-sides compilation 
+    by British indie electronic band Broadcast, released on 21 August 2006 by Warp. 
+    It collects all the tracks released on singles, EPs and compilations from 1999 to 2003, 
+    with the exception of 'Drums on Fire'.
+    
+    
     (Description from https://en.wikipedia.org/wiki/The_Future_Crayon)"
     broadcastAlbum2 = Album.create(title: 'The Future Crayon', 
         artist_id: broadcastArtist.id,
@@ -57,11 +70,21 @@
         io: open('https://new-wave-aa-seeds.s3.amazonaws.com/future.jpeg'), 
         filename: 'future.jpeg')
 
-    mosesDesc = "On græ, Moses Sumney lets out everything inside of him. The album is bigger, in every sense—longer, for starters, a 20-song double album that Sumney saw fit to release in two parts (the first half of the album appeared in February, the second arriving only this week.)
-    \r\n
-    Where Aromanticism was intimate and sleek, græ is rangy, sprawling, a riot of moods from lustful to angry to broken-hearted. He has summoned a battalion of collaborators, including production from Daniel Lopatin, basslines from Thundercat, saxophone from Shabaka Hutchings, horn parts from the English art-rock group Adult Jazz, writing credits from James Blake and author Michael Chabon. The camera lens zooms out from dewdrop to mountain range. Everything Sumney’s ever done or tried to do is here. 
-    \r\n 
-    \r\n 
+    mosesDesc = "On græ, Moses Sumney lets out everything inside of him. 
+    The album is bigger, in every sense—longer, for starters, 
+    a 20-song double album that Sumney saw fit to release in two parts 
+    (the first half of the album appeared in February, the second arriving only this week.)
+    
+    Where Aromanticism was intimate and sleek, græ is rangy, sprawling, 
+    a riot of moods from lustful to angry to broken-hearted. He has summoned 
+    a battalion of collaborators, including production from Daniel Lopatin, 
+    basslines from Thundercat, saxophone from Shabaka Hutchings, 
+    horn parts from the English art-rock group Adult Jazz, 
+    writing credits from James Blake and author Michael Chabon. 
+    The camera lens zooms out from dewdrop to mountain range. 
+    Everything Sumney’s ever done or tried to do is here. 
+     
+     
     (Description from https://pitchfork.com/reviews/albums/moses-sumney-grae/)"
     mosesAlbum = Album.create(title: 'græ, Part 1', artist_id: mosesArtist.id, release_date: '02/21/2020', 
         description: mosesDesc)
@@ -69,11 +92,18 @@
         io: open('https://new-wave-aa-seeds.s3.amazonaws.com/grae.jpeg'), 
         filename: 'grae.jpeg')
 
-    stereoDesc = "Peng! is the debut studio album by English-French rock band Stereolab. It was released on 26 May 1992 by Too Pure in the United Kingdom. The album was issued in the United States on 13 June 1995 by Too Pure and American Recordings. A remastered edition of the album was released on 9 November 2018 by Too Pure and Beggars Arkive.
-    \r\n
-    The album's title (a German onomatopoeia for a loud pop or bang) and cover art are derived from a comic strip named Der tödliche Finger that appeared in a 1970 issue of Hotcha, a Swiss underground newspaper. Different panels of the same strip were adapted into cover art for other early Stereolab releases, and remain popular icons for the band. 
-    \r\n 
-    \r\n
+    stereoDesc = "Peng! is the debut studio album by English-French rock band Stereolab. 
+    It was released on 26 May 1992 by Too Pure in the United Kingdom. 
+    The album was issued in the United States on 13 June 1995 by Too Pure and American Recordings. 
+    A remastered edition of the album was released on 9 November 2018 by Too Pure and Beggars Arkive.
+    
+    The album's title (a German onomatopoeia for a loud pop or bang) and cover art 
+    are derived from a comic strip named Der tödliche Finger that appeared 
+    in a 1970 issue of Hotcha, a Swiss underground newspaper. 
+    Different panels of the same strip were adapted into cover art 
+    for other early Stereolab releases, and remain popular icons for the band. 
+     
+    
     (Description from https://en.wikipedia.org/wiki/Peng!)"
     stereoAlbum = Album.create!(title: 'Peng!', artist_id: stereoAtrist.id, release_date: '05/26/1992', 
         description: stereoDesc)
@@ -82,10 +112,15 @@
         filename: 'peng.jpeg')
 
     beatDesc = "Beat is the second studio album by American band Bowery Electric. 
-    \r\n
-    It was released on November 12, 1996 by Kranky. Lawrence Chandler of Bowery Electric told Alternative Press 'Beat is the beginning of us learning our way around a proper sampler and software which allows us to work with samples on the computer. We can sample ourselves, manipulate sounds, create our own beats and basically work with fewer restrictions.'
-    \r\n
-    \r\n
+    
+    It was released on November 12, 1996 by Kranky. 
+    Lawrence Chandler of Bowery Electric told Alternative Press 
+    'Beat is the beginning of us learning our way around a proper sampler 
+    and software which allows us to work with samples on the computer.
+    We can sample ourselves, manipulate sounds, create our own beats 
+    and basically work with fewer restrictions.'
+    
+    
     (Description from https://en.wikipedia.org/wiki/Beat_(Bowery_Electric_album))"
     beatAlbum = Album.create!(title: 'Beat', artist_id: boweryArtist.id, release_date: '11/12/1996', description: beatDesc)
     beatAlbum.photo.attach(
@@ -93,47 +128,65 @@
         filename: 'beat.jpeg')
 
     moodyDesc = "ESG is the debut EP by American post-punk band ESG. 
-    \r\n
-    It was released by 99 Records in 1981. The EP received positive reviews from music critics. 'Moody' became popular with house DJs, and 'UFO' came to be one of the most sampled tracks in hip hop music. 
-    \r\n
-    \r\n
+    
+    It was released by 99 Records in 1981. 
+    The EP received positive reviews from music critics. 
+    'Moody' became popular with house DJs, and 'UFO' came to be one of the most sampled tracks in hip hop music. 
+    
+    
     (Description from https://en.wikipedia.org/wiki/ESG_(EP))"
     esgMoodyEp = Album.create!(title: 'The Moody EP', artist_id: esgArtist.id, release_date: '01/01/1981', description: moodyDesc)
     esgMoodyEp.photo.attach(
         io: open('https://new-wave-aa-seeds.s3.amazonaws.com/Screen+Shot+2022-03-03+at+4.19.13+PM.png'),
         filename: 'esgmoody.jpg')
 
-    cawesDesc = "Decades after its release, Come Away with ESG saw a critical resurgence. It was named the 84th greatest album of the 1980s by Pitchfork. 
-    \r\n
-    The album became influential for post-punk, dance, and hip hop acts. Kathleen Hanna stated that it influenced her work with Le Tigre. Royal Trux member Jennifer Herrema has also cited Come Away with ESG as an influence. 
-    \r\n
-    \r\n
+    cawesDesc = "Decades after its release, Come Away with ESG saw a critical resurgence. 
+    It was named the 84th greatest album of the 1980s by Pitchfork. 
+    
+    The album became influential for post-punk, dance, and hip hop acts.
+    Kathleen Hanna stated that it influenced her work with Le Tigre. 
+    Royal Trux member Jennifer Herrema has also cited Come Away with ESG as an influence. 
+    
+    
     (Description from https://en.wikipedia.org/wiki/Come_Away_with_ESG)"
     cawesgAlbum = Album.create!(title: 'Come Away With ESG', artist_id: esgArtist.id, release_date: '03/01/1983', description: cawesDesc )
     cawesgAlbum.photo.attach(
         io: open('https://new-wave-aa-seeds.s3.amazonaws.com/cawesgAlbum.jpeg'),
         filename: 'cawesgAlbum.jpeg')
 
-    tsegueDesc = "The Éthiopiques series is known for high-energy pop, brass bands and jazzy instrumentals-dance music for swingin’ Addis Ababa. But the 21st volume acts like a nightcap after a night out on the town. 
-    \r\n
-    Playing solo piano, Tsegué-Maryam Guèbrou works through 16 delicate compositions that sound like a somber Claude Debussy interpreting Ethiopian music: pentatonic, modal and mostly in the middle register. 
-    \r\n
-    The performances come from the 1960s, 1970s and 1990s, all made after Guèbrou had become a nun because her dreams to become a full-time musician were dashed by governmental interference. She made these recordings to raise money for charities, and it’s a relief she didn’t give up on music entirely after politics derailed her dreams. Emahoy is a strange, sui generis CD. 
-    \r\n
-    \r\n
+    tsegueDesc = "The Éthiopiques series is known for high-energy pop, brass bands 
+    and jazzy instrumentals-dance music for swingin’ Addis Ababa. 
+    But the 21st volume acts like a nightcap after a night out on the town. 
+    
+    Playing solo piano, Tsegué-Maryam Guèbrou works through 16 delicate compositions 
+    that sound like a somber Claude Debussy interpreting Ethiopian music: 
+    pentatonic, modal and mostly in the middle register. 
+    
+    The performances come from the 1960s, 1970s and 1990s, 
+    all made after Guèbrou had become a nun because her dreams to become a full-time musician 
+    were dashed by governmental interference. She made these recordings to raise money for charities, 
+    and it’s a relief she didn’t give up on music entirely after politics derailed her dreams. 
+    Emahoy is a strange, sui generis CD. 
+    
+    
     (Description from https://jazztimes.com/archives/emahoy-tsegue-and-maryam-guebrou-ethiopiques-21-ethiopia-song/)"
     tsegueAlbum = Album.create!(title: 'Ethiopiques, vol. 21', artist_id: tsegueArtist.id, release_date: '12/01/2005', description: tsegueDesc)
     tsegueAlbum.photo.attach(
         io: open('https://new-wave-aa-seeds.s3.amazonaws.com/tsegue.jpg'),
         filename: 'tsegue.jpg')
 
-    cocteauDesc = "Released in 1990, Heaven or Las Vegas was Cocteau Twins' most commercially successful release, reaching number seven in the UK album charts.
-    \r\n        
-    Numerous publications have since declared it one of the best albums of the ‘90s, Pitchfork calling it “a core of ungodly gorgeous songs that is every bit as moving and relevant today as it ever was.”
-    \r\n    
-    Label founder Ivo Watts-Russell goes further, candidly revealing in the recent 4AD biography, Facing The Other Way, that this album wasn’t just his favourite Cocteaus album but also his favourite all-time 4AD album, and “by a long shot”, calling it “the perfect record.
-    \r\n
-    \r\n
+    cocteauDesc = "Released in 1990, Heaven or Las Vegas was Cocteau Twins' most commercially successful release, 
+    reaching number seven in the UK album charts.
+            
+    Numerous publications have since declared it one of the best albums of the ‘90s, 
+    Pitchfork calling it “a core of ungodly gorgeous songs that is every bit as moving and relevant today as it ever was.”
+        
+    Label founder Ivo Watts-Russell goes further, 
+    candidly revealing in the recent 4AD biography, Facing The Other Way, that 
+    this album wasn’t just his favourite Cocteaus album but also his favourite all-time 4AD album, 
+    and “by a long shot”, calling it “the perfect record.
+    
+    
     (Description from https://genius.com/albums/Cocteau-twins/Heaven-or-las-vegas)"
     cocteauAlbum = Album.create!(title: 'Heaven or Las Vegas', artist_id: cocteauArtist.id, release_date: '09/17/1990', description: cocteauDesc)
     cocteauAlbum.photo.attach(
@@ -141,12 +194,19 @@
         filename: 'holv.jpeg')
 
     latinDesc = "Latin Playboys is the self-titled debut album of experimental band Latin Playboys.
-    \r\n
-    Robert Christgau of The Village Voice named the album the best release of 1994 and described it as 'impressionistic fragments coalescing into a self-sustaining aural counterreality.'Writing for The A.V. Club, Joshua Klein called the album a 'casual masterpiece' consisting of 'found sounds, low-fidelity recording techniques, distorted drum loops, deep-dungeon blues, fragmented guitar parts, and some gorgeous songs.' 
-    \r\n
-    In his AllMusic review, Richie Unterberger stated that the album's 'lyrics and song structures are almost impressionistic in tone, creating an effect similar to listening to your car radio as stations drift in and out of reach while you drive along the Mexican border.'Christgau later named it among his 10 best albums from the 1990s. 
-    \r\n
-    \r\n
+    
+    Robert Christgau of The Village Voice named the album the best release of 1994 
+    and described it as 'impressionistic fragments coalescing into a self-sustaining aural counterreality.' 
+    Writing for The A.V. Club, Joshua Klein called the album a 'casual masterpiece' 
+    consisting of 'found sounds, low-fidelity recording techniques, distorted drum loops, 
+    deep-dungeon blues, fragmented guitar parts, and some gorgeous songs.' 
+    
+    In his AllMusic review, Richie Unterberger stated that the album's 
+    'lyrics and song structures are almost impressionistic in tone, creating an effect similar to 
+    listening to your car radio as stations drift in and out of reach while you drive along the Mexican border.' 
+    Christgau later named it among his 10 best albums from the 1990s. 
+    
+    
     (Description from https://en.wikipedia.org/wiki/Latin_Playboys_(album))"
     latinAlbum = Album.create!(title: 'Latin Playboys', artist_id: latinAtrist.id, release_date: '03/08/1994', description: latinDesc)
     latinAlbum.photo.attach(
@@ -162,6 +222,11 @@
     cherrySong.audio.attach(
         io: open('https://new-wave-aa-seeds.s3.amazonaws.com/Cherry-coloured+Funk.mp3'),
         filename: 'Cherry-coloured+Funk.mp3'
+    )
+    heavenSong = Song.create!(title: 'Heaven or Las Vegas', album_id: cocteauAlbum.id)
+    heavenSong.audio.attach(
+        io: open('https://new-wave-aa-seeds.s3.amazonaws.com/Cocteau+Twins+~+Heaven+Or+Las+Vegas+(Remastered)+HQ+Audio.mp3').
+        filename: 'Cocteau Twins ~ Heaven Or Las Vegas (Remastered) HQ Audio.mp3'
     )
     manifoldSong = Song.create!(title: 'Manifold De Amour', album_id: latinAlbum.id)
     manifoldSong.audio.attach(

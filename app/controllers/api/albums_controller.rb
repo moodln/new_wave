@@ -52,6 +52,6 @@ class Api::AlbumsController < ApplicationController
     end 
 
     def album_params 
-        params.require(:album).permit(:title, :artist_id, :photo, :song, :release_date, :price, :description)
+        params.require(:album).permit(:title, :artist_id, :photo, :release_date, :price, :description, songs: [])
     end 
 end 
