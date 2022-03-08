@@ -5,4 +5,7 @@ json.description album.description
 json.price album.price
 json.photoUrl url_for(album.photo) if album.photo.attached?
 
-json.songUrls album.songs.map { |file| url_for(file.audio) }
+json.songs album.songs do |song|
+    json.title song.title
+    json.url url_for(song.audio)
+end

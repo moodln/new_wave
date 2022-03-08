@@ -90,7 +90,7 @@ class AlbumShow extends React.Component {
                                     <h2>{album.title}</h2>
                                     <p>by {album.artist.name}</p>
                                     <audio controls type='audio/mpeg' id='audio'>
-                                        <source id='audioSource' src={album.songUrls[0]}></source>
+                                        <source id='audioSource' src={album.songs[0].url}></source>
                                     </audio>
 
                                     <h4>Digital Album</h4>
@@ -100,7 +100,7 @@ class AlbumShow extends React.Component {
                                     <p>Send as Gift</p>
                                 
                                     <div className='song-list'>
-                                        {album.songUrls.map(song => {
+                                        {album.songs.map(song => {
                                             return  <SongIndexItem song={song} playAudio={this.playAudio} key={song.id} />
                                         })}
                                     </div>
