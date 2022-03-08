@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import SongIndexItem from "../songs/SongIndexItem";
 
 
 class AlbumShow extends React.Component {
@@ -20,11 +21,11 @@ class AlbumShow extends React.Component {
         })
     }
 
-    playAudio(album) {
+    playAudio(songUrl) {
         let audio = document.getElementById('audio');
         let source = document.getElementById('audioSource');
-        source.src = album.songUrls[1];
-        debugger
+        source.src = songUrl;
+        // debugger
         audio.load();
         audio.play();
     }
@@ -99,11 +100,9 @@ class AlbumShow extends React.Component {
                                     <p>Send as Gift</p>
                                 
                                     <div className='song-list'>
-                                        <button onClick={() => this.playAudio(album)}>
-                                            <img src={window.play} alt="play_button" className='play' />
-                                        </button>
-                                        <p>1. {album.songTitle}</p>
-                                        <p>3:44</p>
+                                        {album.songUrls.map(song => {
+                                            return  <SongIndexItem song={song} playAudio={this.playAudio} key={song.id} />
+                                        })}
                                     </div>
                                     <div className='description release-date'>
                                         <p>{album.description}</p>
