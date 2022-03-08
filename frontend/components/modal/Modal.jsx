@@ -3,6 +3,7 @@ import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import LoginFormContainer from '../session/login_form_container';
 import SignupFormContainer from '../session/signup_form_container';
+import SongFormContainer from '../songs/create_song_form_container';
 
 class Modal extends React.Component {
     constructor(props) {
@@ -21,6 +22,9 @@ class Modal extends React.Component {
                 break;
             case 'signup':
                 component = <SignupFormContainer />;
+                break;
+            case 'create-song':
+                component = <SongFormContainer />;
                 break;
             default:
                 return null;

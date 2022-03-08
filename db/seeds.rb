@@ -17,7 +17,7 @@
     ApplicationRecord.connection.reset_pk_sequence!('articles')
     ApplicationRecord.connection.reset_pk_sequence!('songs')
 
-    demoUser = User.create!(username: 'guest', email: 'demo@demo.com', password: 'password')
+    demoUser = User.create!(username: 'guest', email: 'demo@demo.com', password: 'password', location: 'Independence, Kansas')
 
     boweryArtist = User.create!(username: 'bowery electric', name: 'Bowery Electric', email: 'bowery@gmail.com', password: 'password', location: 'NYC', about: 'American post-rock band, formed in 1993', artist: true)
     boweryArtist.photo.attach(

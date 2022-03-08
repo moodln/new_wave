@@ -85,7 +85,8 @@ class Header extends React.Component {
                         <Link to='/'>
                             <div className="logo">
                                 <img src={window.logo} alt="new_wave logo" className='logo' /><p>new wave</p>
-                            </div>                        </Link>
+                            </div>                        
+                        </Link>
                         <SearchBarContainer articles={this.props.articles} albums={this.props.albums}/>
                     </div>
                     <div className='links-container'>

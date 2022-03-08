@@ -20,17 +20,26 @@ class Api::AlbumsController < ApplicationController
     def create 
         form = params["album"]
         errors = []
-
+        
         errors << 'album must have a title' if form["title"] == "album name"     
-        errors << 'you must upload a song' if form["song"] == "null" 
+        errors << 'you must upload a song' if form["songs"][0] == "null" 
         errors << 'you must have an album photo' if form["photo"] == "null"
-
+        
         if errors.length > 0
             render json: errors.join(', '), status: 422
         else 
+            
             @album = Album.create(album_params)
-            # @song = Song.create(@album.song)
+            # debugger
+            # # @song = Song.create(@album.songs[0])
+            # # @song.album_id = @album.id
+            # debugger
+            
+            
+            # @song = Song.create(@album.song) Song.create!(title: "Mother's Love", album_id: tsegueAlbum.id)
             # @song.album_id = @album.id
+
+            # song needs title (track_name), album_id, then audio.attach
             if @album.save
                 render :show
             else
@@ -52,6 +61,6 @@ class Api::AlbumsController < ApplicationController
     end 
 
     def album_params 
-        params.require(:album).permit(:title, :artist_id, :photo, :release_date, :price, :description, songs: [])
+        params.require(:album).permit(:title, :artist_id, :photo, :release_date, :price, :description, :track_title)
     end 
 end 

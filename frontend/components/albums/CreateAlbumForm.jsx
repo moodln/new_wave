@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Modal from '../modal/Modal';
 
 class CreateAlbumForm extends React.Component {
     constructor(props) {
@@ -11,6 +12,7 @@ class CreateAlbumForm extends React.Component {
             artist_id: this.props.currentUser.id,
             img_url: null, 
             audio_url: null,
+            track_title: 'Untitled Track',
             descriptuon: 'Includes unlimited streaming via the free new wave app, plus high-quality download in MP3, FLAC and more.',
             price: '7.00',
             release_date: this.todaysDate(),
@@ -24,6 +26,7 @@ class CreateAlbumForm extends React.Component {
         this.handleInput = this.handleInput.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleFile = this.handleFile.bind(this);
+        this.handleTrack = this.handleTrack.bind(this);
     }
 
     toggleInput() {
@@ -78,25 +81,63 @@ class CreateAlbumForm extends React.Component {
         }
     }
 
+    handleTrack() {
+        this.props.openModal('create-song')
+    }
+
     handleSubmit(e) {
         e.preventDefault();
             // const date = Date.parse(this.state.release_date);
             // const newDate = new Date(date);
-            debugger
-            const formData = new FormData();
+            // debugger
+            const albumData = new FormData();
+            const songData = new FormData();
+            albumData.append('album[title]', this.state.title);
+            albumData.append('album[artist_id]', this.state.artist_id);
+            albumData.append('album[photo]', this.state.img_url);
+            albumData.append('album[songs][]', this.state.audio_url);
+            // albumData.append('album[track_title]', this.state.track_title);
+            albumData.append('album[release_date]', this.state.release_date);
+            albumData.append('album[price]', this.state.price);
 
-            formData.append('album[title]', this.state.title);
-            formData.append('album[artist_id]', this.state.artist_id);
-            formData.append('album[photo]', this.state.img_url);
-            formData.append('album[song]', this.state.audio_url);
-            formData.append('album[release_date]', this.state.release_date);
-            formData.append('album[price]', this.state.price);
-            
-            this.props.createAlbum(formData)
+            songData.append('song[audio]', this.state.audio_url)
+            songData.append('song[title]', this.state.track_title)
+
+            this.props.createAlbum(albumData) // create album first so that we can attach album_id to song
                 .then(response => {
-                    return this.props.history.push(`/albums/${response.album.id}`)
+                    debugger
+                    songData.append('song[album_id]', response.album.id)
+                    console.log('in createAlbum', response)
+                    this.props.createSong(songData) // then create song so that the song is associated with album in backend
+                        .then(response => {
+                            debugger
+                            console.log('in createSong', response)
+                            return this.props.history.push(`/albums/${response.albumWithSongAttached.id}`)
+                        })
                 })
-        
+
+            
+            
+            // songData.append('song[album_id]', 11)
+
+            // debugger
+            // this.props.createSong(songData)
+            //     .then(response => {
+            //     // debugger
+            //     console.log('in createSong', response)
+            //     // return this.props.history.push(`/albums/${response.album_id}`)
+            // })
+
+            // need to add track name
+            
+            // this.props.createAlbum(albumData)
+            //     .then(response => {
+            //         return this.props.history.push(`/albums/${response.album.id}`)
+            //     })
+    }
+
+    handleSave(albumId) {
+        return this.props.history.push(`/albums/${albumId}`)
     }
 
 
@@ -110,6 +151,7 @@ class CreateAlbumForm extends React.Component {
         if (this.state) {
             return (
                 <div>
+                    <Modal />
                     <div className='create-album-body'>
                         
                             <form className='create-album-form' onSubmit={this.handleSubmit}>
@@ -135,13 +177,17 @@ class CreateAlbumForm extends React.Component {
                                             type="file"
                                             title='add track'
                                             accept="audio/mp3"
+                                            // onClick={this.handleTrack}
                                             onChange={this.handleFile('audio_url')} />
+                                    </label>
+                                    <label>Title
+                                        <input type="text" placeholder='Untitled Track' onChange={this.handleInput('track_title')} />
                                     </label>
                                 </div>
                                 <div id="album-track-error">
                                     <p>{song_error}</p>
                                 </div>
-                                <button>save draft</button>
+                                <button id='save-draft-button' disabled={true}>save draft</button>
                                 {/* <div className='album-errors'>
                                     {errors.map(error => 
                                         <li key={error.length}>
@@ -182,7 +228,7 @@ class CreateAlbumForm extends React.Component {
                                     </div>
                                     <p>enter zero or more</p>
                                     <div className='checkbox'>
-                                        <input type="checkbox" checked/>
+                                        <input type="checkbox" defaultChecked/>
                                         <p>let fans pay more if they want</p>
                                     </div>
                                     <div className='payments'>
